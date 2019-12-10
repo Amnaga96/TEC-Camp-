@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class AskController extends Controller
 {
     public function ask(){
-        return view()
+        return view("ask");
 
     }
 }
+?>
