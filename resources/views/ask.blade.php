@@ -104,7 +104,7 @@
     <br>
     <div class="container mb-5">
         <div>
-            <img src="C:\Users\HP\Desktop\projec\Psychiatrist-vs-therapist-whats-the-difference-4.jpg " class="img-fluid " alt="Responsive image ">
+            <img src="Psychiatrist-vs-therapist-whats-the-difference-4.jpg " class="img-fluid " alt="Responsive image ">
         </div>
         <!--<h1>ask</h1>-->
         <div class="text-center shadow-lg p-3 mb-5 bd-with  bg-white rounded mx-auto d-block text-center">
@@ -114,23 +114,24 @@
             <div class="container">
                 <div class="row">
                     <div class="col-5 mt-5 rounded mx-auto d-block">
-                        <img class="zoom" src="C:\Users\HP\Desktop\projec\Writing-512.png" alt="write">
-                        <img class="zoom" src="C:\Users\HP\Desktop\projec\im2.png" alt="docters">
-                        <img class="zoom" src="C:\Users\HP\Desktop\projec\1.jpg" alt="help you">
+                        <img class="zoom" src="Writing-512.png" alt="write">
+                        <img class="zoom" src="im2.png" alt="docters">
+                        <img class="zoom" src="1.jpg" alt="help you">
                     </div>
                 </div>
             </div>
         </div>
+        <form action="" method="post">
         <div class="container row text-center mb-2 rounded mx-auto d-block">
             <div class="col-5 rounded mx-auto d-block">
                 <div class="form-group">
                     <label for="comment">Your Question:</label>
-                    <textarea style="border: 1px solid #86e2d5;" class=" form-control " rows="5 " id="comment "></textarea>
+                    <textarea type="text" name="comment" class=" form-control " style="border: 1px solid #86e2d5;"  rows="5 " id="comment "></textarea>
                 </div>
                 <div class="col-6 mx-auto ">
                     <div class="form-group ">
                         <label for="usr ">Your Name:</label>
-                        <input style="border: 1px solid #86e2d5; " type="text " class="form-control " id="usr ">
+                        <input style="border: 1px solid #86e2d5; " type="text " class="form-control " id="usr " name="name">
                     </div>
                     <label for="doctors ">Choose your doctor</label>
                     <div>
@@ -144,6 +145,7 @@
                 </div>
             </div>
         </div>
+        </form>
         <!--
         <div class="bg-white ">
             <div class="container row text-center mb-2 mr-5 rounded mx-auto d-block ">
@@ -151,7 +153,7 @@
                     Questionnaire
                 </h2>
                 <div>
-                    <img src="C:\Users\HP\Desktop\projec\Psychiatrist-vs-therapist-whats-the-difference-4.jpg " class="img-fluid " alt="Responsive image ">
+                    <img src="Psychiatrist-vs-therapist-whats-the-difference-4.jpg " class="img-fluid " alt="Responsive image ">
                 </div>
             </div>
             <div>
