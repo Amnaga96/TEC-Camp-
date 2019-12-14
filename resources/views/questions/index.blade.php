@@ -23,7 +23,7 @@
             <td>{{ $question->title }}</td>
             <td>{{ $question->created_at }}</td>
             {{-- <td>{{ $question->body }}</td> --}}
-          <td><a href="{{url('/show')}}">more details</a></td>
+          <td><a href="{{url("/questions/$question->id/show")}}">more details</a></td>
 
           </tr>
         @endforeach
