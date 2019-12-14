@@ -104,7 +104,7 @@
     <br>
     <div class="container mb-5">
         <div>
-            <img src="Psychiatrist-vs-therapist-whats-the-difference-4.jpg " class="img-fluid " alt="Responsive image ">
+            <img src="{{ asset(Psychiatrist-vs-therapist-whats-the-difference-4.jpg)}}" class="img-fluid " alt="Responsive image ">
         </div>
         <!--<h1>ask</h1>-->
         <div class="text-center shadow-lg p-3 mb-5 bd-with  bg-white rounded mx-auto d-block text-center">
