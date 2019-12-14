@@ -11,5 +11,7 @@
 |
 */
 
-Route::get('/ask', 'AskController@ask');
-?>
+// Route::get('/ask', 'AskController@ask');
+Route::get('/', 'PagesController@index');
+Route::get('/ask', 'QuestionController@create');
+Route::post('/ask', 'QuestionController@store');
