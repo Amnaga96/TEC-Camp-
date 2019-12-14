@@ -47,7 +47,7 @@ class QuestionController extends Controller
         $ques->body= request('body');
         //$ques->doctor= request('ti');
         $ques-> save();
-
+        return redirect('questions');
     }
 
     /**
