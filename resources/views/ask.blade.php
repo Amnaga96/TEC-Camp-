@@ -121,31 +121,32 @@
                 </div>
             </div>
         </div>
-        <form action="" method="post">
+        <form action="{{ url('/ask') }}" method="post">
+        @csrf
+            <div class="col-6 mx-auto ">
+                    <div class="form-group ">
+                        <label for="usr ">title:</label>
+                        <input style="border: 1px solid #86e2d5; " type="text " class="form-control " id="usr " name="title">
+                    </div>
+                    </div>
         <div class="container row text-center mb-2 rounded mx-auto d-block">
             <div class="col-5 rounded mx-auto d-block">
                 <div class="form-group">
                     <label for="comment">Your Question:</label>
-                    <textarea type="text" name="comment" class=" form-control " style="border: 1px solid #86e2d5;"  rows="5 " id="comment "></textarea>
+                    <textarea type="text" name="body" class=" form-control " style="border: 1px solid #86e2d5;"  rows="5 " id="comment "></textarea>
                 </div>
                 <div class="col-6 mx-auto ">
-                    <div class="form-group ">
-                        <label for="usr ">Your Name:</label>
-                        <input style="border: 1px solid #86e2d5; " type="text " class="form-control " id="usr " name="name">
-                    </div>
                     <label for="doctors ">Choose your doctor</label>
                     <div>
-                        <select name="doctor " style="border: 1px solid #86e2d5; border-radius: 4px; ">
-                    <option value="... ">Tasnim</option>
-                    <option value="... ">Soha</option>
-                    <option value="... ">Heba</option>
-                    <option value="... ">Asma</option>
+                        <select name="doctor" style="border: 1px solid #86e2d5; border-radius: 4px; ">
+                    <option value="Tasnim ">Tasnim</option>
+                    <option value="Soha ">Soha</option>
+                    <option value="Heba">Heba</option>
+                    <option value="Asma">Asma</option>
                 </select>
                     </div>
                 </div>
             </div>
-        </div>
-        </form>
         <!--
         <div class="bg-white ">
             <div class="container row text-center mb-2 mr-5 rounded mx-auto d-block ">
@@ -170,11 +171,13 @@
                 </ul>
             </div>
             -->
-        <div class="col-6 mt-3 mb-3 ml-5">
+            <div class="col-6 mt-3 mb-3 ml-5">
             <button class="btn button rounded float-right">Send</button>
-        </div>
+            </div>
+        </form>
         <br>
         <br>
+
     </div>
     <div id="footer">
         <div class="container">
