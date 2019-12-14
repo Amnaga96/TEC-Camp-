@@ -1,4 +1,4 @@
-><!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-      <p>  {{ $question->body }} </p>
 </body>
 </html>
+-->
+
+@extends('layouts.app')
+@section('content')
+        <div>
+      <h2 class="text-sm-center text-info">  {{ $question->title }} </h2>
+      <p>  {{ $question->body }} </p>
+        </div>
+        <br>
+        <form action="" method="">
+        <div class="col-10 mt-3 mb-3 ml-5">
+            <button class="btn btn-outline-info  rounded float-right ml-6">reply</button>
+            </div>
+        </form>
+
+      @stop

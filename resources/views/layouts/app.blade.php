@@ -57,13 +57,11 @@ background: #000;
 
 
 
-
+      <div class="container">
       <!--PUT YOUR CONTENT HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
-
-<div class="container">
-    @yield('content')
-</div>
+        @yield('content') 
+        </div>
 
 
 

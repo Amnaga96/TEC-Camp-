@@ -52,7 +52,7 @@
 <body>
 
     <nav style="background-color: #86e2d5;" class="navbar  navbar-light  fixed-top text-white  navbar-expand-lg ">
-        <a style="color: rgb(83, 81, 81);" class="navbar-brand " href="#">HEALTH CARE</a>
+        <a style="color: rgb(83, 81, 81);" class="navbar-brand " href="#">YOU TALK</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -104,7 +104,7 @@
     <br>
     <div class="container mb-5">
         <div>
-            <img src="{{ asset(Psychiatrist-vs-therapist-whats-the-difference-4.jpg)}}" class="img-fluid " alt="Responsive image ">
+            <img src="Psychiatrist-vs-therapist-whats-the-difference-4.jpg" class="img-fluid " alt="Responsive image ">
         </div>
         <!--<h1>ask</h1>-->
         <div class="text-center shadow-lg p-3 mb-5 bd-with  bg-white rounded mx-auto d-block text-center">
@@ -123,16 +123,16 @@
         </div>
         <form action="{{ url('/ask') }}" method="post">
         @csrf
-            <div class="col-6 mx-auto ">
+            <div class="col-4 mx-auto">
                     <div class="form-group ">
-                        <label for="usr ">title:</label>
+                        <label class="col-12 text-center" for="usr">title</label>
                         <input style="border: 1px solid #86e2d5; " type="text " class="form-control " id="usr " name="title">
                     </div>
                     </div>
         <div class="container row text-center mb-2 rounded mx-auto d-block">
             <div class="col-5 rounded mx-auto d-block">
                 <div class="form-group">
-                    <label for="comment">Your Question:</label>
+                    <label for="comment">Your Question</label>
                     <textarea type="text" name="body" class=" form-control " style="border: 1px solid #86e2d5;"  rows="5 " id="comment "></textarea>
                 </div>
                 <div class="col-6 mx-auto ">
