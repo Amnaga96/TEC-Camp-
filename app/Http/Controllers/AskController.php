@@ -10,5 +10,6 @@ class AskController extends Controller
         return view("ask");
 
     }
+    
 }
 ?>

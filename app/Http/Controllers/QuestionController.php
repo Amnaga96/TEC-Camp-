@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Question;
 
+
 class QuestionController extends Controller
 {
     /**
@@ -40,7 +41,13 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        return request()->all();
+        //return request()->all();
+        $ques = new Question;
+        $ques->title= request('title');
+        $ques->body= request('body');
+        //$ques->doctor= request('ti');
+        $ques-> save();
+
     }
 
     /**
