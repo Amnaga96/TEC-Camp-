@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('/find','FindController@find');
 // Route::get('/ask', 'AskController@ask');
 Route::get('/', 'PagesController@index');
 Route::get('/ask', 'QuestionController@create');
