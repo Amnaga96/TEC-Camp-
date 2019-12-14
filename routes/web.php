@@ -15,3 +15,5 @@
 Route::get('/', 'PagesController@index');
 Route::get('/ask', 'QuestionController@create');
 Route::post('/ask', 'QuestionController@store');
+Route::get('/questions', 'QuestionController@index');
+Route::get('/questions/{qid}/show', 'QuestionController@show');

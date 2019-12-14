@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    @yield('content')
+      <p>  {{ $question->body }} </p>
 </body>
 </html>
