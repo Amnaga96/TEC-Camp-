@@ -19,35 +19,33 @@ background: #000;
 <body>
 
 
-  <nav class=" black sticky-top" >
-    <nav class="sticky-top navbar mb-5 navbar-expand-lg navbar-light  pull-right"  > 
+  <a class=" black sticky-top">
+    <nav class="sticky-top navbar mb-5 navbar-expand-lg navbar-light  pull-right" style="background-color: #86e2d5;"> 
 <div class="container">
-        <a style="color: silver; margin-top: 3px;" class="navbar-brand" href="#"><h4>You Talk</h4> </a>
-
+        <a style="color: rgb(83, 81, 81); margin-top: 3px;" class="navbar-brand" href="#"><h4>You Talk</h4> </a>
         <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">           
           <ul   class=" nav  justify-content-end   ml-auto">
 
             <li class="nav-item ">
-              <a style= "font-size: 14.5px; color: silver;" class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a style= "font-size: 14.5px; color: rgb(83, 81, 81);" class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li  class="nav-item">
-              <a style="font-size: 14.5px; color: silver;"  class="nav-link" href="#">About</a>
+              <a style="font-size: 14.5px; color: rgb(83, 81, 81);"  class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
-                <a style="font-size: 14.5px; color: silver;" class="nav-link" href="#">Services</a>
+                <a style="font-size: 14.5px; color: rgb(83, 81, 81);" class="nav-link" href="#">Services</a>
               </li>            
               <li  class="nav-item">
-                  <a style="font-size: 14.5px; color: silver;" class="nav-link" href="blog.html">Our blog</a>
+                  <a style="font-size: 14.5px; color: rgb(83, 81, 81);" class="nav-link" href="blog.html">Our blog</a>
                 </li>               
                 <li class="nav-item">
-                    <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="#">Contact us</a>
+                    <a style=" font-size: 14.5px; color: rgb(83, 81, 81);" class="nav-link" href="#">Contact us</a>
                   </li>
                   <li class="nav-item">
-                      <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="singin.html">Sign in</a>
+                      <a style="font-size: 14.5px; color: rgb(83, 81, 81);" class="nav-link" href="singin.html">Sign in</a>
                     </li>
                    </ul>         
                       </div></div>

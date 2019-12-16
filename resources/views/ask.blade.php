@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,9 +62,6 @@
 
 
 
-            <!--kmfklermfkmes gf-->
-
-
             <ul style="margin-left: 260px;" class="navbar-nav mr-auto ">
 
 
@@ -100,11 +97,35 @@
             </ul>
         </div>
     </nav>
-    <br>
-    <br>
-    <div class="container mb-5">
-        <div>
-            <img src="Psychiatrist-vs-therapist-whats-the-difference-4.jpg" class="img-fluid " alt="Responsive image ">
+    -->
+    <style>
+    .zoom {
+        padding: 10px;
+        transition: transform .2s;
+        /* Animation */
+        width: 80px;
+        height: 80px;
+    }
+    
+    .zoom:hover {
+        transform: scale(1.5);
+        /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+    
+    .button {
+        background-color: #86e2d5;
+    }
+    
+    .button:hover {
+        background-color: #86e2d5;
+        }
+    
+    </style>
+    @extends('layouts.app')
+    @section('content')
+    <div class="container">
+        <div style="border: 1px solid #86e2d5; border-radius: 4px; ">
+            <img src="{{asset('img/Psychiatrist-vs-therapist-whats-the-difference-4.jpg')}}" class="img-fluid " alt="Responsive image ">
         </div>
         <!--<h1>ask</h1>-->
         <div class="text-center shadow-lg p-3 mb-5 bd-with  bg-white rounded mx-auto d-block text-center">
@@ -113,10 +134,10 @@
             <p>Our based doctors will review to ensure you are medically suitable for your requested treatment.....</p>
             <div class="container">
                 <div class="row">
-                    <div class="col-5 mt-5 rounded mx-auto d-block">
-                        <img class="zoom" src="Writing-512.png" alt="write">
-                        <img class="zoom" src="im2.png" alt="docters">
-                        <img class="zoom" src="1.jpg" alt="help you">
+                    <div class="col-5 mt-5 rounded mx-auto d-block" >
+                        <img class="zoom" src="{{asset('img/Writing-512.png')}}" alt="write">
+                        <img class="zoom" src="{{asset('img/im2.png')}}" alt="docters">
+                        <img class="zoom" src="{{asset('img/1.jpg')}}" alt="help you">
                     </div>
                 </div>
             </div>
@@ -170,15 +191,21 @@
                     </li>
                 </ul>
             </div>
+            </div
             -->
             <div class="col-6 mt-3 mb-3 ml-5">
-            <button class="btn button rounded float-right">Send</button>
+            <button style="border: 1px solid #86e2d5; border-radius: 4px; " class="btn button rounded float-right">Send</button>
             </div>
         </form>
-        <br>
-        <br>
-
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    @stop
+    <!--
     <div id="footer">
         <div class="container">
             <p>Copyright © health care. <br> 2019 Design by <a style="color: #86e2d5;" href="team" rel="nofollow">OUR
@@ -193,3 +220,4 @@
 </body>
 
 </html>
+-->
