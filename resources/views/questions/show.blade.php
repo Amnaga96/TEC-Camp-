@@ -11,7 +11,7 @@
 </html>
 -->
 
-@extends('layouts.app')
+@extends('layouts.app_renamed')
 @section('content')
         <div>
       <h2 class="text-sm-center text-info">  {{ $question->title }} </h2>
