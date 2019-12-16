@@ -23,20 +23,20 @@
         width: 80px;
         height: 80px;
     }
-    
+
     .zoom:hover {
         transform: scale(1.5);
         /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
     }
-    
+
     .button {
         background-color: #86e2d5;
     }
-    
+
     .button:hover {
         background-color: rgb(83, 81, 81);
     }
-    
+
     #footer {
         position: fixed;
         left: 0;
@@ -160,10 +160,9 @@
                     <label for="doctors ">Choose your doctor</label>
                     <div>
                         <select name="doctor" style="border: 1px solid #86e2d5; border-radius: 4px; ">
-                    <option value="Tasnim ">Tasnim</option>
-                    <option value="Soha ">Soha</option>
-                    <option value="Heba">Heba</option>
-                    <option value="Asma">Asma</option>
+                    @foreach ($consulters as $consulter)
+                        <option value="{{ $consulter->id }}">{{ $consulter->name }}</option>
+                    @endforeach
                 </select>
                     </div>
                 </div>
@@ -220,4 +219,3 @@
 </body>
 
 </html>
--->

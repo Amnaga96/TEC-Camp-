@@ -12,7 +12,7 @@
 col-10 mt-3 mb-1 ml-3 
 -->
 
-@extends('layouts.app')
+@extends('layouts.app_renamed')
 @section('content')
         <div class="container">
       <h2 class="text-sm-center text-info">  {{ $question->title }} </h2>
@@ -28,22 +28,5 @@ col-10 mt-3 mb-1 ml-3
         </form>
         </div>
 
-    
-   
+
       @stop
-      <script>
-      $(document).ready(function() {
-        $("#addreply").reply(function(event) {
-          event.preventDefault();
-          if (document.getElementById('response').value) {
-             var newListItem = document.createElement('li');
-             newListItem.textContent = $('#response').val();
-             newListItem.setAttribute('class', 'list-group-item');
-             newListItem.style.display = 'none';
-             $(newListItem).fadeIn(2000);
-             document.getElementById('addreply').appendChild(newListItem);
-              $("#response").val("");
-    }
-  });
-      });
-      </script>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Consulter;
+use App\Message;
 use Illuminate\Http\Request;
 use \App\Question;
 
@@ -29,8 +31,9 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        return view("ask");
-        //
+        return view("ask", [
+            'consulters' => Consulter::all()
+        ]);
     }
 
     /**
@@ -41,13 +44,20 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //return request()->all();
-        $ques = new Question;
+        // validation
+
+        $ques = new Message();
         $ques->title= request('title');
         $ques->body= request('body');
-        //$ques->doctor= request('ti');
-        $ques-> save();
-        return redirect('questions');
+
+        $consulter= Consulter::find(request('doctor'));
+
+        $msg =  auth()->user()->sent_messages()->make($ques->toArray());
+        $msg->receiver()->associate($consulter);
+        $msg->save();
+
+        // $ques-> save();
+        // return redirect('questions');
     }
 
     /**
