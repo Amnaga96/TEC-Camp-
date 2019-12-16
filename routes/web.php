@@ -1,20 +1,22 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
+// Admin
+// Patient (User)
+// Consulter
+// Clinic
+// Message
+// Article
 */
 
 Route::get('/find','FindController@find');
 // Route::get('/ask', 'AskController@ask');
 Route::get('/', 'PagesController@index');
-Route::get('/ask', 'QuestionController@create');
-Route::post('/ask', 'QuestionController@store');
+Route::get('/ask', 'QuestionController@create')->middleware('auth');
+Route::post('/ask', 'QuestionController@store')->middleware('auth');
 Route::get('/questions', 'QuestionController@index');
 Route::get('/questions/{qid}/show', 'QuestionController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
