@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-      <p>  {{ $question->body }} </p>
+      <p>  {{ $question->body }} </p> 
 </body>
 </html>
