@@ -12,7 +12,7 @@
 @extends('layouts.app_renamed')
 @section('content')
   <div class="container">
-  <h1 class="text-info mt-5 mb-3"> Inbox </h1>
+  <h1 class="text-info mt-5 mb-3"> {{  $title }} </h1>
       <table class="table table-sm">
         <thead class="table-info">
           <tr class="text-center">

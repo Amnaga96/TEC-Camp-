@@ -23,5 +23,5 @@ Route::group(['namespace' => 'Consulter'], function() {
     Route::get('email/verify','Auth\VerificationController@show')->name('consulter.verification.notice');
     Route::get('email/verify/{id}','Auth\VerificationController@verify')->name('consulter.verification.verify');
 
-    Route::get('messages', 'MessageController@index');
+    Route::get('/questions', 'QuestionController@index');
 });

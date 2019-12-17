@@ -6,13 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateQuestionsTable extends Migration
 {
-    
+
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
             $table->mediumText('body');
+            $table->integer('user_id');
+            $table->integer('consulter_id');
             $table->timestamps();
         });
     }

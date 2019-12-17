@@ -37,8 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function sent_messages()
+    public function questions()
     {
-        return $this->morphMany('App\Message', 'sender');
+        return $this->hasMany('App\Question');
     }
 }

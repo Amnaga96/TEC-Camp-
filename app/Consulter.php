@@ -17,7 +17,7 @@ class Consulter extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'city'
     ];
 
     /**
@@ -59,8 +59,8 @@ class Consulter extends Authenticatable
         $this->notify(new ConsulterVerifyEmail);
     }
 
-    public function received_messages()
+    public function questions()
     {
-        return $this->morphMany('App\Message', 'receiver');
+        return $this->hasMany('App\Question');
     }
 }

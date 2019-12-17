@@ -2,79 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use App\Consulter;
-use App\Message;
 use Illuminate\Http\Request;
-use \App\Question;
-
+use App\Question;
+use App\Consulter;
 
 class QuestionController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-         $questions = Question::all();
-         
-        return view('questions.index', ['questions'=> $questions]);
+        $questions = auth()->user()->questions;
 
-
+        return view('questions.index', [
+            'questions'=> $questions,
+            'title' => 'Patient asked questions'
+            ]);
     }
 
     public function create()
     {
-<<<<<<< HEAD
-        return view("ask");
-       
-=======
         return view("ask", [
             'consulters' => Consulter::all()
         ]);
->>>>>>> e6989385094a9aa29ac545e811665706a8793fe7
     }
 
     public function store(Request $request)
     {
-<<<<<<< HEAD
-        $ques = new Question;
-        $ques->title= request('title');
-        $ques->body= request('body');
-        $ques-> save();
-        return redirect('questions');
-=======
-        // validation
+        //  Please add validation here later
 
-        $ques = new Message();
+        $ques = new Question();
         $ques->title= request('title');
         $ques->body= request('body');
 
         $consulter= Consulter::find(request('doctor'));
 
-        $msg =  auth()->user()->sent_messages()->make($ques->toArray());
-        $msg->receiver()->associate($consulter);
+        $msg =  auth()->user()->questions()->make($ques->toArray());
+        $msg->consulter()->associate($consulter);
         $msg->save();
 
-        // $ques-> save();
-        // return redirect('questions');
->>>>>>> e6989385094a9aa29ac545e811665706a8793fe7
-    }
-
-    public function show($qid)
-    {
-        $question = Question::find($qid);
-        return view('questions.show', compact('question'));
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
+        return redirect('questions');
     }
 }
