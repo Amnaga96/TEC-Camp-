@@ -20,3 +20,5 @@ Route::get('/questions/{qid}/show', 'QuestionController@show');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('consulters', 'ConsulterController@index');

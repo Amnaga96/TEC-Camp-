@@ -19,6 +19,8 @@ class CreateConsultersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('city');
+            $table->boolean('accept_messages')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
