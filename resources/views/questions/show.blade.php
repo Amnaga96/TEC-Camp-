@@ -20,13 +20,11 @@ col-10 mt-3 mb-1 ml-3
       <ul id="addreply" class="list-group mt-5"></ul>
         </div>
         <br>
-        <!--'<p> }}$answer->response}}'</p><div class="display-inline"> -->
+        <!--'<p> }}$answer->response}}'</p><div class="display-inline">
         <div class="text-center">
         <form action="" method="" class="form-inline" id="addreply">
         <textarea type="text" name="response" class="form-control " style="border: 1px solid #86e2d5;"  rows="2" id="response"></textarea>
         <button id="submitButton" type="rebly" value="addrebly" style="border: 1px solid #86e2d5;" class="btn btn-outline-info  rounded float-right ml-3">reply</button>
         </form>
         </div>
-
-
-      @stop
+ -->

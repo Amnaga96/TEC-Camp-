@@ -17,7 +17,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-         $questions = Question::all();
+         $questions = Message::all();
         //  return $a ;
         return view('questions.index', ['questions'=> $questions]);
 
@@ -50,14 +50,18 @@ class QuestionController extends Controller
         $ques->title= request('title');
         $ques->body= request('body');
 
-        $consulter= Consulter::find(request('doctor'));
+        //$consulter= Consulter::find(request('doctor'));
+
+        request()->validate([
+         'doctor' => 'required|unique:categories'
+        ]);
 
         $msg =  auth()->user()->sent_messages()->make($ques->toArray());
         $msg->receiver()->associate($consulter);
         $msg->save();
 
         // $ques-> save();
-        // return redirect('questions');
+        return redirect('questions');
     }
 
     /**
@@ -68,7 +72,7 @@ class QuestionController extends Controller
      */
     public function show($qid)
     {
-        $question = Question::find($qid);
+        $question = Message::find($qid);
         return view('questions.show', compact('question'));
     }
 
