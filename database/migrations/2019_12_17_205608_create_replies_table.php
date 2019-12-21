@@ -17,7 +17,7 @@ class CreateRepliesTable extends Migration
             $table->bigIncrements('id');
             $table->text('body');
             $table->integer('question_id');
-            $table->morphs('replier');
+            $table->integer('replier_id');
             $table->timestamps();
         });
     }

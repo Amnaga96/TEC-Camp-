@@ -20,6 +20,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('consulters', 'ConsulterController@index'); // this is a page to show consulters for users
+Route::get('therapists', 'TherapistController@index'); // this is a page to show consulters for users
+// create
+// store
 
 Route::get('questions', 'QuestionController@index'); // getting patient's questions for them

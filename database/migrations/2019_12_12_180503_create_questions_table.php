@@ -13,7 +13,7 @@ class CreateQuestionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->mediumText('body');
-            $table->integer('user_id');
+            $table->integer('patient_id');
             $table->integer('consulter_id');
             $table->timestamps();
         });

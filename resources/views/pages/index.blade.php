@@ -39,17 +39,17 @@
 <!-- Navigation
     ==========================================-->
 <nav id="menu" class="navbar navbar-default navbar-fixed-top">
-  <div class="container"> 
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
-      data-target="#bs-example-navbar-collapse-1"> 
-      <span class="sr-only">Toggle navigation</span> 
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+      data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
-       <span class="icon-bar"></span> 
+       <span class="icon-bar"></span>
        <span class="icon-bar"></span> </button>
       <a class="navbar-brand" href="index.html">utalk</a></div>
-    
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
@@ -62,9 +62,9 @@
         <li><a href="#contact-section" class="page-scroll">Contact</a></li>
       </ul>
     </div>
-    <!-- /.navbar-collapse --> 
+    <!-- /.navbar-collapse -->
   </div>
-  <!-- /.container-fluid --> 
+  <!-- /.container-fluid -->
 </nav>
 
 <!-- Header -->
@@ -73,8 +73,8 @@
     <h1>Welcome to <span class="color">utalk</span></h1>
     <p> you talk we help ... we care about you </p>
     <div class="clearfix"></div>
-    <a href="sign_up_form/src/signin.html" class="btn btn-default btn-lg page-scroll">log in</a>
-    <a href="sign_up_form/src/signup.html" class="btn btn-default btn-lg page-scroll">sign up</a> </div>
+    <a href="{{  url('/login') }}" class="btn btn-default btn-lg page-scroll">log in</a>
+    <a href="{{  url('/register') }}" class="btn btn-default btn-lg page-scroll">sign up</a> </div>
 </header>
 
 <!-- About Section -->
@@ -110,7 +110,7 @@
     <div class="section-title">
       <h2>Our <strong>Services</strong></h2>
       <hr>
-      
+
       <div class="clearfix"></div>
     </div>
     <div class="space"></div>
@@ -377,7 +377,7 @@
         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fa fa-github"></i></a></li>   
+        <li><a href="#"><i class="fa fa-github"></i></a></li>
       </ul>
     </div>
   </div>
@@ -393,20 +393,20 @@
   </div>
 </div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
-<script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script type="text/javascript" src="js/bootstrap.js"></script> 
-<script type="text/javascript" src="js/SmoothScroll.js"></script> 
-<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script> 
-<script type="text/javascript" src="js/jquery.isotope.js"></script> 
-<script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
-<script type="text/javascript" src="js/contact_me.js"></script> 
-<script type="text/javascript" src="js/owl.carousel.js"></script> 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/SmoothScroll.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.js"></script>
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+<script type="text/javascript" src="js/contact_me.js"></script>
+<script type="text/javascript" src="js/owl.carousel.js"></script>
 
 <!-- Javascripts
-    ================================================== --> 
+    ================================================== -->
 <script type="text/javascript" src="js/main.js"></script>
 <script src="js/homeScript.js" type="text/javascript" ></script>
 </body>

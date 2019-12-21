@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Consulter;
+use App\User;
 use Illuminate\Http\Request;
 
-class ConsulterController extends Controller
+class TherapistController extends Controller
 {
     /**
      * Here we are getting list of consulters from db,
@@ -13,7 +13,7 @@ class ConsulterController extends Controller
      */
     public function index()
     {
-        $consulters = Consulter::query();
+        $consulters = User::where('user_type', 'therapist');
 
         $consulters->when(request('name'), function($q) {
             $q->where('name', 'LIKE', '%' . request('city') . '%');
@@ -27,5 +27,20 @@ class ConsulterController extends Controller
         return view('consulters.index', [
             'consulters' => $consulters->get()
         ]);
+    }
+    public function show($qid)
+    {
+        $question = Question::find($qid);
+        return view('questions.show', compact('question'));
+    }
+
+    public function create()
+    {
+        # code...
+    }
+
+    public function store()
+    {
+        # code...
     }
 }

@@ -106,20 +106,20 @@
         width: 80px;
         height: 80px;
     }
-    
+
     .zoom:hover {
         transform: scale(1.5);
         /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
     }
-    
+
     .button {
         background-color: #86e2d5;
     }
-    
+
     .button:hover {
         background-color: #86e2d5;
         }
-    
+
     </style>
     @extends('layouts.app')
     @section('content')
@@ -160,8 +160,8 @@
                     <label for="doctors ">Choose your doctor</label>
                 <div>
                         <select name="doctor" style="border: 1px solid #86e2d5; border-radius: 4px; ">
-                    @foreach ($consulters as $consulter)
-                        <option value="{{ $consulter->id }}">{{ $consulter->name }}</option>
+                    @foreach ($therapists as $therapist)
+                        <option value="{{ $therapist->id }}">{{ $therapist->name }}</option>
                     @endforeach
                 </select>
                     </div>
