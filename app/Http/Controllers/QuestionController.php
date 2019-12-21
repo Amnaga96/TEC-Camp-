@@ -10,18 +10,23 @@ class QuestionController extends Controller
 {
     public function index(Request $request)
     {
-        $questions = auth()->user()->questions;
+        $user =  auth()->user();
+
+        if ($user->user_type == 'patient') {
+            $questions = $user->asked_questions;
+        } elseif ($user->user_type == 'therapist') {
+            $questions = $user->recevied_questions;
+        }
 
         return view('questions.index', [
             'questions'=> $questions,
-            'title' => 'Patient asked questions'
             ]);
     }
 
     public function create()
     {
         return view("ask", [
-            'therapists' => User::where('user_type', 'thetapist')
+            'therapists' => User::where('user_type', 'therapist')->get()
         ]);
     }
 
@@ -32,13 +37,16 @@ class QuestionController extends Controller
         $ques = new Question();
         $ques->title= request('title');
         $ques->body= request('body');
-
-        $consulter= Consulter::find(request('doctor'));
-
-        $msg =  auth()->user()->questions()->make($ques->toArray());
-        $msg->consulter()->associate($consulter);
-        $msg->save();
+        $ques->therapist_id = request('therapist');
+        $ques->patient_id = auth()->id();
+        $ques->save();
 
         return redirect('questions');
+    }
+
+    public function show($qid)
+    {
+        $question =  Question::with('replies')->find($qid);
+        return view('questions.show', compact('question'));
     }
 }

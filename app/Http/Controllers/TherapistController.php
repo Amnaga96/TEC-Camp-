@@ -13,19 +13,19 @@ class TherapistController extends Controller
      */
     public function index()
     {
-        $consulters = User::where('user_type', 'therapist');
+        $therapists = User::where('user_type', 'therapist');
 
-        $consulters->when(request('name'), function($q) {
-            $q->where('name', 'LIKE', '%' . request('city') . '%');
+        $therapists->when(request('name'), function($q) {
+            $q->where('name', 'LIKE', '%' . request('name') . '%');
         });
 
-        $consulters->when(request('city'), function($q) {
+        $therapists->when(request('city'), function($q) {
             $q->where('city', request('city'));
         });
 
         // TODO - style the following view
-        return view('consulters.index', [
-            'consulters' => $consulters->get()
+        return view('therapists.index', [
+            'therapists' => $therapists->get()
         ]);
     }
     public function show($qid)
@@ -36,11 +36,14 @@ class TherapistController extends Controller
 
     public function create()
     {
-        # code...
+        return view('therapists.create');
     }
 
     public function store()
     {
-        # code...
+        // $therapist = new User;
+        // $therapist->user_type = 'therapist';
+        // $therapist->name = 'Hani';
+        // $therpa
     }
 }

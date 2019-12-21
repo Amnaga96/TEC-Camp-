@@ -14,7 +14,7 @@ class CreateQuestionsTable extends Migration
             $table->string('title');
             $table->mediumText('body');
             $table->integer('patient_id');
-            $table->integer('consulter_id');
+            $table->integer('therapist_id');
             $table->timestamps();
         });
     }

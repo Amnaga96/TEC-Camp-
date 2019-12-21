@@ -8,6 +8,6 @@ class Reply extends Model
 {
     public function replier()
     {
-        return $this->morphTo('replier');
+        return $this->belongsTo('App\User', 'replier_id');
     }
 }
