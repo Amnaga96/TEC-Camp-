@@ -48,7 +48,7 @@
       <span class="icon-bar"></span>
        <span class="icon-bar"></span>
        <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="index.html">utalk</a></div>
+      <a class="navbar-brand" href="{{ url('/') }}">utalk</a></div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -116,11 +116,11 @@
     <div class="space"></div>
     <div class="row">
       <div class="col-md-6 col-sm-6 service"> <!--<i class="fa fa-desktop"></i>-->
-        <h4><a href="find-thirapist/find.html">find a thirapist</a></h4>
+        <h4><a href="{{ url('/find') }}">find a thirapist</a></h4>
         <p> Here in health care we can help you to find the avilible therapists in the country. </p>
       </div>
       <div class="col-md-6 col-sm-6 service">  <!--<i class="fa fa-gears"></i>-->
-        <h4><a href="projec/ask.html">git help</a></h4>
+        <h4><a href="{{ url('/ask') }}">git help</a></h4>
         <p> Ask a therapist for help. </p>
       </div>
      </div>
@@ -135,7 +135,7 @@
       <hr>
       <div class="clearfix"></div>
     </div>
-    <!-- <div class="categories"> -->
+    {{--  <!-- <div class="categories"> -->
       <!-- <ul class="cat"> -->
         <!-- <li> -->
           <!-- <ol class="type"> -->
@@ -145,7 +145,7 @@
             <li><a href="#" data-filter=".branding">adults</a></li> -->
           <!-- </ol> -->
         <!-- </li> -->
-      <!-- </ul> -->
+      <!-- </ul> -->  --}}
       <div class="clearfix"></div>
     </div>
     <div class="row">
@@ -184,7 +184,7 @@
               <img src="Blog/images/img_1.jpg" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
-       <!-- <div class="col-sm-6 col-md-3 col-lg-3 web">
+       {{--  <!-- <div class="col-sm-6 col-md-3 col-lg-3 web">
           <div class="portfolio-item">
             <div class="hover-bg"> <a href="img/portfolio/04.jpg" rel="prettyPhoto">
               <div class="hover-text">
@@ -236,7 +236,7 @@
                 <small></small>
                 <div class="clearfix"></div>
                 <i class="fa fa-plus"></i> </div>
-              <img src="img/portfolio/08.jpg" class="img-responsive" alt="Project Title"> </a> </div> -->
+              <img src="img/portfolio/08.jpg" class="img-responsive" alt="Project Title"> </a> </div> -->  --}}
           </div>
         </div>
       </div>
@@ -253,7 +253,7 @@
     </div>
     <div id="row">
       <div class="col-md-3 col-sm-6 team">
-        <div class="thumbnail"> <img src="img/team/01.jpg" alt="..." class="img-circle team-img">
+        <div class="thumbnail"> <img src="{{ asset('img/team/01.png') }}" alt="..." class="img-circle team-img">
           <div class="caption">
             <h3>amna</h3>
             <p>control</p>
@@ -262,7 +262,7 @@
         </div>
       </div>
       <div class="col-md-3 col-sm-6 team">
-        <div class="thumbnail"> <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
+        <div class="thumbnail"> <img src="{{ asset('img/team/02.png') }}" alt="..." class="img-circle team-img">
           <div class="caption">
             <h3>heba</h3>
             <p>software engineering</p>
@@ -271,7 +271,7 @@
         </div>
       </div>
       <div class="col-md-3 col-sm-6 team">
-        <div class="thumbnail"> <img src="img/team/03.jpg" alt="..." class="img-circle team-img">
+        <div class="thumbnail"> <img src="{{ asset('img/team/03.png') }}" alt="..." class="img-circle team-img">
           <div class="caption">
             <h3>asma</h3>
             <p>software ngineering</p>
@@ -280,7 +280,7 @@
         </div>
       </div>
       <div class="col-md-3 col-sm-6 team">
-        <div class="thumbnail"> <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
+        <div class="thumbnail"> <img src="{{ asset('img/team/04.png') }}" alt="..." class="img-circle team-img">
           <div class="caption">
             <h3>soha</h3>
             <p>Project manager</p>
@@ -377,7 +377,6 @@
         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
         <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fa fa-github"></i></a></li>
       </ul>
     </div>
   </div>

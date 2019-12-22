@@ -157,9 +157,9 @@
                     <textarea type="text" name="body" class=" form-control " style="border: 1px solid #86e2d5;"  rows="5 " id="comment "></textarea>
                 </div>
                 <div class="col-6 mx-auto ">
-                    <label for="doctors ">Choose your doctor</label>
+                    <label for="therapists ">Choose your doctor</label>
                 <div>
-                        <select name="doctor" style="border: 1px solid #86e2d5; border-radius: 4px; ">
+                        <select name="therapist" style="border: 1px solid #86e2d5; border-radius: 4px; ">
                     @foreach ($therapists as $therapist)
                         <option value="{{ $therapist->id }}">{{ $therapist->name }}</option>
                     @endforeach

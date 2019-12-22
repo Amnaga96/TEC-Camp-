@@ -12,4 +12,9 @@ class Question extends Model
     {
         return $this->belongsTo('App\Consulter');
     }
+
+    public function replies()
+    {
+        return $this->hasMany('App\Reply');
+    }
 }
