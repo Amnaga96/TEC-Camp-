@@ -34,6 +34,12 @@ class QuestionController extends Controller
     {
         //  Please add validation here later
 
+        request()->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'therapist' => 'required|image',
+            'patient' => 'required'
+        ]);
         $ques = new Question();
         $ques->title= request('title');
         $ques->body= request('body');
