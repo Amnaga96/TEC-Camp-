@@ -203,7 +203,7 @@
     <br>
     <br>
     <br>
-    @stop
+    @endsection
     <!--
     <div id="footer">
         <div class="container">

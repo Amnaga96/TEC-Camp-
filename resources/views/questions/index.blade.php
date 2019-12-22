@@ -15,9 +15,7 @@
           <tr>
             <td class="text-info">{{ $question->title }}</td>
             <td>{{ $question->created_at }}</td>
-            {{-- <td>{{ $question->body }}</td> --}}
           <td class="text-info"><a href="{{url("/questions/$question->id/show")}}">more details</a></td>
-
           </tr>
         @endforeach
 
