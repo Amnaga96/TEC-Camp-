@@ -9,7 +9,11 @@
 // Article
 */
 
+
 Route::get('/find','FindController@find');
+Route::get('/find/create','FindController@create');
+Route::get('/find/store','FindController@store');
+
 // Route::get('/ask', 'AskController@ask');
 Route::get('/', 'PagesController@index');
 Route::get('/ask', 'QuestionController@create')->middleware('auth');
