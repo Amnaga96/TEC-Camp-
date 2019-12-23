@@ -24,21 +24,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        $this->mapConsulterRoutes();
-
         //
     }
-
-
-    protected function mapConsulterRoutes()
-    {
-        Route::prefix('consulter')
-             ->middleware(['web'])
-             ->namespace($this->namespace)
-             ->group(base_path('routes/consulter.php'));
-    }
-
-
 
 
     protected function mapWebRoutes()
