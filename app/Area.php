@@ -8,6 +8,6 @@ class Area extends Model
 {
     public function clinic()
     {
-        return $this->belongsToMany(clinic::class);
+        return $this->hasMany('App\clinic');
     }
 }

@@ -19,7 +19,6 @@ class CreateClinicsTable extends Migration
             $table->string('phone_number');
 
             $table->unsignedBigInteger('area_id');
-            $table->foreing('area_id')->references('id')->on('areas');
             
             $table->timestamps();
         });
