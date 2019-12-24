@@ -1,0 +1,67 @@
+/* showcase */
+#showcase {
+    background: url('../Find/pexels-photo.jpg') no-repeat center center/cover;
+    
+height: 500px;
+width: 65%;
+margin-top: 50px;
+
+}
+
+.header{
+
+background: white;
+width: 65px;
+height: 100px;
+margin-top: 50px;
+margin-left: 280px;
+
+}
+
+
+
+
+/*THE CONTENT OF THE BOLOG*/
+
+.container{
+    
+    margin-top: 50px;
+    max-width: 1000px;
+}
+
+.profile aside p {
+    font-size: 12px;
+
+}
+.profile aside ul li{
+    float: left;
+    margin-right:8px ;
+}
+.profile aside ul {
+    list-style: none;
+    padding: 0px;
+}
+.profile aside ul:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.profile{
+    margin-right: 70px;
+}
+
+.pagination{
+
+    margin-left: 138px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#artical1 {
+    background: url('..//Find/pexels-photo.jpg') no-repeat center center/cover;
+    
+height: 500px;
+width: 65%;
+margin-top: 50px;
+
+}

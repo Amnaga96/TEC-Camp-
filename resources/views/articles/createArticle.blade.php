@@ -47,10 +47,6 @@
                 </form>
             </div>
         </section>
-        <div id="footer" class="container">
-            <p> Copyright © health care. <br> 2019 Design by <a style="color: #86e2d5;" href="#" rel="nofollow">OUR TEAM </a>
-            </p>
-        </div>
          <!-- JQuery, js, and Bootstrap Plugins -->
           <!-- Native javascript --> 
             <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script> 

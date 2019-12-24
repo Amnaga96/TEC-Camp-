@@ -1,0 +1,35 @@
+
+/*THE CONTENT OF THE BOLOG*/
+
+.container{
+    
+    margin-top: 130px;
+    max-width: 1200px;
+    margin-bottom: 200px;
+}
+
+.profile aside p {
+    font-size: 12px;
+
+}
+ul li{
+    float: left;
+    margin-right:8px ;
+}
+ul {
+    list-style: none;
+    padding: 0px;
+}
+ul:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+a {
+    color: #38756c;
+
+}
+a:hover{
+    color: black;
+}

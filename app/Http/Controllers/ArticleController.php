@@ -44,11 +44,11 @@ class ArticleController extends Controller
     {
         $article = new Article;
 
-
+            $path =  request('image_link')->store('public');
             $article->title = request('title');
             $article->body = request('body');
             $article->editor_name = request('editor_name');
-            $article->image_link = request('image_link')->store('public');
+            $article->image_link = str_replace('public','storage',$path);
             $article-> save();
 
             return redirect('blog');
@@ -62,7 +62,7 @@ class ArticleController extends Controller
      */
     public function show($a_id)
     {
-        return view("articles.single_article")->with(['a_id'=>Article::find($a_id)]);
+        return view("articles.single_article")->with(['article'=>Article::find($a_id)]);
     } 
 
     // /**

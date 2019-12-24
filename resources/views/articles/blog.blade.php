@@ -7,64 +7,29 @@
     <title>Our Blog</title>        
       <!-- Stylesheet -->     
          <link rel="stylesheet" href="{{asset('css/articles/style.css')}}">
-        {{-- <link rel="stylesheet" href="{{asset('css/style.css.map')}}"> --}}
-        {{-- <link rel="stylesheet" href="{{asset('css/blog_style.css')}}"> --}}
-        <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
-        <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
-        <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/mediaelementplayer.css')}}">
-        <link rel="stylesheet" href="{{asset('css/animate.css')}}">
-        <link rel="stylesheet" href="{{asset('css/fl-bigmug-line.css')}}">
-        <link rel="stylesheet" type="{{asset('css/text/css" href="css/responsive.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/magnific-popup.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/jquery-ui.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/owl.theme.default.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/mediaelementplayer.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/animate.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/fl-bigmug-line.css')}}">
+        <link rel="stylesheet" type="{{asset('css/articles/text/css" href="css/responsive.css')}}">
         <link rel="stylesheet" href="{{asset('css/articles.css')}}">
       <!-- Bootstrap -->
-        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
-        <script type="text/javascript" src="{{asset('js/bootstrap.js')}}"></script>     
+        <link rel="stylesheet" href="{{asset('css/articles/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/bootstrap-datepicker.css')}}">
+        <script type="text/javascript" src="{{asset('js/articles/bootstrap.js')}}"></script>     
       <!-- Font Icon -->
-        <link rel="stylesheet" href="{{asset('fonts/material-icon/css/material-design-iconic-font.min.css')}}">
-        <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
-        <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
+        <link rel="stylesheet" href="{{asset('fonts/articles/material-icon/css/material-design-iconic-font.min.css')}}">
+        <link rel="stylesheet" href="{{asset('fonts/articles/flaticon/font/flaticon.css')}}">
+        <link rel="stylesheet" href="{{asset('fonts/articles/icomoon/style.css')}}">
   </head>
 
   <body>
-
-    <!-- Navigation bar -->
-      <div class="container">
-        <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light ">
-          <a class="navbar-brand" href="#"><strong>Mental Health Care</strong></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto" >
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Ourblog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Team</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="#">Testimonial</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
                                  
     <!-- Article blocks-->
     <!-- Slide pics block -->
-      <div class="container">
         <div class="site-section">
           <div class="container">
               <div class="row">
@@ -76,28 +41,28 @@
                           </ol>
                           <div class="carousel-inner">
                             <div class="carousel-item active">                           
-                              <a href="..\single_article.blade.php">
-                                <img src="images/img-9.jpg" class="d-block w-100" alt="...">
+                              <a href="{{route('show',['a_id'=> $articles[0]->id])}}">
+                                <img src="{{ $articles[0]->image_link }}" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
-                                  <strong><h3>{International Mental Health Day}</h3></strong>
+                                  <strong><h3>{{ $articles[0]->title }}</h3></strong>
                                   <p>We deserve a break!</p>
                                 </div>                            
                               </a>
                             </div>
                             <div class="carousel-item"> 
-                              <a href="..\single_article.blade.php">
-                                <img src="images/img4.jpg" class="d-block w-100" alt="...">
+                              <a href="{{route('show',['a_id'=> $articles[1]->id])}}">
+                                <img src="{{ $articles[1]->image_link }}" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <strong><h3>Stress Dominates the List of the Most Common Psychiatric Issues</h3></strong>
+                                    <strong><h3>{{ $articles[1]->title }}</h3></strong>
                                     <p>Lorem ipsum dolor sit amet.</p>
                                 </div>
                               </a>
                             </div>
                             <div class="carousel-item">               
-                              <a href="single.html">
-                                <img src="images/img_6.jpg" class="d-block w-100" alt="...">
+                              <a href="{{route('show',['a_id'=> $articles[0]->id])}}">
+                                <img src="{{ $articles[0]->image_link }}" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
-                                  <strong><h3>Mental Health Issues Among Entrepreneurs</h3></strong>
+                                  <strong><h3>{{ $articles[0]->title }}</h3></strong>
                                   <p>Taking a Look at Fact.</p>
                                 </div>
                               </a>
@@ -114,10 +79,10 @@
                   </div>
               </div>
           </div>
-        </div>
-      </div>
+     </div>
+     
     <!-- Articles -->
-        <h1 class="blog_header">Mental ealth articles : </h1>
+        <h1 class="blog_header">Our blog articles : </h1>
         <hr>
     <!--The 1st Row-->
       <div class="container">
@@ -126,37 +91,19 @@
           <!--THE COL 1-->
             <div class="col-md-3 profile box" >
               <aside>
-                <img src="images/hero_bg_3.jpg"  width="300px" alt="" class="img-circle">
-                  <span class="editor_label">{{$article->editor_name}}</span>
-
-                <hr>
-                <div class="social-login">
-                  <span class="social-label">Share with</span>
-                  <ul class="socials">
-                    <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                    <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                    <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
-                  </ul>
-                </div>
+                <img src="{{asset($article->image_link)}}"  width="200px" alt="" class="img">
+                  <span class="editor_label">Author: {{$article->editor_name}}</span>z
               </aside>
             </div>
           <!--THE COL 2-->
           <div class="col-md-8 box" >    
-                      <article>
+            <article>
               <header>
                 <a href="{{route('show',['a_id'=> $article->id])}}"><h2>{{ $article->title }}</h2></a>
               </header>
               <footer><small>{{ $article->created_at }}</small></footer>
-              <div class="lead">{{$article->body }}
-              </div>
-              <footer>
-                <span class="badge badge-success">psychology</span>
-                <span class="badge badge-success">stress</span>
-                <span class="badge badge-success">Sefl_development</span>
-                <span class="badge badge-success"></span>
-              </footer>
-                <br><br>
-                <hr>
+              <div class="lead">{{$article->body }} </div>
+                <br> <br> <hr>
             </article>          
           </div>
         </div>
@@ -164,33 +111,29 @@
       </div>
     
         <!-- End of articles blockes -->
-        
-        <!--footer-->
-        <div class="footer">
-            <p>Copyright &copy; 2019 health care. Design by <a href="team" rel="nofollow">team</a></p>
-          </div>
+     
 
         <!-- JQuery, js, and Bootstrap Plugins -->
           <!-- Native javascript --> 
             <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script> 
-            <script src="{{asset('articles/js/mediaelement-and-player.min.js')}}"></script>
-            <script src="{{asset('articles/js/jquery-migrate-3.0.1.min.js')}}"></script>  
-            <script src="{{asset('articles/js/circleaudioplayer.js')}}"></script>
-            <script src="{{asset('articles/js/owl.carousel.min.js')}}"></script>
-            <script src="{{asset('articles/js/popper.min.js')}}"></script> 
-            <script src="{{asset('js/main.js')}}"></script>
-            <script src="{{asset('articles/js/aos.js')}}"></script>
+            <script src="{{asset('js/articles/mediaelement-and-player.min.js')}}"></script>
+            <script src="{{asset('js/articles/jquery-migrate-3.0.1.min.js')}}"></script>  
+            <script src="{{asset('js/articles/circleaudioplayer.js')}}"></script>
+            <script src="{{asset('js/articles/owl.carousel.min.js')}}"></script>
+            <script src="{{asset('js/articles/popper.min.js')}}"></script> 
+            <script src="{{asset('js/articles/main.js')}}"></script>
+            <script src="{{asset('js/articles/aos.js')}}"></script>
           <!-- JQuery script -->   
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
             <script type="{{asset('text/javascript" src="articles/js/jquery.1.11.1.js')}}"></script> 
-            <script src="{{asset('articles/js/jquery.magnific-popup.min.js')}}"></script>
-            <script src="{{asset('articles/js/jquery.countdown.min.js')}}"></script>
-            <script src="{{asset('articles/js/jquery.stellar.min.js')}}"></script>
-            <script src="{{asset('articles/js/jquery-3.3.1.min.js')}}"></script>
-            <script src="{{asset('articles/js/jquery-ui.js')}}"></script>
+            <script src="{{asset('js/articles/jquery.magnific-popup.min.js')}}"></script>
+            <script src="{{asset('js/articles/jquery.countdown.min.js')}}"></script>
+            <script src="{{asset('js/articles/jquery.stellar.min.js')}}"></script>
+            <script src="{{asset('js/articles/jquery-3.3.1.min.js')}}"></script>
+            <script src="{{asset('js/articles/jquery-ui.js')}}"></script>
           <!-- Bootstrap script -->
             <script type="{{asset('text/javascript" src="articles/js/bootstrap.js')}}"></script> 
-            <script src="{{asset('articles/js/bootstrap-datepicker.min.js')}}"></script>
-            <script src="{{asset('articles/js/bootstrap.min.js')}}"></script>
+            <script src="{{asset('js/articles/bootstrap-datepicker.min.js')}}"></script>
+            <script src="{{asset('js/articles/bootstrap.min.js')}}"></script>
     </body>
 </html>
