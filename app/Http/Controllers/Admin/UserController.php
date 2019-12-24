@@ -40,8 +40,10 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        // todo
+
     }
+
+
 
     public function delete($id)
     {
