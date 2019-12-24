@@ -154,25 +154,26 @@
         <form action="{{ url('/ask') }}" method="post">
         @csrf
             <div class="col-4 mx-auto">
-                    <div class="form-group ">
-                        <label class="col-12 text-center" for="usr">title</label>
-                        <input style="border: 1px solid #86e2d5; " type="text " class="form-control " id="usr " name="title">
-                    </div>
-                    </div>
-        <div class="container row text-center mb-2 rounded mx-auto d-block">
-            <div class="col-5 rounded mx-auto d-block">
-                <div class="form-group">
-                    <label for="comment">Your Question</label>
-                    <textarea type="text" name="body" class=" form-control " style="border: 1px solid #86e2d5;"  rows="5 " id="comment "></textarea>
+                <div class="form-group ">
+                    <label class="col-12 text-center" for="usr">title</label>
+                    <input style="border: 1px solid #86e2d5; " type="text " class="form-control " id="usr " name="title">
                 </div>
-                <div class="col-6 mx-auto ">
-                    <label for="therapists ">Choose your doctor</label>
-                <div>
-                        <select name="therapist" style="border: 1px solid #86e2d5; border-radius: 4px; ">
-                    @foreach ($therapists as $therapist)
-                        <option value="{{ $therapist->id }}">{{ $therapist->name }}</option>
-                    @endforeach
-                </select>
+            </div>
+            <div class="container row text-center mb-2 rounded mx-auto d-block">
+                <div class="col-5 rounded mx-auto d-block">
+                    <div class="form-group">
+                        <label for="comment">Your Question</label>
+                        <textarea type="text" name="body" class=" form-control " style="border: 1px solid #86e2d5;"  rows="5 " id="comment "></textarea>
+                    </div>
+                    <div class="col-6 mx-auto ">
+                        <label for="therapists ">Choose your doctor</label>
+                        <div>
+                            <select name="therapist" style="border: 1px solid #86e2d5; border-radius: 4px; ">
+                                @foreach ($therapists as $therapist)
+                                    <option value="{{ $therapist->id }}">{{ $therapist->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -205,7 +206,6 @@
             <button style="border: 1px solid #86e2d5; border-radius: 4px; " class="btn button rounded float-right">Send</button>
             </div>
         </form>
-    </div>
     <br>
     <br>
     <br>
@@ -228,3 +228,5 @@
 </body>
 
 </html>
+
+-->
