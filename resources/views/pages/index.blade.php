@@ -48,7 +48,7 @@
       <span class="icon-bar"></span>
        <span class="icon-bar"></span>
        <span class="icon-bar"></span> </button>
-      <a class="navbar-brand" href="{{ url('/') }}">utalk</a></div>
+      <a  class="navbar-brand" href="{{ url('/') }}">utalk</a></div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -60,6 +60,9 @@
         <li><a href="#team-section" class="page-scroll">Team</a></li>
         <li><a href="#testimonials-section" class="page-scroll">Testimonials</a></li>
         <li><a href="#contact-section" class="page-scroll">Contact</a></li>
+        @auth
+        <li><a href="{{ url('questions') }}">Questions</a></li>
+        @endauth
       </ul>
     </div>
     <!-- /.navbar-collapse -->
@@ -73,8 +76,17 @@
     <h1>Welcome to <span class="color">utalk</span></h1>
     <p> you talk we help ... we care about you </p>
     <div class="clearfix"></div>
+    @guest
     <a href="{{  url('/login') }}" class="btn btn-default btn-lg page-scroll">log in</a>
     <a href="{{  url('/register') }}" class="btn btn-default btn-lg page-scroll">sign up</a> </div>
+    @else
+        Welcome <strong>{{ auth()->user()->name }}</strong>,
+
+        <form action="{{ url('logout') }}" method="post">
+            @csrf
+            <input type="submit" class="btn btn-link" value="Logout?">
+        </form>
+    @endguest
 </header>
 
 <!-- About Section -->
@@ -401,7 +413,7 @@
 <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
 <script type="text/javascript" src="js/jquery.isotope.js"></script>
 <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
-<script type="text/javascript" src="js/contact_me.js"></script>
+{{-- <script type="text/javascript" src="js/contact_me.js"></script> --}}
 <script type="text/javascript" src="js/owl.carousel.js"></script>
 
 <!-- Javascripts

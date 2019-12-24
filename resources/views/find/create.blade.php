@@ -4,30 +4,24 @@
 
 
 @section('content')
-              <!--PUT YOUR CONTENT HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+ <div class="container">   <br><br> <div style="heigt:100% ; background-color:#86e2d5 ;" class="shareet"><h4 class="ml-5">Add to find a therapist database:</h4> </div><br><br>
+</div>
+<div style="width:600px; height:100%;"  class="container">
+<form action="{{ url('find/store') }}" method="post">
+    @csrf   
+    clinic's name : <input class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" type="text" name="clinic_name" > <br><br>
+    clinc's phone number : <input class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" type="text" name="clinic_phone_number"> <br><br>
+    clini's area : <input class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" type="text" name="area"> <br><br>
+    doctor's name : <input class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" type="text" name="doctor_name"> <br><br>
+    doctor's specialization : <input class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" type="text" name="doctor_specialization"> 
 
-              <div id="showcase">
 
-<div style="width:600px;" class="container">
-                  <div class="showcase-content">
-                      <h2>FIND A THIRAPIST!</h2>
-                      <p>Here in health care we can help you to find the avilible therapists in the country.</p>
-  
-  <form action="{{ route('/find/store') }}" method="POST">
-  @csrf
-                                area:  <input type="text" name="area">
+    <button style="background-color: #86e2d5;" class="btn btn-info mt-5 mb-5 " type="submit">add!</button>
 
-        <button style="background-color: #86e2d5; margin-top: 20px;" class="btn btn-info " type="submit" >FIND!</button>
-        </form>
+</form>
+</div>
 
-                    
-</div> 
-                      
-                    </div>                     
-            </div>
 
-            {{-- @foreach($result as $value)
-                <p> {{ $value->name }} </p>
-                <p> {{ $value->clinic->name }} </p>
-            @endforeach --}}
+
+             
 @endsection

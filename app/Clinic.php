@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clinic extends Model
 {
-    public function doctor()
-{
-    return $this->belongsToMany(doctor::class);
-}
- 
-public function area()
-{
-    return $this-belongsTo('app\area');
-}
+    public function therapists()
+    {
+        return $this->belongsToMany('App\User'); // ->where('user_type', 'therapist')
+    }
+
+    public function Area()
+    {
+        return $this->belongsTo('App\Area');
+    }
+
 
 }

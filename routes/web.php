@@ -12,7 +12,8 @@
 
 Route::get('/find','FindController@find');
 Route::get('/find/create','FindController@create');
-Route::get('/find/store','FindController@store');
+Route::post('/find/store','FindController@store');
+Route::post('/find/find_result','FindController@find_result');
 
 // Route::get('/ask', 'AskController@ask');
 Route::get('/', 'PagesController@index');
@@ -25,8 +26,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('therapists', 'TherapistController@index'); // this is a page to show consulters for users
-// create
-// store
+Route::get('therapists/create', 'TherapistController@create')->middleware('auth-admin');
+Route::post('therapists', 'TherapistController@store');
 
 Route::get('questions', 'QuestionController@index')->middleware('auth'); // getting patient's questions for them
 Route::post('questions/{id}/replies', 'QuestionReplyController@store')->middleware('auth');
+
+// Route::get('clinics', 'ClinicController@index');
+// Route::get('clinics/create', 'ClinicController@create');
+// Route::post('clinics', 'ClinicController@store');

@@ -16,10 +16,9 @@ class CreateClinicsTable extends Migration
         Schema::create('clinics', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('place')->nullable();
+            $table->UnsignedBigInteger('area_id');
             $table->string('phone_number');
-
-            $table->unsignedBigInteger('area_id');
-            
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClinicDoctorsTable extends Migration
+class CreateClinicUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateClinicDoctorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('clinic__doctors', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->UnsignedBigInteger('clinic_id');
-            $table->UnsignedBigInteger('doctor_id');
-            $table->timestamps();
+        Schema::create('clinic_user', function (Blueprint $table) {
+            $table->integer('clinic_id');
+            $table->integer('user_id');
         });
     }
 
@@ -28,6 +26,6 @@ class CreateClinicDoctorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clinic__doctors');
+        Schema::dropIfExists('clinic_user');
     }
 }

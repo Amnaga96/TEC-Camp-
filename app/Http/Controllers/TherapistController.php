@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Clinic;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -23,9 +24,16 @@ class TherapistController extends Controller
             $q->where('city', request('city'));
         });
 
+        $therapists->when(request('clinic_id'), function($therapistQuery) {
+            $therapistQuery->whereHas('clinics', function($clinicQuery) {
+                $clinicQuery->where('clinic_id', request('clinic_id'));
+            });
+        });
+
         // TODO - style the following view
         return view('therapists.index', [
-            'therapists' => $therapists->get()
+            'therapists' => $therapists->get(),
+            'clinics' => Clinic::all()
         ]);
     }
     public function show($qid)
@@ -41,9 +49,15 @@ class TherapistController extends Controller
 
     public function store()
     {
-        // $therapist = new User;
-        // $therapist->user_type = 'therapist';
-        // $therapist->name = 'Hani';
-        // $therpa
+        // TODO - Validation
+
+        $therapist = new User;
+        $therapist->user_type = 'therapist';
+        $therapist->name = request('name');
+        $therapist->email = request('email');
+        $therapist->password = bcrypt(request('password'));
+        $therapist->save();
+
+        return redirect('therapists');
     }
 }
