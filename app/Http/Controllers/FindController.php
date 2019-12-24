@@ -52,6 +52,8 @@ class FindController extends Controller
         return view("find.find_result");
 
     }
+
+    
     
 
 
