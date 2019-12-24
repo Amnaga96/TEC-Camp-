@@ -18,7 +18,7 @@
         <form action="{{  url("questions/$question->id/replies") }}" method="post" class="form-inline" id="addreply">
             @csrf
         <textarea type="text" name="reply" class="form-control " style="border: 1px solid #86e2d5;"  rows="2" id="response"></textarea>
-        <button id="submitButton" type="rebly" value="addrebly" style="border: 1px solid #86e2d5;" class="btn btn-outline-info  rounded float-right ml-3">reply</button>
+        <button id="submitButton" type="submit" value="addrebly" style="border: 1px solid #86e2d5;" class="btn btn-outline-info  rounded float-right ml-3">reply</button>
         </form>
         </div>
 @endsection

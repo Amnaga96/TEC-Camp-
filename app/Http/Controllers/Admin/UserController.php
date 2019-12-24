@@ -10,12 +10,12 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::query();
-
+        $users = User::all()->groupBy('user_type');
+        // return $users;
         // filtering
 
         return view('admin.users.index', [
-            'users' => $users->get()
+            'users' => $users
         ]);
     }
 
@@ -34,6 +34,18 @@ class UserController extends Controller
         $therapist->email = request('email');
         $therapist->password = bcrypt(request('password'));
         $therapist->save();
+
+        return redirect('admin/users');
+    }
+
+    public function edit($id)
+    {
+        // todo
+    }
+
+    public function delete($id)
+    {
+        User::find($id)->delete();
 
         return redirect('admin/users');
     }

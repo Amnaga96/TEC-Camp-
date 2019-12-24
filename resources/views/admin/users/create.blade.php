@@ -2,13 +2,17 @@
 
 @section('content')
 
-<form action="{{ url('admin/users') }}" method="post">
+<form action="{{ route('store') }}" method="post">
     @csrf
     <input type="text" name="name">
     <input type="email" name="email">
     <input type="password" name="password">
-// select user type
-    <input type="submit">
+     <select name="user_type">
+     <option value="admin">Admin</option>
+     <option value="therapist">Therapist</option>
+     <option value="patient">Patient</option>
+     </select>
+    <input type="submit" value="save">
 </form>
 
 @stop
