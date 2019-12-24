@@ -8,7 +8,7 @@ class Clinic extends Model
 {
     public function doctors()
     {
-        return $this->belongsToMany('App\Doctor');
+        return $this->belongsToMany('App\Doctor', 'clinic__doctors');
     }
 
     public function Area()
