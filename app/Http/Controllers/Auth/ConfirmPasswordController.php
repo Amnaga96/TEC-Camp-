@@ -10,7 +10,12 @@ class ConfirmPasswordController extends Controller
 
     use ConfirmsPasswords;
 
-    protected $redirectTo = '/home';
+    /**
+     * Where to redirect users when the intended url fails.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/';
 
 
     public function __construct()

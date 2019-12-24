@@ -121,7 +121,7 @@
         }
 
     </style>
-    @extends('layouts.app')
+    @extends('layouts.app_renamed')
     @section('content')
     <div class="container">
         <div style="border: 1px solid #86e2d5; border-radius: 4px; ">
@@ -142,6 +142,15 @@
                 </div>
             </div>
         </div>
+         @if ($errors->count())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
         <form action="{{ url('/ask') }}" method="post">
         @csrf
             <div class="col-4 mx-auto">
@@ -203,7 +212,7 @@
     <br>
     <br>
     <br>
-    @stop
+    @endsection
     <!--
     <div id="footer">
         <div class="container">

@@ -3,7 +3,6 @@
 <head>
     <style>
     nav .black{
-
 background: #000;
 }
 
@@ -22,7 +21,7 @@ background: #000;
   <nav class=" black sticky-top" >
     <nav class="sticky-top navbar mb-5 navbar-expand-lg navbar-light  pull-right"  >
 <div class="container">
-        <a style="color: silver; margin-top: 3px;" class="navbar-brand" href="#"><h4>You Talk</h4> </a>
+        <a style="color: #86e2d5;  margin-top: 3px;" class="navbar-brand" href="{{  url('/') }}"><p>utalk</p> </a>
 
         <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -32,30 +31,33 @@ background: #000;
           <ul   class=" nav  justify-content-end   ml-auto">
 
             <li class="nav-item ">
-              <a style= "font-size: 14.5px; color: silver;" class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a style= "font-size: 14.5px; color: silver;" class="nav-link" href="{{  url('/') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li  class="nav-item">
-              <a style="font-size: 14.5px; color: silver;"  class="nav-link" href="#">About</a>
+              <a style="font-size: 14.5px; color: silver;"  class="nav-link" href="#about-section">About</a>
             </li>
             <li class="nav-item">
-                <a style="font-size: 14.5px; color: silver;" class="nav-link" href="#">Services</a>
+                <a style="font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/ask') }}">get help</a>
+              </li>
+              <li class="nav-item">
+                <a style="font-size: 14.5px; color: silver;" class="nav-link"  href="{{ url('/find') }}">find a thirapist</a>
               </li>
               <li  class="nav-item">
-                  <a style="font-size: 14.5px; color: silver;" class="nav-link" href="blog.html">Our blog</a>
+                  <a style="font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/blog')}}">Our blog</a>
                 </li>
                 <li class="nav-item">
-                    <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="#">Contact us</a>
+                    <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="#contact-section">Contact us</a>
                   </li>
                   @guest
                   <li class="nav-item">
-                      <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="singin.html">Sign in</a>
+                      <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="{{  url('/login') }}">Log in</a>
                     </li>
                     @else
                     <li class="nav-item">
-                        <a href="{{ url('questions') }}" class="nav-link">Questions</a>
+                        <a style=" color: #86e2d5;" href="{{ url('questions') }}" class=" nav-link">Questions</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a style=" color: #86e2d5;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 

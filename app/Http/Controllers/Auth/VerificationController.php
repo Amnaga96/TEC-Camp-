@@ -10,8 +10,12 @@ class VerificationController extends Controller
 
     use VerifiesEmails;
 
-
-    protected $redirectTo = '/home';
+    /**
+     * Where to redirect users after verification.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/';
 
 
     public function __construct()
