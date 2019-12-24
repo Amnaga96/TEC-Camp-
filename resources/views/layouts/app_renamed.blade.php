@@ -1,5 +1,5 @@
 <html>
- 
+
 <head>
     <style>
     nav .black{
@@ -20,15 +20,15 @@ background: #000;
 
 
   <nav class=" black sticky-top" >
-    <nav class="sticky-top navbar mb-5 navbar-expand-lg navbar-light  pull-right"  > 
+    <nav class="sticky-top navbar mb-5 navbar-expand-lg navbar-light  pull-right"  >
 <div class="container">
         <a style="color: silver; margin-top: 3px;" class="navbar-brand" href="#"><h4>You Talk</h4> </a>
 
         <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">           
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul   class=" nav  justify-content-end   ml-auto">
 
             <li class="nav-item ">
@@ -39,17 +39,40 @@ background: #000;
             </li>
             <li class="nav-item">
                 <a style="font-size: 14.5px; color: silver;" class="nav-link" href="#">Services</a>
-              </li>            
+              </li>
               <li  class="nav-item">
                   <a style="font-size: 14.5px; color: silver;" class="nav-link" href="blog.html">Our blog</a>
-                </li>               
+                </li>
                 <li class="nav-item">
                     <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="#">Contact us</a>
                   </li>
+                  @guest
                   <li class="nav-item">
                       <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="singin.html">Sign in</a>
                     </li>
-                   </ul>         
+                    @else
+                    <li class="nav-item">
+                        <a href="{{ url('questions') }}" class="nav-link">Questions</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @endguest
+                   </ul>
                       </div></div>
                            </nav>
 </nav>
@@ -60,12 +83,12 @@ background: #000;
       <div class="container">
       <!--PUT YOUR CONTENT HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
-        @yield('content') 
+        @yield('content')
         </div>
 
 
 
-     
+
  <!--FOOTER-->
  <div style=" position: fixed;
  left: 0;
@@ -75,18 +98,18 @@ background: #000;
  color: white;
  text-align: center;
  height: 50px;
- width: 100%;"   
- 
+ width: 100%;"
+
   class="footerr">
 
-     <center><p class="footer" style="font-size: 13.5px; color: rgb(169, 166, 166); margin-top: 10px;">Copyright &copy; 2019  health care.   Design by <a style=" color: #86e2d5;" href="team" rel="nofollow">TEAM</a></p></center>        
+     <center><p class="footer" style="font-size: 13.5px; color: rgb(169, 166, 166); margin-top: 10px;">Copyright &copy; 2019  health care.   Design by <a style=" color: #86e2d5;" href="team" rel="nofollow">TEAM</a></p></center>
   </div>
 <!--END OF FOOTER-->
 
 
 <script type="text/javascript">
 $(window).on("scroll",function() {
-if( $(window).scrollTop() > 50 ) { 
+if( $(window).scrollTop() > 50 ) {
   $('nav').addClass('black');
 }
 else {  $('nav').removeClass('black');
@@ -95,8 +118,8 @@ else {  $('nav').removeClass('black');
 </script>
 
 
-    
-    
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

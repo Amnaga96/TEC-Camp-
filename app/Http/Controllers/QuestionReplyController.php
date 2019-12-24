@@ -11,7 +11,9 @@ class QuestionReplyController extends Controller
     public function store($id)
     {
         // TODO validation
-
+            request()->validate([
+            'body' => 'required'
+        ]);
         $reply = new Reply;
         $reply->body = request('reply');
         $reply->replier_id = auth()->id();

@@ -121,7 +121,7 @@
         }
 
     </style>
-    @extends('layouts.app')
+    @extends('layouts.app_renamed')
     @section('content')
     <div class="container">
         <div style="border: 1px solid #86e2d5; border-radius: 4px; ">
