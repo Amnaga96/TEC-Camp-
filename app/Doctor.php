@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Doctor extends Model
 {
-    public function Clinic()
+    public function clinics()
     {
-        return $this->belongsToMany(clinic::class);
+        return $this->belongsToMany(clinic::class, 'clinic__doctors');
     }
     
     public function specialization()

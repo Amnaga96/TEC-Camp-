@@ -1,16 +1,19 @@
 @extends('layouts.app_renamed')
 
 @section('content')
-<div class="container">
-<div class="mt-3 mb-3 text-center">
-<h1 class="text-info mt-3 mr-2">New therapists</h1>
-<br>
+ <div class="container">   <br><br> <div style="heigt:100% ; background-color:#86e2d5 ;" class="shareet"><h4 class="ml-5">add a therapist!</h4> </div><br><br>
+</div>
+
+<div style="width:600px; height:100%;"  class="container">
+
 <form action="{{ url('therapists') }}" method="post">
     @csrf
-    <div class="text-info mt-3 mr-2">Your name: <input type="text" name="name" style="border: 1px solid #86e2d5;"></div>
-    <div class="text-info mt-3 ml-4">Email: <input type="email" name="email" style="border: 1px solid #86e2d5;"></div>
-    <div class="text-info mt-3">password: <input type="password" name="password" style="border: 1px solid #86e2d5;"></div>
-    <div class="text-info mt-3 mr-2"> <input style="border: 1px solid #86e2d5;" type="submit" value="send">
-</form></div>
-</div>
+ your name : <input class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" type="text" name="name" > <br><br>
+ email : <input class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" type="email" name="email" > <br><br>
+ password : <input class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" type="password" name="password" > <br><br>
+
+<button style="background-color: #86e2d5; " class="mt-5 mb-5 btn btn-info " type="submit" value="send" >ADD!</button>
+
+</form>
+
 @endsection

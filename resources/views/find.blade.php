@@ -15,10 +15,12 @@
   
   <form>
   @csrf
-                                 <select class="form-control form-control-lg " style="border-color:#86e2d5 ;" name="address">
+                                 <select class="form-control form-control-lg " style="border-color:#86e2d5 ;" name="area_id">
                                       <option>select a place</option>
                                      
-                                        <option >sssss</option>
+                                        @foreach ($areas as $area)
+                                            <option value="{{ $area->id }}">{{ $area->name }}</option>
+                                        @endforeach
                                      
 
                                       </select></p>
@@ -39,9 +41,8 @@
                       
                     </div>                     
             </div>
-
-            {{-- @foreach($result as $value)
-                <p> {{ $value->name }} </p>
-                <p> {{ $value->clinic->name }} </p>
-            @endforeach --}}
+{{ dd($doctors)}}
+            @foreach($doctors as $doctor)
+                <p> {{ $doctor->name }} </p>
+            @endforeach
 @endsection
