@@ -2,10 +2,10 @@
 @section('content')
   <div class="container">
       @if (auth()->user()->user_type == 'patient')
-        <a href="{{ url('/ask') }}"> Ask new question</a>
+        <a  style=" color: black; font-size:20px;" href="{{ url('/ask') }}"> Ask a new question :</a>
       @endif
-      <table class="table table-sm">
-        <thead class="table-info">
+      <table style="margin-Top:20px ;" class="table table-sm">
+        <thead style="background-color: #86e2d5;"  class="table-info ">
           <tr class="text-center">
 
             <th scope="col">question title</th>

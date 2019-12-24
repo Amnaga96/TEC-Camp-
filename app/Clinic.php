@@ -10,4 +10,11 @@ class Clinic extends Model
     {
         return $this->belongsToMany('App\User'); // ->where('user_type', 'therapist')
     }
+
+    public function Area()
+    {
+        return $this->belongsTo('App\Area');
+    }
+
+
 }

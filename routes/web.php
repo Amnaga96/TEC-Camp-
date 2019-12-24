@@ -9,7 +9,13 @@
 // Article
 */
 
+
 Route::get('/find','FindController@find');
+Route::get('/find/create','FindController@create');
+Route::post('/find/store','FindController@store');
+Route::post('/find/find_result','FindController@find_result');
+
+
 // Route::get('/ask', 'AskController@ask');
 Route::get('/', 'PagesController@index');
 Route::get('/ask', 'QuestionController@create')->middleware('auth');
