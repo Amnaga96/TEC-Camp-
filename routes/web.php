@@ -30,3 +30,8 @@ Route::post('questions/{id}/replies', 'QuestionReplyController@store')->middlewa
 // Route::get('clinics', 'ClinicController@index');
 // Route::get('clinics/create', 'ClinicController@create');
 // Route::post('clinics', 'ClinicController@store');
+
+Route::get('admin/users', 'Admin\UserController@index');
+Route::get('admin/users/create', 'Admin\UserController@create');
+Route::post('admin/users', 'Admin\UserController@store');
+Route::get('admin', 'Admin\HomeController@index');
