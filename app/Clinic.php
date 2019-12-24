@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clinic extends Model
 {
-    public function therapists()
+    public function doctors()
     {
-        return $this->belongsToMany('App\User'); // ->where('user_type', 'therapist')
+        return $this->belongsToMany('App\Doctor');
     }
 
     public function Area()
