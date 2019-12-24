@@ -34,6 +34,12 @@ class QuestionController extends Controller
     {
         //  Please add validation here later
 
+        request()->validate([
+            'title' => 'required',
+            'body' => 'required',
+            'therapist' => 'required',
+            // 'patient' => 'required'
+        ]);
         $ques = new Question();
         $ques->title= request('title');
         $ques->body= request('body');
@@ -41,7 +47,7 @@ class QuestionController extends Controller
         $ques->patient_id = auth()->id();
         $ques->save();
 
-        return redirect('questions');
+        return redirect()->route('questions');
     }
 
     public function show($qid)

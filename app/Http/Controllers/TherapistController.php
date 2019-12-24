@@ -30,7 +30,7 @@ class TherapistController extends Controller
             });
         });
 
-        // TODO - style the following view
+        // TODO - style the following view "don"
         return view('therapists.index', [
             'therapists' => $therapists->get(),
             'clinics' => Clinic::all()
@@ -49,7 +49,12 @@ class TherapistController extends Controller
 
     public function store()
     {
-        // TODO - Validation
+        // TODO - Validation "don"
+         request()->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
 
         $therapist = new User;
         $therapist->user_type = 'therapist';
