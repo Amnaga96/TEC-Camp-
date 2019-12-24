@@ -30,7 +30,7 @@ Route::get('therapists', 'TherapistController@index'); // this is a page to show
 Route::get('therapists/create', 'TherapistController@create');//->middleware('auth-admin');
 Route::post('therapists', 'TherapistController@store');
 
-Route::get('questions', 'QuestionController@index')->middleware('auth'); // getting patient's questions for them
+Route::get('questions', 'QuestionController@index')->name('questions')->middleware('auth'); // getting patient's questions for them
 Route::post('questions/{id}/replies', 'QuestionReplyController@store')->middleware('auth');
 
 // Route::get('clinics', 'ClinicController@index');
