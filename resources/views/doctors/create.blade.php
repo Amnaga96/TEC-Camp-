@@ -10,6 +10,7 @@
     @csrf
  doctor's name : <input class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" type="text" name="name" > <br><br>
  
+                                  <select name="specialization">
                                       <option>select specialization</option>
                                      
                                         @foreach ($specializations as $specialization)

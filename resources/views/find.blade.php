@@ -36,13 +36,17 @@
         <button style="background-color: #86e2d5; margin-top: 20px;" class="btn btn-info " type="submit" >FIND!</button>
         </form>
 
-                    
 </div> 
                       
                     </div>                     
             </div>
-{{ dd($doctors)}}
-            @foreach($doctors as $doctor)
-                <p> {{ $doctor->name }} </p>
+
+
+            @foreach($clinics as $clinic)
+                <p> {{ $clinic->name }} </p>
+@foreach ($clinic->doctors as $doctor )
+                <p> {{ $doctor->name}}  </p>
+@endforeach
             @endforeach
-@endsection
+
+
