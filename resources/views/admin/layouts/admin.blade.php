@@ -37,6 +37,9 @@
                         <li class="nav-item">
                             <a href="{{ url('admin/users') }}" class="nav-link">Users</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ url('admin/clinic') }}" class="nav-link">Clinics</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

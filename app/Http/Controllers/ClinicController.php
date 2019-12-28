@@ -4,30 +4,38 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Clinic;
+use App\Doctor;
 use App\Area;
+use App\specialization;
+use App\Clinic;
 
 class ClinicController extends Controller
 {
+    
     public function index()
     {
-        //
+        $clinics = Clinic::with('doctors');
+
+        $clinics->when(request('name'), function($q) {
+            $q->where('name', 'LIKE', '%' . request('name') . '%');
+        });
+
+        $clinics->when(request('city'), function($q) {
+            $q->where('city', request('city'));
+        });
+
+        $clinics->when(request('area_id'), function($clinicQuery) {
+                $clinicQuery->where('area_id', request('area_id'));
+        });
+
+        return view('find', [
+            'clinics' => $clinics->get(),
+            'areas' => Area::all()
+        ]);
     }
 
-    public function create()
-    {
-        return view('clinics.create')->with(['areas' => Area::All()]);
-    }
 
-    public function store(Request $request)
-    {
-        $clinic = new clinic;
-        $clinic -> name = $request->name;
-        $clinic -> phone_number = $request->phone_number;
-        $clinic -> area_id = $request->area;
-        $clinic ->save();
-         return redirect()->route('doctors');
 
-    }
+    
 
 }

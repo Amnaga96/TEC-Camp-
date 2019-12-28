@@ -74,6 +74,8 @@ class UserController extends Controller
         return redirect('admin/users');      
     }
 
+
+
     public function delete($id)
     {
         User::find($id)->delete();

@@ -1,0 +1,187 @@
+<<<<<<< HEAD
+/* Navigation (navbar) styling */
+#nav.navbar{
+  background-color: #d6e8ee !important;
+  text-transform: uppercase;
+
+}
+.nav-item{
+  padding-right: 3%;
+  padding-left: 3%;
+}
+/* ===================================================================================== */
+
+/* Base */
+body {
+  line-height: 1.7;
+  font-size: 1rem;
+  color: rgb(51, 51, 51);
+  font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+
+.text-black {
+  color: #000 !important; }
+
+.site-section {
+  padding: 3em 0; }
+  @media (min-width: 768px) {
+    .site-section {
+      padding: 7em 0; } }
+/* ===================================================================================== */
+/* Slide pics Style */
+.carousel-caption {
+  color: #000 !important;
+  backgound-color: rgba(0, 0, 0, 0.198);
+  }
+  .carousel-indicators li .active{
+    color: #1da0f2;
+  }
+  .carousel-caption h5{
+    text-emphasis: 5px;
+  }
+  /* .carousel-control-next-icon:after{
+    color: #000;
+    font-size: 55px;
+  } */
+  .carousel-control-prev-icon:after {
+    font-size: 55px;
+    color: rgb(0, 0, 0);
+  }
+  /* ======================================================================================== */
+  
+/*  Switching blog pages */
+.site-block-27 ul, .site-block-27 ul li {
+  padding: 0;
+  margin: 0; }
+
+.site-block-27 ul li {
+  display: inline-block;
+  margin-bottom: 4px; }
+
+.site-block-27 ul li a, .site-block-27 ul li span {
+  text-align: center;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  border: 1px solid #97cadb; }
+
+.site-block-27 ul li.active a, .site-block-27 ul li.active span {
+  background: #97cadb;
+  color: rgb(0, 0, 0);
+  border: 1px solid transparent; }
+    
+a{
+  color: #383a37 !important;
+  border-radius: 20px;
+}
+/* ===================================================================================== */
+
+
+/* Article blocks styling */
+
+.article-block{
+  background-color: #C4D5A7;
+}
+.article-block img{
+  padding: .5cm ;
+}
+.sub_article{
+  background-color: rgb(167, 209, 213);
+}
+.blog_header, .article-title{
+  margin-top: 3%;
+  padding: 3%;
+  padding-left: 17%;
+  background-color: #d6e8ee;
+}
+  /* Zmdi Icons  */
+.zmdi-facebook {
+  background: #3b5998; }
+
+.zmdi-twitter {
+  background: #1da0f2; }
+
+.zmdi-google {
+  background: #db1e2b; }
+
+.social-label {
+  display: inline-block;
+  margin-right: 55px; }
+
+.socials li {
+  padding-right: 5px; }
+
+.socials li:last-child {
+  margin-right: 0px; }
+
+.socials li a {
+  text-decoration: none; }
+
+.socials li a i {
+  padding-top: 20%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out; }
+
+.socials li:hover a i {
+  -webkit-transform: scale(1.3) translateZ(0);
+  transform: scale(1.3) translateZ(0); }
+
+.social-login {
+  justify-content: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center; 
+  align-items: center; }
+
+  
+ @media screen and (max-width: 400px) 
+  {
+  .social-login {
+    flex-direction: column;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -o-flex-direction: column;
+    -ms-flex-direction: column; } 
+
+  .social-label {
+    margin-right: 0px;
+    margin-bottom: 2px; }
+    }
+  display-flex, .social-login, .socials {
+    display: flex;
+    display: -webkit-flex; }
+    
+  .badge .badge-success{
+  color: #97cad8;}
+  /* ===================================================================================== */
+
+/* Footer styling */
+.footer{
+  background-color: #000;
+  color: white;
+  text-align: center;
+  height: 10%;
+  margin-top: 5%;
+}
+/* ======================================================================================== */
