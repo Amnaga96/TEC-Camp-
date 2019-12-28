@@ -27,6 +27,12 @@ class UserController extends Controller
     public function store()
     {
         // TODO - Validation
+         request()->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'user_type' => 'required'
+        ]);
 
         $therapist = new User;
         $therapist->user_type = request('user_type');
@@ -40,7 +46,32 @@ class UserController extends Controller
 
     public function edit($id)
     {
+        // todo
+        //return view('admin/edit', compact($id));
 
+         return view('Admin.edit',  [
+            'user'=>User::find($id)
+        ]);
+    }
+   
+
+     public function update($id)
+    {
+        // todo
+           request()->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'user_type' => 'required'
+        ]);
+            $user = User::find($id);  
+        $user->user_type = request('user_type');
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->password = bcrypt(request('password'));
+        $user->save();
+
+        return redirect('admin/users');      
     }
 
 
