@@ -10,11 +10,12 @@
 */
 
 Route::group([
-'prefix' => 'clinic',
+'prefix' => 'admin/clinic',
 'as' => 'clinic.'
 ],function(){
-    Route::get('/create', 'ClinicController@create')->name('create');
-    Route::post('/store', 'ClinicController@store')->name('store');
+    Route::get('/create', 'Admin\ClinicController@create')->name('create');
+    Route::post('/store', 'Admin\ClinicController@store')->name('store');
+    Route::get('/', 'Admin\ClinicController@index')->name('index');
 });
 
 
@@ -24,6 +25,7 @@ Route::group([
     ],function(){
         Route::get('/create', 'SpecializationController@create')->name('create');
         Route::post('/store', 'SpecializationController@store')->name('store');
+        Route::get('/', 'Admin\SpecializationController@index')->name('index');
     });
 
 Route::group([
@@ -31,11 +33,11 @@ Route::group([
     'as' => 'doctor.'
     ],function(){
         Route::get('/create', 'DoctorController@create')->name('create');
-        Route::post('/store', 'ClinicController@store')->name('store');
+        Route::post('/store', 'DoctorController@store')->name('store');
     });
 
 
-Route::get('doctors', 'DoctorController@index')->name('doctors');
+Route::get('clinics', 'ClinicController@index')->name('clinics');
 
 
 Route::get('/find','FindController@find');
@@ -50,6 +52,13 @@ Route::get('/ask', 'QuestionController@create')->middleware('auth');
 Route::post('/ask', 'QuestionController@store')->middleware('auth');
 Route::get('/questions/{qid}/show', 'QuestionController@show');
 
+ //Articles Routes!    
+ Route::get('/blog', 'ArticleController@index'); // showa the ganeral blog page
+ Route::get('/create-article', 'ArticleController@create'); //create a new article
+ Route::post('/create-article', 'ArticleController@store'); //store a new article
+ Route::get('/article/{a_id}', 'ArticleController@show')->name('show'); //show an article
+ Route::get('article/{a_id}/edit', 'ArticleController@edit'); //edit an article
+ 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

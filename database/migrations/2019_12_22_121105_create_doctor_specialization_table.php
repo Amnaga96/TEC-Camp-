@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpecializationDoctorsTable extends Migration
+class CreateDoctorSpecializationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSpecializationDoctorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('specialization__doctors', function (Blueprint $table) {
+        Schema::create('doctor_specialization', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->UnsignedBigInteger('specialization_id');
 
