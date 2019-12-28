@@ -18,11 +18,8 @@ class ArticleController extends Controller
         // request()->file('image');
         return view("articles.blog", [
             'articles' => Article::all()
-        ]);
-        
-
+        ]);   
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -62,7 +59,10 @@ class ArticleController extends Controller
      */
     public function show($a_id)
     {
-        return view("articles.single_article")->with(['article'=>Article::find($a_id)]);
+        return view("articles.single_article")->with( [
+            'article'=>Article::find($a_id),
+            'otherArticles'=> Article::take(6)->get()
+            ] );
     } 
 
     // /**
@@ -71,10 +71,12 @@ class ArticleController extends Controller
     //  * @param  int  $id
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function edit($id)
-    // {
-    //     //
-    // }
+     public function edit($id)
+    {
+        return view("articles.edit", 
+        ['articles' => Article::find($id)] );
+
+   }
 
     // /**
     //  * Update the specified resource in storage.
