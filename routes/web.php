@@ -70,3 +70,8 @@ Route::post('admin/users', 'Admin\UserController@store')->name('store');
 Route::get('admin', 'Admin\HomeController@index');
 Route::get('admin/edit/{id}', 'Admin\UserController@edit')->name('user-edit');
 Route::get('admin/delete/{id}', 'Admin\UserController@delete')->name('user-delete');
+
+// contact form
+ Route::get('/', 'ContactUSController@contactUS' );
+ Route::post('/', ['as'=>'contactus.store','uses'=>'ContactUSController@contactSaveData'] )->name('contactus');
+
