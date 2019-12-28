@@ -352,7 +352,9 @@
     </div>
     <div class="col-md-8">
       <h3>Leave us a message</h3>
-      <form name="sentMessage" id="contactForm" novalidate>
+      {{--  contact form  --}}
+       <form action="{{ route('contactus') }}" method="post" name="sentMessage" id="contactForm" novalidate>
+       @csrf
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -377,8 +379,9 @@
           <p class="help-block text-danger"></p>
         </div>
       <div id="success"></div>
-      <button onClick="sayDone()" type="submit" class="btn btn-default">Send Message</button>
+      <button onClick="sayDone()" type="submit" value "Send"class="btn btn-default">Send Message</button>
       </form>
+      {{--  end of contact form  --}}
     </div>
   </div>
 </div>
