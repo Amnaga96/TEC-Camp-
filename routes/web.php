@@ -76,7 +76,7 @@ Route::post('questions/{id}/replies', 'QuestionReplyController@store')->middlewa
 Route::get('admin/users', 'Admin\UserController@index');
 Route::get('admin/users/create', 'Admin\UserController@create');
 Route::post('admin/users', 'Admin\UserController@store')->name('store');
-Route::get('admin', 'Admin\HomeController@index');
+Route::get('admin/{id}', 'Admin\HomeController@index');
 Route::get('admin/edit/{id}', 'Admin\UserController@edit')->name('user-edit');
 Route::patch('admin/{id}', 'Admin\UserController@update');//->name('user-update');
 Route::get('admin/delete/{id}', 'Admin\UserController@delete')->name('user-delete');
