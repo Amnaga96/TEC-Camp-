@@ -101,7 +101,10 @@
               <header>
                 <a href="{{route('show',['a_id'=> $article->id])}}"><h2>{{ $article->title }}</h2></a>
               </header>
-              <footer><small>{{ $article->created_at }}</small></footer>
+              <footer><small>{{ $article->created_at }} br 
+              <a href= "uri">
+              </a>
+              </small></footer>
               <div class="lead">{{$article->body }} </div>
                 <br> <br> <hr>
             </article>          

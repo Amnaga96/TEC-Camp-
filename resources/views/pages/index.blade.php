@@ -351,20 +351,27 @@
       <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+218 91 000000</p>
     </div>
     <div class="col-md-8">
+        <div class="alert alert-warning">
+        <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+        </ul>
+        </div>
       <h3>Leave us a message</h3>
       {{--  contact form  --}}
-       <form action="{{ route('contactus') }}" method="post" name="sentMessage" id="contactForm" novalidate>
+       <form  action="{{ route('contactus') }}" method="post" name="sentMessage" id="contactForm" novalidate>
        @csrf
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+              <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="required">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="required">
               <p class="help-block text-danger"></p>
             </div>
           </div>

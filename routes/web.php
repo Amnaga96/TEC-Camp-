@@ -1,14 +1,5 @@
 <?php
 
-/*
-// Admin
-// Patient (User)
-// Consulter
-// Clinic
-// Message
-// Article
-*/
-
 Route::group([
 'prefix' => 'admin/clinic',
 'as' => 'clinic.'
@@ -52,13 +43,13 @@ Route::get('/ask', 'QuestionController@create')->middleware('auth');
 Route::post('/ask', 'QuestionController@store')->middleware('auth');
 Route::get('/questions/{qid}/show', 'QuestionController@show');
 
- //Articles Routes!    
+ //Articles Routes!
  Route::get('/blog', 'ArticleController@index'); // showa the ganeral blog page
  Route::get('/create-article', 'ArticleController@create'); //create a new article
  Route::post('/create-article', 'ArticleController@store'); //store a new article
  Route::get('/article/{a_id}', 'ArticleController@show')->name('show'); //show an article
  Route::get('article/{a_id}/edit', 'ArticleController@edit'); //edit an article
- 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -82,6 +73,6 @@ Route::patch('admin/{id}', 'Admin\UserController@update');//->name('user-update'
 Route::get('admin/delete/{id}', 'Admin\UserController@delete')->name('user-delete');
 
 // contact form
- Route::get('/', 'ContactUSController@contactUS' );
- Route::post('/', ['as'=>'contactus.store','uses'=>'ContactUSController@contactSaveData'] )->name('contactus');
+//   Route::get('/contact', 'ContactUSController@contactUS' );
+  Route::post('/contact', 'ContactUSController@contactSaveData')->name('contactus');
 
