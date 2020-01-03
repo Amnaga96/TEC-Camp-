@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< HEAD
 Route::post('patient/register', 'API\PatientRegisterController@register');
 
 Route::post('/login', 'API\LoginController@login');
@@ -12,7 +11,6 @@ Route::post('/login', 'API\LoginController@login');
     //Route::post('user/auth/refresh', 'AuthController@refresh');
     Route::get('user/auth/me', 'API\user\AuthController@me');//->middleware('auth:api');
    
-=======
 Route::get('/questions', 'API\QuestionController@index');
 Route::post('/questions', 'API\QuestionController@store');
 Route::get('/questions/{qid}', 'API\QuestionController@show');
@@ -20,4 +18,3 @@ Route::get('/questions/{qid}', 'API\QuestionController@show');
 Route::post('/questions/{qid}/replies', 'API\QuestionReplyController@store');
 
 
->>>>>>> 1659d54fb7fb628f5104da61eeb3fc14e5ad44de
