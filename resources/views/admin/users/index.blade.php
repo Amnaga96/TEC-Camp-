@@ -17,6 +17,8 @@
         background-color: #22a391;
         }
 </style>
+
+
 @extends('layouts.app_renamed')
     @section('content')
 <div class="container">
@@ -44,7 +46,7 @@
                     <td scope="col" class="text-info">{{ $user->user_type }}</td>
                     <td>
                         <a href="{{ route('user-edit',['id' => $user->id]) }}" class="btn button">Edit</a>
-                        <a href="{{ route('user-delete',['id' => $user->id]) }}" class="btn button">Delete</a>
+                        <a href="{{ route('area.user-delete',['id' => $user->id]) }}" class="btn button">Delete</a>
                     </td>
                 </tr>
                 @endforeach

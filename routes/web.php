@@ -16,27 +16,58 @@ Route::group([
     Route::get('/create', 'Admin\ClinicController@create')->name('create');
     Route::post('/store', 'Admin\ClinicController@store')->name('store');
     Route::get('/', 'Admin\ClinicController@index')->name('index');
+    Route::get('/page', 'Admin\ClinicController@page')->name('page');
+    Route::get('/{id}', 'Admin\ClinicController@destroy')->name('delete');
+
+
 });
 
 
 Route::group([
-    'prefix' => 'specialization',
+    'prefix' => 'admin/specialization',
     'as' => 'specialization.'
     ],function(){
-        Route::get('/create', 'SpecializationController@create')->name('create');
-        Route::post('/store', 'SpecializationController@store')->name('store');
+        Route::get('/create', 'Admin\SpecializationController@create')->name('create');
+        Route::post('/store', 'Admin\SpecializationController@store')->name('store');
         Route::get('/', 'Admin\SpecializationController@index')->name('index');
+        Route::get('/page', 'Admin\SpecializationController@page')->name('page');
+        Route::get('/{id}', 'Admin\SpecializationController@destroy')->name('delete');
     });
 
 Route::group([
-    'prefix' => 'doctor',
+    'prefix' => 'admin/doctor',
     'as' => 'doctor.'
     ],function(){
-        Route::get('/create', 'DoctorController@create')->name('create');
-        Route::post('/store', 'DoctorController@store')->name('store');
+        Route::get('/create', 'Admin\DoctorController@create')->name('create');
+        Route::post('/store', 'Admin\DoctorController@store')->name('store');
+        Route::get('/', 'Admin\DoctorController@index')->name('index');
+        Route::get('/page', 'Admin\DoctorController@page')->name('page');
+        Route::get('/{id}', 'Admin\DoctorController@destroy')->name('delete');
+
+
+
     });
 
 
+    Route::group([
+        'prefix' => 'admin/area',
+        'as' => 'area.'
+        ],function(){
+            Route::get('/create', 'Admin\AreaController@create')->name('create');
+            Route::post('/store', 'Admin\AreaController@store')->name('store');
+            Route::get('/', 'Admin\AreaController@index')->name('index');
+            Route::get('/page', 'Admin\AreaController@page')->name('page');
+            Route::get('/edit/{id}', 'Admin\AreaController@edit')->name('edit');
+            Route::delete('/{id}', 'Admin\AreaController@destroy')->name('delete');
+
+
+        });
+
+
+
+
+
+        
 Route::get('clinics', 'ClinicController@index')->name('clinics');
 
 
