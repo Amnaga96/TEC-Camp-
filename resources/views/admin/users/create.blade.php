@@ -39,6 +39,15 @@
 
 <div class="bg-img">
 <div class="mt-3 mb-3 text-center">
+ @if ($errors->count())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 <form action="{{ route('store') }}" method="post">
     @csrf
     <h2 class="text-info mb-3 pt-3 mb-auto mr-2">New Users</h2>

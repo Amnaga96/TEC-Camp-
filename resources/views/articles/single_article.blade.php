@@ -16,9 +16,9 @@
         <!--THE COL 1-->
            <div style="margin-bottom: 50px; margin-top: 50px;" class="col-md-3 profile box" >
             <aside>
-              <img src="{{asset($articles->image_link)}}"  width="300px" alt="{{$articles->title }}" class="img">
+              <img src="{{asset($article->image_link)}}"  width="300px" alt="{{$article->title }}" class="img">
               <h4 style="margin-top: 10px;" >Stress</h4>
-              <p>Author: {{$articles->editor_name }} </p>
+              <p>Author: {{$article->editor_name }} </p>
               <hr>
             </aside>
           </div>
@@ -26,11 +26,11 @@
         <!--THE COL 2-->
         <div style=" margin-top: 70px;" class="col-md-3 ml-auto">
              <header>
-               <h2 class="article-title">{{$articles->title }}</h2>
+               <h2 class="article-title">{{$article->title }}</h2>
              </header>
-             <footer><small>{{$articles->updated_at}}</small></footer>
+             <footer><small>{{$article->updated_at}}</small></footer>
              <br>
-             <div class="lead">{{$articles->body}} <hr> </div>   
+             <div class="lead">{{$article->body}} <hr> </div>   
         </div>
       </div>
     </div>
@@ -40,9 +40,10 @@
       <div class="mb-5">
           <h3 class="h5 text-black mb-3 sub_article"><strong>You may also like to see</strong></h3>
           <ul class="list-unstyled">
-              <li class="mb-2"><a href="{{route('show',['article'=> $articles[0]->id])}}">An article</a></li>
-              <li class="mb-2"><a href="{{route('show',['article'=> $articles[1]->id])}}">Another trend article</a></li>
-              <li class="mb-2"><a href="{{route('show',['article'=> $articles[0]->id])}}">NEW cool article</a></li>
+          @foreach ( $otherArticles as $article)
+              <li class="mb-2"><a href="{{url("article/$article->id")}}">{{$article->title}}</a></li>
+          @endforeach
+              
           </ul>
       </div>
     
