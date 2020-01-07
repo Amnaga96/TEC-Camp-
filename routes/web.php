@@ -52,7 +52,7 @@ Route::get('/questions/{qid}/show', 'QuestionController@show');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::get('therapists/create', 'TherapistController@create');//->middleware('auth-admin');
 Route::post('therapists', 'TherapistController@store');
@@ -64,13 +64,13 @@ Route::post('questions/{id}/replies', 'QuestionReplyController@store')->middlewa
 // Route::get('clinics/create', 'ClinicController@create');
 // Route::post('clinics', 'ClinicController@store');
 
-Route::get('admin/users', 'Admin\UserController@index');
-Route::get('admin/users/create', 'Admin\UserController@create');
-Route::post('admin/users', 'Admin\UserController@store')->name('store');
-Route::get('admin/home', 'Admin\HomeController@index');
-Route::get('admin/edit/{id}', 'Admin\UserController@edit')->name('user-edit');
+Route::get('admin/users', 'Admin\UserController@index')->middleware('auth');
+Route::get('admin/users/create', 'Admin\UserController@create')->middleware('auth');
+Route::post('admin/users', 'Admin\UserController@store')->name('store')->middleware('auth');
+Route::get('admin/home', 'Admin\HomeController@index')->middleware('auth');
+Route::get('admin/edit/{id}', 'Admin\UserController@edit')->name('user-edit')->middleware('auth');
 Route::patch('admin/{id}', 'Admin\UserController@update');//->name('user-update');
-Route::get('admin/delete/{id}', 'Admin\UserController@delete')->name('user-delete');
+Route::get('admin/delete/{id}', 'Admin\UserController@delete')->name('user-delete')->middleware('auth');
 
 // contact form
 //   Route::get('/contact', 'ContactUSController@contactUS' );
