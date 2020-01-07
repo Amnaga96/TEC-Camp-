@@ -1,5 +1,7 @@
 <?php
 
+
+Route::get('/find-therapist','API\FindTherapistController@index');
 Route::post('patient/register', 'API\PatientRegisterController@register');
 
 Route::post('/login', 'API\LoginController@login');
