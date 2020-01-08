@@ -1,9 +1,7 @@
 <?php
 
-<<<<<<< HEAD
 Route::get('/blog', 'API\ArticleController@index');
 Route::get('/article/{a_id}', 'API\ArticleController@show');
-=======
 Route::post('patient/register', 'API\PatientRegisterController@register');
 
 Route::post('/login', 'API\LoginController@login');
@@ -22,4 +20,3 @@ Route::get('/questions/{qid}', 'API\QuestionController@show');
 Route::post('/questions/{qid}/replies', 'API\QuestionReplyController@store');
 
 
->>>>>>> 340234506b00dcd08571c4e1b5cee446093670ea
