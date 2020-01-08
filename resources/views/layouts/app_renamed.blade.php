@@ -55,8 +55,14 @@ background: #000;
                     </li>
                     @else
                     <li class="nav-item">
-                        <a style=" color: #86e2d5;" href="{{ url('questions') }}" class=" nav-link">Questions</a>
+                        <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('questions') }}" class=" nav-link">Questions</a>
                     </li>
+                    <ul class="navbar-nav mr-auto">
+                        
+                        <li class="nav-item">
+                            <a href="{{ url('admin/clinic') }}" class="nav-link">find feature</a>
+                        </li>
+                    </ul>
                     <li class="nav-item dropdown">
                         <a style=" color: #86e2d5;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>

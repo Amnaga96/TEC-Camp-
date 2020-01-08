@@ -18,14 +18,14 @@
         }
 </style>
 
-@extends('admin.layouts.admin')
-
+@extends('layouts.app_renamed')
 @section('content')
 
 
 <div class="container">
     <div class="btn button mb-3 pb-2 " style="border: 1px solid #86e2d5;">
      <a href="{{ url('admin/clinic/create') }}" style="color:black;">Add new Clinic</a></div>
+     <div class="btn button mb-3 pb-2 " style="border: 1px solid #86e2d5;"><a href="{{ url('admin/home') }}" style="color:black;">your profile</a></div>
     {{--  table to list users  --}}
     <div class="mt-3 mb-3 text-center ">
     <div class="reponsive-table">
@@ -51,7 +51,7 @@
                         <a href="{{ route('clinic.delete',['id' => $clinic->id]) }}"  style="border: 1px solid #86e2d5;" class="btn button">Delete</a>
                     </td>
                 </tr>
-                          @endforeach
+            @endforeach
 
         </table>
     </div>

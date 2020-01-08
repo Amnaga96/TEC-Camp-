@@ -63,6 +63,29 @@
         @auth
         <li><a href="{{ url('questions') }}">Questions</a></li>
         @endauth
+        @guest
+                  <li class="nav-item">
+                      <a  class="page-scroll" href="{{  url('/login') }}">Log in</a>
+                    </li>
+                    @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="page-scroll" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @endguest
       </ul>
     </div>
     <!-- /.navbar-collapse -->
@@ -80,7 +103,7 @@
     <a href="{{  url('/login') }}" class="btn btn-default btn-lg page-scroll">log in</a>
     <a href="{{  url('/register') }}" class="btn btn-default btn-lg page-scroll">sign up</a> </div>
     @else
-        Welcome <strong>{{ auth()->user()->name }}</strong>,
+        <h6 style="font-size: 20.5px;">Welcome <strong>{{ auth()->user()->name }}</strong></h6>
 
         <form action="{{ url('logout') }}" method="post">
             @csrf
@@ -386,7 +409,8 @@
           <p class="help-block text-danger"></p>
         </div>
       <div id="success"></div>
-      <button onClick="sayDone()" type="submit" value "Send"class="btn btn-default">Send Message</button>
+      <button onClick="sayDone()" type="submit" value="Send"class="btn btn-default">Send Message</button>
+      <button onClick="sayDone()" type="submit" value= "Send"class="btn btn-default">Send Message</button>
       </form>
       {{--  end of contact form  --}}
     </div>
