@@ -35,7 +35,7 @@ background: #000;
               <a style= "font-size: 14.5px; color: silver;" class="nav-link" href="{{  url('/') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li  class="nav-item">
-              <a style="font-size: 14.5px; color: silver;"  class="nav-link" href="#about-section">About</a>
+              <a style="font-size: 14.5px; color: silver;"  class="nav-link" href="{{  url('/#about-section') }}">About</a>
             </li>
             <li class="nav-item">
                 <a style="font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/ask') }}">get help</a>
@@ -47,7 +47,7 @@ background: #000;
                   <a style="font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/blog')}}">Our blog</a>
                 </li>
                 <li class="nav-item">
-                    <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="#contact-section">Contact us</a>
+                    <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/#contact-section')}}">Contact us</a>
                   </li>
                   @guest
                   <li class="nav-item">
