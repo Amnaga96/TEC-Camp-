@@ -5,7 +5,13 @@
 </div>
 
 <div style="width:600px; height:100%;"  class="container">
-
+<div >
+        <ul >
+        @foreach ($errors->all() as $error)
+            <li class="alert alert-warning alert-danger">{{ $error }}</li>
+        @endforeach
+        </ul>
+        </div>
 <form action="{{ route('specialization.store') }}" method="post">
     @csrf
  specialization : <input class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" type="text" name="name" > <br><br>

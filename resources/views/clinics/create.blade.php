@@ -5,6 +5,13 @@
 </div>
 
 <div style="width:600px; height:100%;"  class="container">
+<div >
+        <ul >
+        @foreach ($errors->all() as $error)
+            <li class="alert alert-warning alert-danger">{{ $error }}</li>
+        @endforeach
+        </ul>
+        </div>
 
 <form action="{{ route('clinic.store') }}" method="post">
     @csrf
