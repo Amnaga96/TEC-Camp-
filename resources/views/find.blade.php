@@ -22,7 +22,7 @@ width: 100%;
                       <h2>FIND A THIRAPIST!</h2>
                       <p>Here in Utalk we can help you to find the avilible therapists in the country.</p>
   
-  <form  method="get">
+  <form action="{{ route('find.index') }}"  method="post">
   @csrf
                                  <select class="form-control form-control-lg " style="border-color:#86e2d5 ;" name="area_id">
                                       <option>select a place</option>                                    
@@ -46,12 +46,7 @@ width: 100%;
                     </div>                     
             </div>
 
-
-            @foreach($clinics as $clinic)
-                <p> {{ $clinic->name }} </p>
-@foreach ($clinic->doctors as $doctor )
-                <p> {{ $doctor->name}}  </p>
-@endforeach
-            @endforeach
+ 
+           
 @endsection
 

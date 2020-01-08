@@ -42,20 +42,21 @@ class FindController extends Controller
     }
 
 
+public function show()
+{
+   
 
+return view('find', [
+    'areas' => Area::all(),
+    'specialization' => specialization::all(),
+
+]); 
+
+}
 
     
 
-    public function create()
-    {
-        return view("find.create");
-    }
-
-    public function store()
-    {
-        return redirect('/home');
-    }
-
+   
 
     
 

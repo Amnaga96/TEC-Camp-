@@ -49,10 +49,22 @@ Route::group([
             Route::get('/', 'Admin\AreaController@index')->name('index');
             Route::get('/page', 'Admin\AreaController@page')->name('page');
             Route::get('/edit/{id}', 'Admin\AreaController@edit')->name('edit');
-            Route::delete('/{id}', 'Admin\AreaController@destroy')->name('delete');
+            Route::get('/{id}', 'Admin\AreaController@destroy')->name('delete');
 
 
         });
+
+Route::group([
+
+'prefix' => '/find',
+'as' => 'find.'
+],function(){
+    Route::post('/index','FindController@index')->name('index');
+    Route::get('/','FindController@show')->name('find');
+
+
+
+});
 
 
 
@@ -62,7 +74,6 @@ Route::group([
 Route::get('clinics', 'ClinicController@index')->name('clinics');
 
 
-Route::get('/find','FindController@index');
 
 
 Route::post('/find/find_result','FindController@find_result');
