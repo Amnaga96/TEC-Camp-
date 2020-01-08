@@ -2,7 +2,8 @@
 @extends('layouts.app_renamed')
 
 @section('content')
-      <div class="container row text-center shadow-lg bd-with  bg-white rounded mx-auto d-block p-3"  style="border: 1px solid #86e2d5;">
+<div class="container">
+      <div class="row text-center shadow-lg bd-with  bg-white rounded mx-auto d-block p-3"  style="border: 1px solid #86e2d5;">
         <div class="text-center col-12">
             <div class="container display-table">
               <h2 class="text-sm-center text-info p-3 ">Title:  {{ $question->title }} </h2>
@@ -25,4 +26,5 @@
             </div>
          </div>
       </div>
+</div>
 @endsection
