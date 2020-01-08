@@ -37,7 +37,9 @@
             border: 1px solid #22a391;
             border-radius: 4px; 
         } 
-
+.b2{
+        border: 1px solid #22a391;
+        }
 
 </style>
 
@@ -47,6 +49,7 @@
 @section('content')
 <div class="container bg-img p-5 shadow-lg bd-with rounded mx-auto d-block">
     <div class="row justify-content-center">
+    <div class="col-md-4 mt-0" ><img src="{{asset('img/chat.jpg')}}" alt="#" width=300px height=450px class="b2"></div>
         <div class="col-md-8">
             <div class="card shadow-lg bd-with  bg-white rounded mx-auto d-block" style="border: 1px solid #22a391;">
                 <div class="card-header text-center shadow-lg    rounded mx-auto d-block">{{ __('Register') }}</div>
