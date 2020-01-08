@@ -17,7 +17,7 @@ class Log extends Controller
          $user->email = request('email');
          $user->password = bcrypt(request('password'));
          $user-> save();
-          return ('admin/users');
+          return 5;
 
     }
 }
