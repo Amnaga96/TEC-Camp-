@@ -7,12 +7,18 @@ Route::post('patient/register', 'API\PatientRegisterController@register');
 Route::post('/login', 'API\LoginController@login');
 
 
+<<<<<<< HEAD
 Route::get('/find-therapist','API\FindTherapistController@index');
+=======
+Route::post('patient/register', 'API\PatientRegisterController@register');
+>>>>>>> 0bc91f57427aab87378f72b33403b285c9e5864c
 
-    Route::post('user/auth/login', 'API\user\AuthController@login');
-    Route::post('user/auth/logout', 'API\user\AuthController@logout') ->middleware('auth:api');
-    //Route::post('user/auth/refresh', 'AuthController@refresh');
-    Route::get('user/auth/me', 'API\user\AuthController@me');//->middleware('auth:api');
+// Route::post('/login', 'API\LoginController@login');
+// +
+//     Route::post('user/auth/login', 'API\user\AuthController@login');
+//     Route::post('user/auth/logout', 'API\user\AuthController@logout') ->middleware('auth:api');
+//     //Route::post('user/auth/refresh', 'AuthController@refresh');
+//     Route::get('user/auth/me', 'API\user\AuthController@me');//->middleware('auth:api');
    
 Route::get('/questions', 'API\QuestionController@index');
 Route::post('/questions', 'API\QuestionController@store');

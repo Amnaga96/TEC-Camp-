@@ -42,7 +42,7 @@
                           <div class="carousel-inner">
                             <div class="carousel-item active">                           
                               <a href="{{route('show',['a_id'=>$articles[0]->id])}}">
-                                <img src="{{ $articles[0]->image_link }}" class="d-block w-100" alt="Article image !">
+                                <img src="{{ $articles[0]->image_link }}" class="d-block w-100" alt="Article image !" width="100px">
                                 <div class="carousel-caption d-none d-md-block">
                                   <strong><h3>{{ $articles[0]->title }}</h3></strong>
                                   <p>We deserve a break!</p> <!-- Article slogan !-->
@@ -51,7 +51,7 @@
                             </div>
                             <div class="carousel-item"> 
                               <a href="{{route('show',['a_id'=>$articles[1]->id])}}">
-                                <img src="{{ $articles[1]->image_link }}" class="d-block w-100" alt="Article image !">
+                                <img src="{{ $articles[1]->image_link }}" class="d-block w-100" alt="Article image !" width="100px">
                                 <div class="carousel-caption d-none d-md-block">
                                     <strong><h3>{{ $articles[1]->title }}</h3></strong>
                                     <p>Lorem ipsum dolor sit amet.</p> <!-- Article slogan !-->
@@ -60,7 +60,7 @@
                             </div>
                             <div class="carousel-item">               
                               <a href="{{route('show',['a_id'=>$articles[0]->id])}}">
-                                <img src="{{ $articles[0]->image_link }}" class="d-block w-100" alt="Article image !">
+                                <img src="{{ $articles[0]->image_link }}" class="d-block w-100" alt="Article image !" width="100px">
                                 <div class="carousel-caption d-none d-md-block">
                                   <strong><h3>{{ $articles[0]->title }}</h3></strong>
                                   <p>Taking a Look.</p> <!-- Article slogan !-->
@@ -99,13 +99,20 @@
           <div class="col-md-9 box" >    
             <article>
               <header>
-                <a ><h2>{{$article->title}}</h2></a>
+                <a href="{{route('show',['a_id'=> $article->id])}}" ><h2>{{$article->title}}</h2></a>
                  {{--href="{{route('show',['a_id'=> $article->id])}}"--}}
               </header>
               <footer>
                 {{$article->updated_at}} |
-                 {{-- <a href= "{{url('article/edit/'. $article->id)}}" class="btn"> Edit</a>
-                | <a href= "{{url('article/'. $article->id)}}" class="btn"> Delete</a> <br> --}}
+                  <a href= "{{url('article/edit/'. $article->id)}}" class="btn"> Edit</a> | 
+               <a href= "{{url('article/'. $article)}}" class="btn" action="{{url('article/'.$article)}}" method="post">
+                  @csrf
+                  @method('DELETE') Delete</a> <br> 
+                {{-- <form action="{{url('article/'.$article)}}" method="post" style="display;">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="Delete" class="btn">
+                </form> --}}
               </footer>
               <div class="lead">{{$article->body}}</div>
                 <br> <br> <hr>
