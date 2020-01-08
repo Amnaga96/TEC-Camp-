@@ -1,6 +1,6 @@
 /* showcase */
 #showcase {
-    background: url('../find-thirapist/LocationMap.jpg')
+    background: url('../img/LocationMap.jpg')
 no-repeat center center/cover;
 height: 670px; 
 width: 100%;
@@ -27,16 +27,5 @@ width: 100%;
     padding-bottom: 20px;
     line-height: 1.7em;
 }
-
-/* Navigation (navbar) styling */
-#nav.navbar{
-    background-color: #d6e8ee !important;
-    text-transform: uppercase;
-  
-  }
-  .nav-item{
-    padding-right: 3%;
-    padding-left: 3%;
-  }
 
 

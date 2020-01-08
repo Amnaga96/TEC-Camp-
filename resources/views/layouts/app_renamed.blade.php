@@ -20,7 +20,7 @@ background: #000;
 
 
   <nav class=" black sticky-top" >
-    <nav class="sticky-top navbar mb-5 navbar-expand-lg navbar-light  pull-right"  >
+    <nav class="sticky-top navbar  navbar-expand-lg navbar-light  pull-right"  >
 <div class="container">
         <a style="color: #86e2d5;  margin-top: 3px;" class="navbar-brand" href="{{  url('/') }}"><p>utalk</p> </a>
 
@@ -89,11 +89,10 @@ background: #000;
 
 
 
-      <div class="container">
       <!--PUT YOUR CONTENT HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
         @yield('content')
-        </div>
+        
 
 
 
@@ -111,7 +110,7 @@ background: #000;
 
   class="footerr">
 
-     <center><p class="footer" style="font-size: 13.5px; color: rgb(169, 166, 166); margin-top: 10px;">Copyright &copy; 2019  health care.   Design by <a style=" color: #86e2d5;" href="team" rel="nofollow">TEAM</a></p></center>
+     <center><p class="footer" style="font-size: 13.5px; color: rgb(169, 166, 166); margin-top: 10px;">Copyright &copy; 2019  health care.   Design by <a style=" color: #86e2d5;" href="{{ url('/#team-section')}}" rel="nofollow">TEAM</a></p></center>
   </div>
 <!--END OF FOOTER-->
 

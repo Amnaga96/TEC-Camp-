@@ -8,11 +8,6 @@ use App\Article;
 
 class ArticleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         // request()->file('image');
@@ -20,43 +15,27 @@ class ArticleController extends Controller
             'articles' => Article::all()
         ]);   
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('articles.createArticle');
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $article = new Article;
 
-            $path =  request('image_link')->store('public');
+            $ImagePath =  request('image_link')->store('public');
             $article->title = request('title');
             $article->body = request('body');
             $article->editor_name = request('editor_name');
-            $article->image_link = str_replace('public','storage',$path);
+            $article->image_link = str_replace('public','storage',$ImagePath);
             $article-> save();
 
             return redirect('blog');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($a_id)
     {
         return view("articles.single_article")->with( [
@@ -65,39 +44,33 @@ class ArticleController extends Controller
             ] );
     } 
 
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
      public function edit($id)
     {
-        return view("articles.edit", 
-        ['articles' => Article::find($id)] );
-
+        return view("articles.edit", [
+            'article' => Article::find($id)
+        ]);
    }
 
-    // /**
-    //  * Update the specified resource in storage.
-    //  *
-    //  * @param  \Illuminate\Http\Request  $request
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function update(Request $request, $id)
-    // {
-    //     //
-    // }
+     public function update(Request $request, $a_id)
+     {
+         //
+        $article = Article::find($a_id);
 
-    // /**
-    //  * Remove the specified resource from storage.
-    //  *
-    //  * @param  int  $id
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function destroy($id)
-    // {
-    //     //
-    // }
+        if (request('image_link'))
+         {
+            $ImagePath = request('image_link')->store('public');
+            $article->image_link = str_replace('public', 'storage', $ImagePath);
+        }
+        $article->title = request('title');
+        $article->body = request('body');
+        $article->editor_name = request('editor_name');
+        $article->save();
+        return redirect('blog');
+    }
+
+     public function destroy($a_id)
+     { 
+        $article = Article::find($a_id)->delete();
+        return redirect ('blog');    
+     }
 }
