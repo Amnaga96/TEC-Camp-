@@ -1,28 +1,20 @@
-<style>
-/* showcase */
-#showcase {
-    background: url('../img/LocationMap.jpg')
-no-repeat center center/cover;
-height: 670px; 
-width: 100%;
-}
 
 
-  </style>
+
 @extends('layouts.app_renamed')
 
 
 @section('content')
               <!--PUT YOUR CONTENT HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
-              <div id="showcase ">
+              <div id="showcase " style="background: url('../img/LocationMap7.jpg') no-repeat center center/cover ; width:100%; height:650px; " >
 
-<div style="width:600px;" class="container ">
-                  <div class="showcase-content">
-                      <h2>FIND A THIRAPIST!</h2>
+<div  style="width:600px;" class="container ">
+                  <div  class="showcase-content">
+                      <h2 >FIND A THIRAPIST!</h2>
                       <p>Here in Utalk we can help you to find the avilible therapists in the country.</p>
   
-  <form action="{{ route('find.index') }}"  method="post">
+  <form  action="{{ route('find.index') }}"  method="post">
   @csrf
                                  <select class="form-control form-control-lg " style="border-color:#86e2d5 ;" name="area_id">
                                       <option>select a place</option>                                    
