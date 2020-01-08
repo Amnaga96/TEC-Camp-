@@ -1,8 +1,5 @@
 
-
 @extends('layouts.app_renamed')
-
-
 @section('content')
 
  <div class="container">   <br><br> <div style="heigt:100% ; background-color:#86e2d5 ;" class="shareet"><h4 class="ml-5">Add a new area</h4> </div><br><br>

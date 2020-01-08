@@ -1,5 +1,7 @@
 <?php
 
+Route::get('/blog', 'API\ArticleController@index');
+Route::get('/article/{a_id}', 'API\ArticleController@show');
 Route::post('patient/register', 'API\PatientRegisterController@register');
 
 Route::post('/login', 'API\LoginController@login');

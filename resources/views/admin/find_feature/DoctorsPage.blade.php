@@ -18,8 +18,8 @@
         }
 </style>
 
-@extends('admin.layouts.admin')
 
+@extends('layouts.app_renamed')
 @section('content')
 
 

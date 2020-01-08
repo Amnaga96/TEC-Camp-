@@ -18,8 +18,7 @@
         }
 </style>
 
-@extends('admin.layouts.admin')
-
+@extends('layouts.app_renamed')
 @section('content')
 
 
@@ -51,7 +50,7 @@
                         <a href="{{ route('clinic.delete',['id' => $clinic->id]) }}"  style="border: 1px solid #86e2d5;" class="btn button">Delete</a>
                     </td>
                 </tr>
-                          @endforeach
+            @endforeach
 
         </table>
     </div>

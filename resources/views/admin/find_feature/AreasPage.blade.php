@@ -18,8 +18,8 @@
         }
 </style>
 
-@extends('admin.layouts.admin')
 
+@extends('layouts.app_renamed')
 @section('content')
 
 
@@ -48,7 +48,7 @@
                     <td scope="col" class="text-info"></td>
                     <td scope="col" class="text-info"></td>
                     <td>
-                        <a  style="border: 1px solid #86e2d5;" class="btn button">Edit</a>
+                        <a  style="border: 1px solid #86e2d5;"href="{{ route('area.edit',['id' => $area->id]) }}"  class="btn button">Edit</a>
                         <a href="{{ route('area.delete',['id' => $area->id]) }}"  style="border: 1px solid #86e2d5;" class="btn button">Delete</a>
                     </td>
                 </tr>

@@ -49,9 +49,8 @@ Route::group([
             Route::get('/', 'Admin\AreaController@index')->name('index');
             Route::get('/page', 'Admin\AreaController@page')->name('page');
             Route::get('/edit/{id}', 'Admin\AreaController@edit')->name('edit');
+            Route::patch('/{id}','Admin\AreaController@update')->name('update');
             Route::get('/{id}', 'Admin\AreaController@destroy')->name('delete');
-
-
         });
 
 Route::group([
@@ -85,21 +84,23 @@ Route::get('/ask', 'QuestionController@create')->middleware('auth');
 Route::post('/ask', 'QuestionController@store')->middleware('auth');
 Route::get('/questions/{qid}/show', 'QuestionController@show');
 
- //Articles Routes!
- Route::get('/blog', 'ArticleController@index'); // showa the ganeral blog page
- Route::get('/create-article', 'ArticleController@create'); //create a new article
- Route::post('/create-article', 'ArticleController@store'); //store a new article
- Route::get('/article/{a_id}', 'ArticleController@show')->name('show'); //show an article
- Route::get('article/{a_id}/edit', 'ArticleController@edit'); //edit an article
-
+ //Articles Routes!    
+ Route::get('blog', 'ArticleController@index'); // showa the ganeral blog page
+ Route::get('create-article', 'ArticleController@create');//create a new article
+ Route::post('create-article', 'ArticleController@store'); //store a new article
+ Route::get('article/{a_id}', 'ArticleController@show')->name('show'); //show an article
+ Route::get('article/edit/{a_id}', 'ArticleController@edit'); //to edit an article
+ Route::patch('article/{a_id}', 'ArticleController@update'); 
+ Route::get('article/{a_id}', 'ArticleController@destroy'); //to delete an article
+ 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::get('therapists/create', 'TherapistController@create');//->middleware('auth-admin');
-Route::post('therapists', 'TherapistController@store');
+Route::get('therapists/create', 'TherapistController@create')->middleware('auth-admin');
+Route::post('therapists',       'TherapistController@store');
 
-Route::get('questions', 'QuestionController@index')->name('questions')->middleware('auth'); // getting patient's questions for them
+Route::get('questions',               'QuestionController@index')->name('questions')->middleware('auth'); // getting patient's questions for them
 Route::post('questions/{id}/replies', 'QuestionReplyController@store')->middleware('auth');
 
 // Route::get('clinics', 'ClinicController@index');

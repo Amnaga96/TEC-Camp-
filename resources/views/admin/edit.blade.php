@@ -51,7 +51,7 @@
 <form action="{{url('admin/'.$user->id) }}" method="post" enctype="multipart/form-data">
     @csrf
      @method('PATCH')
-    <h2 class="text-info mb-3 pt-3 mb-auto mr-2">New Users</h2>
+    <h2 class="text-info mb-3 pt-3 mb-auto mr-2">Edit Users</h2>
         <div class="text-info mt-3 mr-2 pt-3">User name: <input type="text" name="name" value="{{ $user->name }}" style="border: 1px solid #22a391;"></div>
             <div class="text-info mt-3 mr-2">User Email: <input type="email" name="email" value="{{ $user->email }}" style="border: 1px solid #22a391;"></div>
             <div class="text-info mt-3 mr-2">password: <input type="password" name="password" value="{{ $user->password}}" style="border: 1px solid #22a391;"></div>
