@@ -19,49 +19,47 @@
         <link rel="stylesheet" href="{{asset('fonts/articles/material-icon/css/material-design-iconic-font.min.css')}}">
         <link rel="stylesheet" href="{{asset('fonts/articles/flaticon/font/flaticon.css')}}">
         <link rel="stylesheet" href="{{asset('fonts/articles/icomoon/style.css')}}">
-    
+        <title>{{$article-> title}}</title>
   </head>
-
   <body>
-  <!--the CONTAINER-->
-  <div class="container">
-    <!--the row container-->
-    <div class="row">
-      <div class="col-md-8" >
-
-        <!--THE COL 1-->
-           <div style="margin-bottom: 50px; margin-top: 50px;" class="col-md-3 profile box" >
+  <div class="row">
+   <!--the CONTAINER-->
+    <div class="container">
+      <!--the row container-->
+        <div class="col-9" >
+          <!--THE COL 1-->
+          <div style="margin-bottom: 50px; margin-top: 50px;" class="col-3 profile box" >
             <aside>
-              <img src="{{asset($article->image_link)}}"  width="300px" alt="{{$article->title }}" class="img">
+              <img src="{{asset($article->image_link)}}" width="300px" alt="{{$article->title }}" class="img">
               <h4 style="margin-top: 10px;" >Stress</h4>
               <p>Author: {{$article->editor_name }} </p>
               <hr>
             </aside>
           </div>
-        
-        <!--THE COL 2-->
-        <div style=" margin-top: 70px;" class="col-md-3 ml-auto">
-             <header>
-               <h2 class="article-title">{{$article->title}}</h2>
-             </header>
-             <footer><small>{{$article->updated_at}}</small></footer>
-             <br>
-             <div class="lead">{{$article->body}}<hr></div>   
-        </div>
+          <!--THE COL 2-->
+          <div style=" margin-top: 70px;" class="col-5 ml-auto">
+              <header>
+                <h2 class="article-title">{{$article->title}}</h2>
+              </header>
+              <footer><small>{{$article->updated_at}} |
+              <a href= "{{url('article/edit/'. $article->id)}}" class="btn"> Edit</a> | 
+               <a href= "{{url('article/'. $article)}}" class="btn" action="{{url('article/'.$article)}}" method="post">
+                  @csrf
+                  @method('DELETE') Delete</a> <br></small></footer>
+              <br>
+              <div class="lead">{{$article->body}}<hr></div>   
+          </div>
       </div>
     </div>
-  </div>
-
-
-      <div class="mb-5">
+      <div class=" col-3 mb-5 ml-auto">
           <h3 class="h5 text-black mb-3 sub_article"><strong>You may also like to see</strong></h3>
           <ul class="list-unstyled">
             @foreach ( $otherArticles as $article)
-                <li class="mb-2"><a href="{{url("article/$article->id")}}">{{$article->title}}</a></li> 
-                {{-- {{route('show',['a_id'=>$article->id])}} --}}
+                <li class="mb-2"><a href="{{route('show',['a_id'=>$article->id])}}">{{$article->title}}</a></li> 
             @endforeach
           </ul>
       </div>
+    </div>
   
 <!-- JQuery, js, and Bootstrap Plugins -->
           <!-- Native javascript --> 

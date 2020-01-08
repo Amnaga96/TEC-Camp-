@@ -61,20 +61,9 @@ Route::group([
 ],function(){
     Route::post('/index','FindController@index')->name('index');
     Route::get('/','FindController@show')->name('find');
-
-
-
 });
 
-
-
-
-
-        
 Route::get('clinics', 'ClinicController@index')->name('clinics');
-
-
-
 
 Route::post('/find/find_result','FindController@find_result');
 
@@ -85,25 +74,15 @@ Route::get('/ask', 'QuestionController@create')->middleware('auth');
 Route::post('/ask', 'QuestionController@store')->middleware('auth');
 Route::get('/questions/{qid}/show', 'QuestionController@show');
 
-<<<<<<< HEAD
- //Articles Routes!    
+ //Articles Routes!
  Route::get('blog', 'ArticleController@index'); // showa the ganeral blog page
  Route::get('create-article', 'ArticleController@create');//create a new article
  Route::post('create-article', 'ArticleController@store'); //store a new article
  Route::get('article/{a_id}', 'ArticleController@show')->name('show'); //show an article
  Route::get('article/edit/{a_id}', 'ArticleController@edit'); //to edit an article
- Route::patch('article/{a_id}', 'ArticleController@update'); 
+ Route::patch('article/{a_id}', 'ArticleController@update');
  Route::get('article/{a_id}', 'ArticleController@destroy'); //to delete an article
- 
-=======
- //Articles Routes!
- Route::get('/blog', 'ArticleController@index'); // showa the ganeral blog page
- Route::get('/create-article', 'ArticleController@create'); //create a new article
- Route::post('/create-article', 'ArticleController@store'); //store a new article
- Route::get('/article/{a_id}', 'ArticleController@show')->name('show'); //show an article
- Route::get('article/{a_id}/edit', 'ArticleController@edit'); //edit an article
 
->>>>>>> 340234506b00dcd08571c4e1b5cee446093670ea
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

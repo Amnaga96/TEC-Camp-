@@ -68,9 +68,9 @@ class ArticleController extends Controller
         return redirect('blog');
     }
 
-     public function destroy($a_id)
-     { 
-        $article = Article::find($a_id)->delete();
-        return redirect ('blog');    
-     }
+      public function destroy($a_id)
+  { 
+      $article = Article::find($a_id)->delete();
+      return redirect ('blog');    
+    }
 }
