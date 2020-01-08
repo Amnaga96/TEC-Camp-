@@ -8,11 +8,28 @@ use App\Http\Controllers\Controller;
 use App\Clinic;
 use App\Area;
 
+
+
 class ClinicController extends Controller
 {
+
+    public function page()
+    {
+
+        $clinics = Clinic::with('area')->get();
+
+        return view('admin.find_feature.ClinicsPage', [
+
+            'clinics' => $clinics,
+            
+        ]);
+
+    }
+    
+
     public function index()
     {
-        return view('admin.clinics.index');
+        return view('admin.find_feature.index');
     }
 
     public function create()
@@ -22,13 +39,28 @@ class ClinicController extends Controller
 
     public function store(Request $request)
     {
+
+        request()->validate([
+            'name' => 'required',
+            'phone_number' => 'required|numeric',
+
+        ]);
+
+
         $clinic = new clinic;
         $clinic -> name = $request->name;
         $clinic -> phone_number = $request->phone_number;
         $clinic -> area_id = $request->area;
         $clinic ->save();
-         return redirect()->route('doctors');
+         return redirect()->route('clinic.page');
 
     }
+    public function destroy($id){
+
+        Clinic::find($id)->delete();
+    
+            return redirect()->route('clinic.page');
+    }
+    
 
 }

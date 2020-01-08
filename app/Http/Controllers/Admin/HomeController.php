@@ -8,11 +8,7 @@ use App\User;
 
 class HomeController extends Controller
 {
-    public function index($id){
-
-     $user =  user::with('name')->find($id);
-        return view('admin', compact('user'));
+    public function index(){
+        return view("admin.home");}
     
-
-}
 }

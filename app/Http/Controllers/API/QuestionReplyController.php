@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Question;
-use App\Reply;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Reply;
+use App\Question;
 
 class QuestionReplyController extends Controller
 {
     public function store($id)
     {
-        // return 1;
-        // TODO validation
+
             request()->validate([
             'reply' => 'required'
         ]);
@@ -21,6 +21,7 @@ class QuestionReplyController extends Controller
 
         $question = Question::find($id);
         $question->replies()->save($reply);
+
         return redirect()->back();
     }
 }

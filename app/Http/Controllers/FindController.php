@@ -5,53 +5,60 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\find;
 use db;
+use App\Doctor;
+use App\Area;
+use App\specialization;
+use App\Clinic;
 
 class FindController extends Controller
 {
-    public function find()
+
+
+    public function index()
     {
-        return view("find");
-    }
+        $clinics = Clinic::with('doctors');
 
-    public function create()
-    {
-        return view("find.create");
-    }
+        $clinics->when(request('name'), function($q) {
+            $q->where('name', 'LIKE', '%' . request('name') . '%');
+        });
 
-    public function store()
-    {
+        $clinics->when(request('city'), function($q) {
+            $q->where('city', request('city'));
+        });
 
-        
-        $clinic = new clinic;
-        $clinic -> name = request('clinic_name');
-        $clinic -> phone_number = request('clinic_phone_number');
-        $clinic ->save();
+        $clinics->when(request('area_id'), function($clinicQuery) {
+                $clinicQuery->where('area_id', request('area_id'));
+        });
 
+        $clinics->when(request('specialization_id'), function($clinicQuery) {
+            $clinicQuery->where('specialization_id', request('specialization_id'));
+    });
 
-
-        $area = new area;
-        $area -> name = request('area');
-        $area ->save();
- 
-
-        $doctor = new doctor;
-        $doctor -> name = request('doctor_name');
-        $doctor ->save();
-
-
-        $specialization = new specialization;
-        $specialization -> name = request('doctor_specialization');
-
-
-        return redirect('/home');
+        return view('find', [
+            'clinics' => $clinics->get(),
+            'areas' => Area::all(),
+            'specialization' => specialization::all()
+        ]);
     }
 
 
-    public function find_result(){
+public function show()
+{
+   
 
-        return view("find.find_result");
+return view('find', [
+    'areas' => Area::all(),
+    'specialization' => specialization::all(),
 
-    }
+]); 
+
+}
+
+    
+
+   
+
+    
 
     
     
