@@ -49,7 +49,7 @@ class AreaController extends Controller
         ]);
 
         $area = new Area;
-        $area -> name = $request->name;
+        $area ->name = request('name');
         $area ->save();
         return redirect()->route('area.page');
 
@@ -58,14 +58,22 @@ class AreaController extends Controller
 public function edit($id)
 {
     return view('areas.edit' ,[
-        'areas' => Area::all(),
         'area' => Area::find($id)
-
-
     ]);
 
   
 
+}
+public function update($id){
+   request()->validate([
+
+            'name' => 'required',
+        ]);
+
+        $area = new Area;
+        $area->name = request('name');
+        $area->save();
+        return redirect()->route('area.page'); 
 }
 
 public function destroy($id){

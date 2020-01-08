@@ -49,7 +49,8 @@ Route::group([
             Route::get('/', 'Admin\AreaController@index')->name('index');
             Route::get('/page', 'Admin\AreaController@page')->name('page');
             Route::get('/edit/{id}', 'Admin\AreaController@edit')->name('edit');
-            Route::delete('/{id}', 'Admin\AreaController@destroy')->name('delete');
+            Route::patch('/{id}','Admin\AreaController@update')->name('update');
+            Route::get('/{id}', 'Admin\AreaController@destroy')->name('delete');
 
 
         });
@@ -85,10 +86,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::get('therapists/create', 'TherapistController@create');//->middleware('auth-admin');
-Route::post('therapists', 'TherapistController@store');
+Route::get('therapists/create', 'TherapistController@create')->middleware('auth-admin');
+Route::post('therapists',       'TherapistController@store');
 
-Route::get('questions', 'QuestionController@index')->name('questions')->middleware('auth'); // getting patient's questions for them
+Route::get('questions',               'QuestionController@index')->name('questions')->middleware('auth'); // getting patient's questions for them
 Route::post('questions/{id}/replies', 'QuestionReplyController@store')->middleware('auth');
 
 // Route::get('clinics', 'ClinicController@index');

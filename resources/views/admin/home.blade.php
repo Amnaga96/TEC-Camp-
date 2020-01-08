@@ -54,10 +54,16 @@
                     @endif
                     <br>
                     <p class="text-size-2">your profile</p>
-                     <div class="btn button mb-3 pb-2 mt-3" style="border: 1px solid #22a391;"><a href="{{ url('admin/users/create') }}" class="text-info">Add new User</a></div>
-                     <div class="btn button mb-3 pb-2 mt-3" style="border: 1px solid #22a391;"><a href="{{ url('admin/users') }}" class="text-info">List Users</a></div>
+                     <div class="btn button mb-3 pb-2 mt-3" style="border: 1px solid #22a391;"><a href="{{ url('admin/users/create') }}" class="text-dark">Add new User</a></div>
+                     <div class="btn button mb-3 pb-2 mt-3" style="border: 1px solid #22a391;"><a href="{{ url('admin/users') }}" class="text-dark">List Users</a></div>
+                     <div class="btn button mb-3 pb-2 mt-3" style="border: 1px solid #22a391;"><a href="{{ url('admin/clinic/page') }}" class="text-dark">Clinics</a></div>
+                     <div  class="btn button mb-3 pb-2 mt-3"style="border: 1px solid #22a391;"><a href="{{ url('admin/area/page') }}" class="text-dark">Areas</a></div>
+                     <div  class="btn button mb-3 pb-2 mt-3" style="border: 1px solid #22a391;"><a href="{{ url('admin/specialization/page') }}" class="text-dark">Specializations</a></div>
+                     <div class="btn button mb-3 pb-2 mt-3" style="border: 1px solid #22a391;"><a href="{{ url('admin/doctor/page') }}" class="text-dark">Doctors</a></div>
+                     
+                     
                      <p>your email: {{ auth()->user()->email }} </p>
-                     <p>your account:<a href="{{ route('user-edit',auth()->user()->id) }}" class="text-info">account</a></div></p>
+                     <p>your account:<a href="{{ route('user-edit',auth()->user()->id) }}" class="text-dark">account</a></div></p>
                     </div>
                 </div>
             </div>

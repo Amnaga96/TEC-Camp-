@@ -18,8 +18,7 @@
         }
 </style>
 
-@extends('admin.layouts.admin')
-
+@extends('layouts.app_renamed')
 @section('content')
 
 
@@ -45,13 +44,13 @@
                     <td scope="col" class="text-info">{{$loop->index +1}}</td>
                     <td scope="col" class="text-info">{{$clinic->name}}</td>
                     <td scope="col" class="text-info">{{$clinic->phone_number}}</td>
-                    <td scope="col" class="text-info">@foreach ($clinic->Area as $Area ){{$Area->name}}@endforeach </td>
+                    <td scope="col" class="text-info">{{$clinic->area->name}}</td>
                     <td>
                         <a style="border: 1px solid #86e2d5;" class="btn button">Edit</a>
                         <a href="{{ route('clinic.delete',['id' => $clinic->id]) }}"  style="border: 1px solid #86e2d5;" class="btn button">Delete</a>
                     </td>
                 </tr>
-                          @endforeach
+            @endforeach
 
         </table>
     </div>

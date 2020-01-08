@@ -1,5 +1,5 @@
-@extends('admin.layouts.admin')
 
+@extends('layouts.app_renamed')
 @section('content')
 
     <a style="background-color:#86e2d5;" class="btn btn-lg" href="{{ url('admin/clinic/page') }}">Clinics</a>
