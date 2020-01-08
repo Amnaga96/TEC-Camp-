@@ -274,6 +274,10 @@ body {
 .signup-image {
   margin: 0 55px; 
   border-top-right-radius: 50px; 
+  orientation: center;
+}
+.article-form-image{
+  margin-bottom: 50px;
 }
 .signup .signin{
   margin: 5px;
@@ -476,12 +480,11 @@ label.valid {
 padding-top : 5px;
 }
 
-.signin-content {
+.signin-content ,.signup-content ,.article_content {
   padding-top: 67px;
   padding-bottom: 87px; }
-  .signup-content {
-    padding-top: 67px;
-    padding-bottom: 87px; }
+  
+   
 
 .social-login {
   align-items: center;

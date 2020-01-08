@@ -22,31 +22,38 @@
     <body>
         <section>
             <div class="container article_content">
-                <h2 class="form-title">Edit : </h2>
-                <form action="create-article" method="POST" class="article-form" enctype="multipart/form-data" >
+                <form action="{{url('article/'.$article-> id)}}" method="POST" class="article-form" enctype="multipart/form-data" >
                     @csrf
-                        <div class="form-group">
-                            <label for="a_title "><i class=" zmdi zmdi-format-subject"></i></label>
-                            <input   type="text " name="title" class="form-control col-6" style="border: 1px solid" id="a_title" value="{{$articles-> title}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="a_body"><i class="zmdi zmdi-collection-text"></i></label>
-                            <textarea type="text" name="body" id="a_body" style="border: 1px solid" {{$articles-> body}}></textarea>
-                        </div>
-                        <div>
-                            <label class="form-group"><i class="zmdi zmdi-collection-image"></i></label>
-                            <input type="file" name="image_link" class="form-control col-6"{{$articles-> image_link}}>
-                            @if ($product->image)
-                                <img src="{{ asset($product->image_link) }}" alt="" width="250">
-                            @endif
-                        </div>
-                        <div class=" form-group">
-                            <label for="editor_info "><i class="zmdi zmdi-edit material-icons-name"></i></label> 
-                            <input  type="string" name="editor_name" class="form-control col-6 " style="border: 1px solid" id="editor_info" {{$articles-> editor_name}} >
-                        </div>
-                        <div class="form-group form-button">
-                                <input type="submit" name="a_button" id="a_button" class="form-submit" value="Save edits !"/>
-                        </div>
+                    @method('PATCH') 
+                    <div class="row"> 
+                        <h2 class="form-title"> Edit this article : </h2>
+                    </div>
+                    <div class="form-group row">
+                        <h4>Title:</h4>
+                        <input type="text " name="title" class="form-control col-6" style="border: 1px solid" id="a_title" value="{{$article-> title}}">
+                    </div>
+                    <div class="form-group row">
+                        <h4>Article body:</h4>
+                        <textarea type="text" name="body" id="a_body" class="form-control col-6" rows="5" style="border: 1px solid">{{$article-> body}}</textarea>
+                    </div>
+                    <div class="form-group row">
+                        <h4>Article image:</h4>
+                            <center>
+                                @if ($article->image_link)
+                                    <img src="{{ asset($article-> image_link) }}" alt="Article Image!" class="article-form-image m-b-5" style="border: 1px solid" width="350">
+                                    <br><br>
+                                @endif
+                            </center>
+                        <input type="file" name="image_link" class="form-control col-6 m-5" style="border: 1px solid">
+                    </div>
+                    <div class=" form-group row">
+                        <h4 class=>Editor name :</h4> 
+                        <input  type="string" name="editor_name" class="form-control col-6 " style="border: 1px solid" id="editor_info" value="{{$article-> editor_name}}" >
+                    </div>
+                    <div class="form-group form-button row">
+                        <input type="submit" name="a_button" id="a_button" class="form-submit" value="Save edits !"/>
+                    </div>
+                    </div>
                 </form>
             </div>
         </section>

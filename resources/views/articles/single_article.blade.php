@@ -1,8 +1,24 @@
 <html>
   <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/articles/style.css')}}">
+   <!-- Stylesheet -->     
+         <link rel="stylesheet" href="{{asset('css/articles/style.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/magnific-popup.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/jquery-ui.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/owl.theme.default.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/mediaelementplayer.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/animate.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/fl-bigmug-line.css')}}">
+        <link rel="stylesheet" type="{{asset('css/articles/text/css" href="css/responsive.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles.css')}}">
+      <!-- Bootstrap -->
+        <link rel="stylesheet" href="{{asset('css/articles/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/bootstrap-datepicker.css')}}">
+        <script type="text/javascript" src="{{asset('js/articles/bootstrap.js')}}"></script>     
+      <!-- Font Icon -->
+        <link rel="stylesheet" href="{{asset('fonts/articles/material-icon/css/material-design-iconic-font.min.css')}}">
+        <link rel="stylesheet" href="{{asset('fonts/articles/flaticon/font/flaticon.css')}}">
+        <link rel="stylesheet" href="{{asset('fonts/articles/icomoon/style.css')}}">
     
   </head>
 
@@ -26,11 +42,11 @@
         <!--THE COL 2-->
         <div style=" margin-top: 70px;" class="col-md-3 ml-auto">
              <header>
-               <h2 class="article-title">{{$article->title }}</h2>
+               <h2 class="article-title">{{$article->title}}</h2>
              </header>
              <footer><small>{{$article->updated_at}}</small></footer>
              <br>
-             <div class="lead">{{$article->body}} <hr> </div>   
+             <div class="lead">{{$article->body}}<hr></div>   
         </div>
       </div>
     </div>
@@ -40,16 +56,33 @@
       <div class="mb-5">
           <h3 class="h5 text-black mb-3 sub_article"><strong>You may also like to see</strong></h3>
           <ul class="list-unstyled">
-          @foreach ( $otherArticles as $article)
-              <li class="mb-2"><a href="{{url("article/$article->id")}}">{{$article->title}}</a></li>
-          @endforeach
-              
+            @foreach ( $otherArticles as $article)
+                <li class="mb-2"><a href="{{url("article/$article->id")}}">{{$article->title}}</a></li> 
+                {{-- {{route('show',['a_id'=>$article->id])}} --}}
+            @endforeach
           </ul>
       </div>
-    
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+  
+<!-- JQuery, js, and Bootstrap Plugins -->
+          <!-- Native javascript --> 
+            <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script> 
+            <script src="{{asset('js/articles/mediaelement-and-player.min.js')}}"></script>
+            <script src="{{asset('js/articles/jquery-migrate-3.0.1.min.js')}}"></script>  
+            <script src="{{asset('js/articles/circleaudioplayer.js')}}"></script>
+            <script src="{{asset('js/articles/owl.carousel.min.js')}}"></script>
+            <script src="{{asset('js/articles/popper.min.js')}}"></script> 
+            <script src="{{asset('js/articles/main.js')}}"></script>
+            <script src="{{asset('js/articles/aos.js')}}"></script>
+          <!-- JQuery script -->   
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+            <script type="{{asset('text/javascript" src="articles/js/jquery.1.11.1.js')}}"></script> 
+            <script src="{{asset('js/articles/jquery.magnific-popup.min.js')}}"></script>
+            <script src="{{asset('js/articles/jquery.countdown.min.js')}}"></script>
+            <script src="{{asset('js/articles/jquery.stellar.min.js')}}"></script>
+            <script src="{{asset('js/articles/jquery-3.3.1.min.js')}}"></script>
+            <script src="{{asset('js/articles/jquery-ui.js')}}"></script>
+          <!-- Bootstrap script -->
+            <script type="{{asset('text/javascript" src="articles/js/bootstrap.js')}}"></script> 
+            <script src="{{asset('js/articles/bootstrap-datepicker.min.js')}}"></script>
+            <script src="{{asset('js/articles/bootstrap.min.js')}}"></script>  </body>
 </html>

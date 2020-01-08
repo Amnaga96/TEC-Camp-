@@ -12,7 +12,6 @@
                   <div class="showcase-content">
                       <h2>FIND A THIRAPIST!</h2>
                       <p>Here in health care we can help you to find the avilible therapists in the country.</p>
-  
   <form>
   @csrf
                                  <select class="form-control form-control-lg " style="border-color:#86e2d5 ;" name="area_id">

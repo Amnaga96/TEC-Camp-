@@ -20,31 +20,33 @@
         <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
     </head>
     <body>
-        <section>
-            <div class="container article_content">
-                <h2 class="form-title">Writw an article</h2>
-                <form action="create-article" method="POST" class="article-form" enctype="multipart/form-data" >
+        <section class="create-article-form">
+            <div class="container article_content m-5 ">
+                <form action="create-article " method="POST" class="article-form row " enctype="multipart/form-data" >
                     @csrf
-                        <div class="form-group">
-                            <label for="a_title "><i class=" zmdi zmdi-format-subject"></i></label>
-                            <input   type="text " name="title" class="form-control col-6" style="border: 1px solid"placeholder="Article title" id="a_title ">
-                        </div>
-                        <div class="form-group">
-                            <label for="a_body"><i class="zmdi zmdi-collection-text"></i></label>
-                            <textarea type="text" name="body" id="a_body" style="border: 1px solid " placeholder="Article text"></textarea>
-                        </div>
-                        <div>
-                            <label class="form-group"><i class="zmdi zmdi-collection-image"></i></label>
-                            <input type="file" name="image_link" class="form-control col-6" placeholder="upload image" >
-                        </div>
-                        <div class=" form-group">
-                            <label for="editor_info "><i class="zmdi zmdi-edit material-icons-name"></i></label> 
-                            <input  type="string" name="editor_name" class="form-control col-6 " style="border: 1px solid"placeholder="Editor Name" id="editor_info" >
-                        </div>
-                        <div class="form-group form-button">
-                                <input type="submit" name="a_button" id="a_button" class="form-submit" value="Save it !"/>
-                        </div>
-                </form>
+                    <div class="row">
+                        <h2 class="form-title col-6 mx-auto"><strong> Write an article</strong></h2> 
+                    </div>
+                    <div class="form-group row">
+                        Title   <label for="a_title "><i class=" zmdi zmdi-format-subject col-2"></i></label> <br>
+                        <input type="text " name="title" class="form-control col-5" style="border: 1px solid" placeholder="Article title" id="a_title ">
+                    </div>
+                    <div class="form-group row">
+                        <label for="a_body"><i class="zmdi zmdi-collection-text col-1"></i></label> <br>
+                        <textarea type="text" name="body" id="a_body" class="form-control col-5" rows="5" style="border: 1px solid " placeholder="Article text"></textarea>
+                    </div>
+                    <div class="form-group row">
+                        <label for="article_image"><i class="zmdi zmdi-collection-image"></i></label> <br>
+                        <input type="file" name="image_link" class="form-control col-5" placeholder="upload image" >
+                    </div>
+                    <div class=" form-group row">
+                        <label for="editor_info "><i class="zmdi zmdi-edit material-icons-name"></i></label> <br> 
+                        <input  type="string" name="editor_name" class="form-control col-5 " style="border: 1px solid"placeholder="Editor Name" id="editor_info" >
+                    </div>
+                    <div class="form-group form-button row">
+                        <input type="submit" name="a_button" id="a_button" class="form-submit" value="Save it !"/>
+                    </div>
+                </form> 
             </div>
         </section>
          <!-- JQuery, js, and Bootstrap Plugins -->
