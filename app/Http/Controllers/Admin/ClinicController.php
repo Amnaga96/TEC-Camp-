@@ -9,7 +9,6 @@ use App\Clinic;
 use App\Area;
 
 
-$clinics = Clinic::with('doctors');
 
 class ClinicController extends Controller
 {
@@ -17,15 +16,16 @@ class ClinicController extends Controller
     public function page()
     {
 
-        $clinics = Clinic::All();
+        $clinics = Clinic::with('area')->get();
 
         return view('admin.find_feature.ClinicsPage', [
 
-            'clinics' => $clinics
+            'clinics' => $clinics,
+            
         ]);
 
     }
-
+    
 
     public function index()
     {

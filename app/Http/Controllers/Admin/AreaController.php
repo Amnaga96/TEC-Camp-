@@ -50,7 +50,7 @@ class AreaController extends Controller
 
         $area = new Area;
         $area -> name = $request->name;
-        $doctor ->save();
+        $area ->save();
         return redirect()->route('area.page');
 
     }

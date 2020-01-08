@@ -10,7 +10,7 @@
     @csrf
  doctor's name : <input class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" type="text" name="name" > <br><br>
  
-                                  <select class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" name="specialization">
+                                  <select  class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;" name="specialization">
                                       <option>select specialization</option>
                                      
                                         @foreach ($specializations as $specialization)
@@ -20,7 +20,7 @@
 
                                       </select></p>
 
-                                       <select class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;"  name="clinic">
+                                       <select  class="mt-2 form-control form-control-lg " style="border-color:#86e2d5 ;"  name="clinic">
                                       <option>select clinic</option>
                                      
                                         @foreach ($clinics as $clinic)

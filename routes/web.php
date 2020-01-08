@@ -62,9 +62,9 @@ Route::group([
 Route::get('clinics', 'ClinicController@index')->name('clinics');
 
 
-Route::get('/find','FindController@find');
-Route::get('/find/create','FindController@create');
-Route::post('/find/store','FindController@store');
+Route::get('/find','FindController@index');
+
+
 Route::post('/find/find_result','FindController@find_result');
 
 

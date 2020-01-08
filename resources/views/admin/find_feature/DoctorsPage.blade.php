@@ -44,8 +44,13 @@
                 <tr class="text-center">
                     <td scope="col" class="text-info">{{$loop->index +1}}</td>
                     <td scope="col" class="text-info">{{$doctor->name}}</td>
-                    <td scope="col" class="text-info"></td>
-                    <td scope="col" class="text-info"></td>
+                    
+                        
+                    <td scope="col" class="text-info">@foreach ($doctor->Specialization as $Specialization ){{$Specialization->name}}@endforeach </td>
+                    <td scope="col" class="text-info">@foreach ($doctor->clinics as $clinic ){{$clinic->name}}@endforeach </td>
+
+                    
+
                     <td>
                         <a style="border: 1px solid #86e2d5;"  class="btn button">Edit</a>
                         <a href="{{ route('doctor.delete',['id' => $doctor->id]) }}"  style="border: 1px solid #86e2d5;" class="btn button">Delete</a>

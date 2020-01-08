@@ -14,9 +14,9 @@ class DoctorController extends Controller
 
     public function page()
     {
-
-        $doctors = Doctor::All();
         
+
+        $doctors = Doctor::with('specialization','clinics')->get();        
         return view('admin.find_feature.DoctorsPage', [
 
             'doctors' => $doctors
@@ -39,6 +39,9 @@ class DoctorController extends Controller
 
         request()->validate([
             'name' => 'required',
+            
+
+
             
         ]);
 

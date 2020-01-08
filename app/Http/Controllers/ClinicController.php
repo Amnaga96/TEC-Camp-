@@ -28,9 +28,12 @@ class ClinicController extends Controller
                 $clinicQuery->where('area_id', request('area_id'));
         });
 
+     
+
         return view('find', [
             'clinics' => $clinics->get(),
             'areas' => Area::all()
+            
         ]);
     }
 
