@@ -7,6 +7,7 @@ Route::post('patient/register', 'API\PatientRegisterController@register');
 Route::post('/login', 'API\LoginController@login');
 
 
+Route::get('/find-therapist','API\FindTherapistController@index');
 
     Route::post('user/auth/login', 'API\user\AuthController@login');
     Route::post('user/auth/logout', 'API\user\AuthController@logout') ->middleware('auth:api');

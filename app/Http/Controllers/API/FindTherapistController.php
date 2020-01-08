@@ -14,7 +14,7 @@ class FindTherapistController extends Controller
 {
     public function index()
     {
-        $clinics = Clinic::with('doctors');
+        $clinics = Clinic::with('doctors','area');
 
         
 

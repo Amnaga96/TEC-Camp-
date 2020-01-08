@@ -44,11 +44,24 @@ class FindController extends Controller
 
 public function show()
 {
-   
+
+    $clinics = Clinic::with('doctors');
+
+    
+
+    $clinics->when(request('area_id'), function($clinicQuery) {
+            $clinicQuery->where('area_id', request('area_id'));
+    });
+
+    $clinics->when(request('specialization_id'), function($clinicQuery) {
+        $clinicQuery->where('specialization_id', request('specialization_id'));
+});
 
 return view('find', [
     'areas' => Area::all(),
     'specialization' => specialization::all(),
+    'clinics' => $clinics->get(),
+
 
 ]); 
 
