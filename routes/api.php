@@ -7,11 +7,8 @@ Route::post('patient/register', 'API\PatientRegisterController@register');
 Route::post('/login', 'API\LoginController@login');
 
 
-<<<<<<< HEAD
 Route::get('/find-therapist','API\FindTherapistController@index');
-=======
 Route::post('patient/register', 'API\PatientRegisterController@register');
->>>>>>> 0bc91f57427aab87378f72b33403b285c9e5864c
 
 // Route::post('/login', 'API\LoginController@login');
 // +
