@@ -58,8 +58,8 @@ Route::group([
 'prefix' => '/find',
 'as' => 'find.'
 ],function(){
-    Route::post('/index','FindController@index')->name('index')->middleware('auth');
-    Route::get('/','FindController@show')->name('find');
+    Route::post('/index','FindController@index')->name('index');
+    Route::get('/','FindController@show')->name('find')->middleware('auth');
 });
 
 
