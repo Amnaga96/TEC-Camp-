@@ -53,7 +53,7 @@
                     
 
                     <td>
-                        <a style="border: 1px solid #86e2d5;"  class="btn button">Edit</a>
+                        <a style="border: 1px solid #86e2d5;" href="{{ route('doctor.edit',['id' => $doctor->id]) }}" class="btn button">Edit</a>
                         <a href="{{ route('doctor.delete',['id' => $doctor->id]) }}"  style="border: 1px solid #86e2d5;" class="btn button">Delete</a>
                     </td>
                 </tr>

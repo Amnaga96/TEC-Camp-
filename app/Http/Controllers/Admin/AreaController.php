@@ -64,7 +64,7 @@ public function edit($id)
   
 
 }
-public function update($id){
+public function update( $id){
    request()->validate([
 
             'name' => 'required',

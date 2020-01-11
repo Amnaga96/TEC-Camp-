@@ -54,6 +54,27 @@ class DoctorController extends Controller
          return redirect()->route('clinic.index');
 
     }
+    public function edit($id){
+        return view('doctors.edit', [
+            'doctor'=>Doctor::find($id)
+            ]);
+
+    } 
+    public function update($id)
+    {
+        request()->validate([
+            'name' => 'required', 
+        ]);
+
+        $doctor = new Doctor;
+        $doctor ->name= request('name');
+        $doctor ->save();
+        $doctor->specialization()->sync($request->specialization);
+        $doctor->clinics()->sync($request->clinic);
+
+         return redirect()->route('clinic.index');
+
+    }
 
     public function destroy($id){
 
