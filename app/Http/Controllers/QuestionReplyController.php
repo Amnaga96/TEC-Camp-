@@ -21,7 +21,6 @@ class QuestionReplyController extends Controller
 
         $question = Question::find($id);
         $question->replies()->save($reply);
-
         return redirect()->back();
     }
 }

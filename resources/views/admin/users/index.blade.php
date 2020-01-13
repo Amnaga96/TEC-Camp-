@@ -17,11 +17,16 @@
         background-color: #22a391;
         }
 </style>
+
+
 @extends('layouts.app_renamed')
     @section('content')
 <div class="container">
-    <div class="btn button mb-3 pb-2 " style="border: 1px solid #22a391;">
+    <div class="btn button mb-3 pb-2" style="border: 1px solid #22a391;">
      <a href="{{ url('admin/users/create') }}" class="text-info">Add new User</a></div>
+    <div class="btn button mb-3 pb-2 " style="border: 1px solid #86e2d5;">
+    <a href="{{ url('admin/home') }}" style="color:black;">your profile</a></div>
+
     {{--  table to list users  --}}
     <div class="mt-3 mb-3 text-center ">
     <div class="reponsive-table">

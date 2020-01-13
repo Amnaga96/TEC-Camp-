@@ -36,6 +36,7 @@
     @section('content')
 <div class="container">
 <div class="btn button mb-3 pb-2 " style="border: 1px solid #22a391;"><a href="{{ url('admin/users') }}" class="text-info">Users</a></div>
+     <div class="btn button mb-3 pb-2 " style="border: 1px solid #86e2d5;"><a href="{{ url('admin/home') }}" style="color:black;">your profile</a></div>
 
 <div class="bg-img">
 <div class="mt-3 mb-3 text-center">

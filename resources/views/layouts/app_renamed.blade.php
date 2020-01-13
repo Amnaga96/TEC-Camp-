@@ -20,7 +20,7 @@ background: #000;
 
 
   <nav class=" black sticky-top" >
-    <nav class="sticky-top navbar mb-5 navbar-expand-lg navbar-light  pull-right"  >
+    <nav class="sticky-top navbar  navbar-expand-lg navbar-light  pull-right"  >
 <div class="container">
         <a style="color: #86e2d5;  margin-top: 3px;" class="navbar-brand" href="{{  url('/') }}"><p>utalk</p> </a>
 
@@ -35,7 +35,7 @@ background: #000;
               <a style= "font-size: 14.5px; color: silver;" class="nav-link" href="{{  url('/') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li  class="nav-item">
-              <a style="font-size: 14.5px; color: silver;"  class="nav-link" href="#about-section">About</a>
+              <a style="font-size: 14.5px; color: silver;"  class="nav-link" href="{{  url('/#about-section') }}">About</a>
             </li>
             <li class="nav-item">
                 <a style="font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/ask') }}">get help</a>
@@ -44,10 +44,10 @@ background: #000;
                 <a style="font-size: 14.5px; color: silver;" class="nav-link"  href="{{ url('/find') }}">find a thirapist</a>
               </li>
               <li  class="nav-item">
-                  <a style="font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/blog')}}">Our blog</a>
+                  <a style="font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/ blog')}}">Our blog</a>
                 </li>
                 <li class="nav-item">
-                    <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="#contact-section">Contact us</a>
+                    <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/#contact-section')}}">Contact us</a>
                   </li>
                   @guest
                   <li class="nav-item">
@@ -55,8 +55,19 @@ background: #000;
                     </li>
                     @else
                     <li class="nav-item">
-                        <a style=" color: #86e2d5;" href="{{ url('questions') }}" class=" nav-link">Questions</a>
+                        <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('questions') }}" class=" nav-link">Questions</a>
                     </li>
+                    <ul class="navbar-nav mr-auto">
+                        
+                        <li class="nav-item">
+                            <a href="{{ url('admin/clinic') }}" class="nav-link">find feature</a>
+                        </li>
+                    </ul>
+                    @if (auth()->user()->user_type == 'admin')
+                    <li class="nav-item">
+                    <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/admin/home')}}">your profile</a>
+                  </li>
+                   @endif
                     <li class="nav-item dropdown">
                         <a style=" color: #86e2d5;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
@@ -83,11 +94,10 @@ background: #000;
 
 
 
-      <div class="container">
       <!--PUT YOUR CONTENT HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
         @yield('content')
-        </div>
+        
 
 
 
@@ -105,7 +115,7 @@ background: #000;
 
   class="footerr">
 
-     <center><p class="footer" style="font-size: 13.5px; color: rgb(169, 166, 166); margin-top: 10px;">Copyright &copy; 2019  health care.   Design by <a style=" color: #86e2d5;" href="team" rel="nofollow">TEAM</a></p></center>
+     <center><p class="footer" style="font-size: 13.5px; color: rgb(169, 166, 166); margin-top: 10px;">Copyright &copy; 2019  health care.   Design by <a style=" color: #86e2d5;" href="{{ url('/#team-section')}}" rel="nofollow">TEAM</a></p></center>
   </div>
 <!--END OF FOOTER-->
 
