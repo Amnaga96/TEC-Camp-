@@ -11,7 +11,6 @@ class QuestionController extends Controller
 {
     public function index(Request $request)
     {
-        // $user =  auth()->user();
         $user = User::first();
 
         if ($user->user_type == 'patient') {
@@ -30,16 +29,16 @@ class QuestionController extends Controller
             'title' => 'required',
             'body' => 'required',
             'therapist' => 'required',
-            // 'patient' => 'required'
         ]);
         $ques = new Question();
         $ques->title= request('title');
         $ques->body= request('body');
         $ques->therapist_id = request('therapist');
-        $ques->patient_id = auth()->id();
+        $ques->patient_id = Question()->first();
         $ques->save();
 
-        return redirect()->route('questions');
+        // return redirect()->route('questions');
+        return $ques;
     }
 
     public function show($qid)
