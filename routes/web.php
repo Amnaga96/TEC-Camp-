@@ -63,7 +63,11 @@ Route::group([
 'as' => 'find.'
 ],function(){
     Route::post('/index','FindController@index')->name('index');
+<<<<<<< HEAD
+    Route::get('/','FindController@show')->name('find');
+=======
     Route::get('/','FindController@show')->name('find')->middleware('auth');
+>>>>>>> 49e391cd0e4c04b261b8f8f885ea7186dfd4c564
 });
 
 
