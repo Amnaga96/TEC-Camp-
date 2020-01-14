@@ -4,12 +4,14 @@ Route::group([
 'prefix' => 'admin/clinic',
 'as' => 'clinic.'
 ],function(){
-    Route::get('/create', 'Admin\ClinicController@create')->name('create')->middleware('auth-admin');
+    Route::get('/create', 'Admin\ClinicController@create')->name('create')->middleware('auth');
     Route::post('/store', 'Admin\ClinicController@store')->name('store');
-    Route::get('/', 'Admin\ClinicController@index')->name('index')->middleware('auth-admin');
-    Route::get('/page', 'Admin\ClinicController@page')->name('page')->middleware('auth-admin');
-    Route::get('/{id}', 'Admin\ClinicController@destroy')->name('delete');
-
+    Route::get('/', 'Admin\ClinicController@index')->name('index')->middleware('auth');
+    Route::get('/page', 'Admin\ClinicController@page')->name('page')->middleware('auth');
+    Route::get('/delete/{id}', 'Admin\ClinicController@destroy')->name('delete');
+    Route::get('/edit/{id}', 'Admin\ClinicController@edit')->name('edit');
+    Route::patch('/{id}', 'Admin\ClinicController@update')->name('update');
+    
 
 });
 
@@ -18,10 +20,10 @@ Route::group([
     'prefix' => 'admin/specialization',
     'as' => 'specialization.'
     ],function(){
-        Route::get('/create', 'Admin\SpecializationController@create')->name('create')->middleware('auth-admin');
+        Route::get('/create', 'Admin\SpecializationController@create')->name('create')->middleware('auth');
         Route::post('/store', 'Admin\SpecializationController@store')->name('store');
-        Route::get('/', 'Admin\SpecializationController@index')->name('index')->middleware('auth-admin');
-        Route::get('/page', 'Admin\SpecializationController@page')->name('page')->middleware('auth-admin');
+        Route::get('/', 'Admin\SpecializationController@index')->name('index')->middleware('auth');
+        Route::get('/page', 'Admin\SpecializationController@page')->name('page')->middleware('auth');
         Route::get('/{id}', 'Admin\SpecializationController@destroy')->name('delete');
     });
 
@@ -29,11 +31,13 @@ Route::group([
     'prefix' => 'admin/doctor',
     'as' => 'doctor.'
     ],function(){
-        Route::get('/create', 'Admin\DoctorController@create')->name('create')->middleware('auth-admin');
+        Route::get('/create', 'Admin\DoctorController@create')->name('create')->middleware('auth');
         Route::post('/store', 'Admin\DoctorController@store')->name('store');
-        Route::get('/', 'Admin\DoctorController@index')->name('index')->middleware('auth-admin');
-        Route::get('/page', 'Admin\DoctorController@page')->name('page')->middleware('auth-admin');
-        Route::get('/{id}', 'Admin\DoctorController@destroy')->name('delete');
+        Route::get('/', 'Admin\DoctorController@index')->name('index')->middleware('auth');
+        Route::get('/page', 'Admin\DoctorController@page')->name('page')->middleware('auth');
+        Route::get('/edit/{id}', 'Admin\DoctorController@edit')->name('edit');
+        Route::patch('/{id}', 'Admin\DoctorController@update')->name('update');
+        Route::get('/delete/{id}', 'Admin\DoctorController@destroy')->name('delete');
 
 
 
@@ -44,13 +48,13 @@ Route::group([
         'prefix' => 'admin/area',
         'as' => 'area.'
         ],function(){
-            Route::get('/create', 'Admin\AreaController@create')->name('create')->middleware('auth-admin');
+            Route::get('/create', 'Admin\AreaController@create')->name('create')->middleware('auth');
             Route::post('/store', 'Admin\AreaController@store')->name('store');
-            Route::get('/', 'Admin\AreaController@index')->name('index')->middleware('auth-admin');
-            Route::get('/page', 'Admin\AreaController@page')->name('page')->middleware('auth-admin');
-            Route::get('/edit/{id}', 'Admin\AreaController@edit')->name('edit')->middleware('auth-admin');
+            Route::get('/', 'Admin\AreaController@index')->name('index')->middleware('auth');
+            Route::get('/page', 'Admin\AreaController@page')->name('page')->middleware('auth');
+            Route::get('/edit/{id}', 'Admin\AreaController@edit')->name('edit')->middleware('auth');
             Route::patch('/{id}','Admin\AreaController@update')->name('update');
-            Route::get('/{id}', 'Admin\AreaController@destroy')->name('delete')->middleware('auth-admin');
+            Route::get('/delete/{id}', 'Admin\AreaController@destroy')->name('delete')->middleware('auth');
         });
 
 Route::group([
@@ -59,7 +63,11 @@ Route::group([
 'as' => 'find.'
 ],function(){
     Route::post('/index','FindController@index')->name('index');
+<<<<<<< HEAD
     Route::get('/','FindController@show')->name('find');
+=======
+    Route::get('/','FindController@show')->name('find')->middleware('auth');
+>>>>>>> 49e391cd0e4c04b261b8f8f885ea7186dfd4c564
 });
 
 
@@ -101,10 +109,10 @@ Route::post('questions/{id}/replies', 'QuestionReplyController@store')->middlewa
 // Route::get('clinics/create', 'ClinicController@create');
 // Route::post('clinics', 'ClinicController@store');
 
-Route::get('admin/users',        'Admin\UserController@index')->middleware('auth-admin');
-Route::get('admin/users/create', 'Admin\UserController@create')->middleware('auth-admin');
+Route::get('admin/users',        'Admin\UserController@index')->middleware('auth');
+Route::get('admin/users/create', 'Admin\UserController@create')->middleware('auth');
 Route::post('admin/users',       'Admin\UserController@store')->name('store')->middleware('auth');
-Route::get('admin/home',         'Admin\HomeController@index')->middleware('auth-admin');
+Route::get('admin/home',         'Admin\HomeController@index')->middleware('auth');
 Route::get('admin/edit/{id}',    'Admin\UserController@edit')->name('user-edit')->middleware('auth-admin');
 Route::patch('admin/{id}',       'Admin\UserController@update');//->name('user-update');
 Route::get('admin/delete/{id}',  'Admin\UserController@delete')->name('user-delete')->middleware('auth-admin');

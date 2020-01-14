@@ -44,7 +44,7 @@ background: #000;
                 <a style="font-size: 14.5px; color: silver;" class="nav-link"  href="{{ url('/find') }}">find a thirapist</a>
               </li>
               <li  class="nav-item">
-                  <a style="font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/blog')}}">Our blog</a>
+                  <a style="font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/ blog')}}">Our blog</a>
                 </li>
                 <li class="nav-item">
                     <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/#contact-section')}}">Contact us</a>
@@ -63,6 +63,11 @@ background: #000;
                             <a href="{{ url('admin/clinic') }}" class="nav-link">find feature</a>
                         </li>
                     </ul>
+                    @if (auth()->user()->user_type == 'admin')
+                    <li class="nav-item">
+                    <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/admin/home')}}">your profile</a>
+                  </li>
+                   @endif
                     <li class="nav-item dropdown">
                         <a style=" color: #86e2d5;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
