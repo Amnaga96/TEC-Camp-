@@ -11,7 +11,7 @@ Route::group([
     Route::get('/delete/{id}', 'Admin\ClinicController@destroy')->name('delete');
     Route::get('/edit/{id}', 'Admin\ClinicController@edit')->name('edit');
     Route::patch('/{id}', 'Admin\ClinicController@update')->name('update');
-    
+
 
 });
 
@@ -70,7 +70,7 @@ Route::group([
 
 
 
-        
+
 Route::get('clinics', 'ClinicController@index')->name('clinics')->middleware('auth');
 
 Route::post('/find/find_result','FindController@find_result');

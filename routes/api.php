@@ -16,7 +16,7 @@ Route::post('patient/register', 'API\PatientRegisterController@register');
 //     Route::post('user/auth/logout', 'API\user\AuthController@logout') ->middleware('auth:api');
 //     //Route::post('user/auth/refresh', 'AuthController@refresh');
 //     Route::get('user/auth/me', 'API\user\AuthController@me');//->middleware('auth:api');
-   
+
 Route::get('/questions', 'API\QuestionController@index');
 Route::post('/questions', 'API\QuestionController@store');
 Route::get('/questions/{qid}', 'API\QuestionController@show');
