@@ -58,7 +58,7 @@ Route::group([
 'prefix' => '/find',
 'as' => 'find.'
 ],function(){
-    Route::post('/index','FindController@index')->name('index')->middleware('auth');
+    Route::post('/index','FindController@index')->name('index');
     Route::get('/','FindController@show')->name('find');
 });
 
