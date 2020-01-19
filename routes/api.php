@@ -22,5 +22,3 @@ Route::post('/questions', 'API\QuestionController@store');
 Route::get('/questions/{qid}', 'API\QuestionController@show');
 
 Route::post('/questions/{qid}/replies', 'API\QuestionReplyController@store');
-
-
