@@ -58,6 +58,8 @@
                     <td scope="col" class="text-info">{{$clinic->name}}</td>
                     <td scope="col" class="text-info">@foreach ($clinic->doctors as $doctor ){{$doctor->name}}@endforeach </td>
                     <td scope="col" class="text-info"></td>
+                    <td scope="col" class="text-info"></td>
+
                     <td scope="col" class="text-info"> {{$clinic->phone_number}} </td>
                 </tr>
                @endforeach

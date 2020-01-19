@@ -11,7 +11,7 @@ Route::group([
     Route::get('/delete/{id}', 'Admin\ClinicController@destroy')->name('delete');
     Route::get('/edit/{id}', 'Admin\ClinicController@edit')->name('edit');
     Route::patch('/{id}', 'Admin\ClinicController@update')->name('update');
-    
+
 
 });
 
@@ -63,14 +63,18 @@ Route::group([
 'as' => 'find.'
 ],function(){
     Route::post('/index','FindController@index')->name('index');
+<<<<<<< HEAD
+    Route::get('/','FindController@show')->name('find');
+=======
     Route::get('/','FindController@show')->name('find')->middleware('auth');
+>>>>>>> 49e391cd0e4c04b261b8f8f885ea7186dfd4c564
 });
 
 
 
 
 
-        
+
 Route::get('clinics', 'ClinicController@index')->name('clinics')->middleware('auth');
 
 Route::post('/find/find_result','FindController@find_result');
