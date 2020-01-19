@@ -32,14 +32,13 @@ class QuestionController extends Controller
 
     public function store(Request $request)
     {
-        //  Please add validation here later
-
         request()->validate([
             'title' => 'required',
             'body' => 'required',
             'therapist' => 'required',
-            // 'patient' => 'required'
+            'patient' => 'required'
         ]);
+
         $ques = new Question();
         $ques->title= request('title');
         $ques->body= request('body');

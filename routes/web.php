@@ -63,28 +63,12 @@ Route::group([
 'as' => 'find.'
 ],function(){
     Route::post('/index','FindController@index')->name('index');
-<<<<<<< HEAD
-    Route::get('/','FindController@show')->name('find');
-=======
     Route::get('/','FindController@show')->name('find')->middleware('auth');
->>>>>>> 49e391cd0e4c04b261b8f8f885ea7186dfd4c564
 });
-
-
-
-
-
 
 Route::get('clinics', 'ClinicController@index')->name('clinics')->middleware('auth');
 
 Route::post('/find/find_result','FindController@find_result');
-
-
-// Route::get('/ask', 'AskController@ask');
-Route::get('/', 'PagesController@index');
-Route::get('/ask', 'QuestionController@create')->middleware('auth');
-Route::post('/ask', 'QuestionController@store');
-Route::get('/questions/{qid}/show', 'QuestionController@show')->middleware('auth');
 
  //Articles Routes!
  Route::get('blog', 'ArticleController@index'); // showa the ganeral blog page
@@ -97,13 +81,22 @@ Route::get('/questions/{qid}/show', 'QuestionController@show')->middleware('auth
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::get('therapists/create', 'TherapistController@create')->middleware('auth-admin');
-Route::post('therapists',       'TherapistController@store');
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('questions',               'QuestionController@index')->name('questions')->middleware('auth'); // getting patient's questions for them
-Route::post('questions/{id}/replies', 'QuestionReplyController@store')->middleware('auth');
+// Route::get('/ask', 'AskController@ask');
+Route::get('/', 'PagesController@index'); // home page
+
+Route::get('/ask',                      'QuestionController@create')->middleware('auth');  // don't work
+Route::post('/ask',                     'QuestionController@store');                            // don't work
+Route::get('/questions/{qid}/show',     'QuestionController@show')->middleware('auth');
+Route::get('questions',                 'QuestionController@index')->name('questions')->middleware('auth'); // getting patient's questions for them
+Route::post('questions/{id}/replies',   'QuestionReplyController@store')->middleware('auth');
+
+
+
+// Route::get('/home', 'HomeController@index')->name('home')->middleware('auth'); un wanted dashboard
+
 
 // Route::get('clinics', 'ClinicController@index');
 // Route::get('clinics/create', 'ClinicController@create');
@@ -116,8 +109,11 @@ Route::get('admin/home',         'Admin\HomeController@index')->middleware('auth
 Route::get('admin/edit/{id}',    'Admin\UserController@edit')->name('user-edit')->middleware('auth-admin');
 Route::patch('admin/{id}',       'Admin\UserController@update');//->name('user-update');
 Route::get('admin/delete/{id}',  'Admin\UserController@delete')->name('user-delete')->middleware('auth-admin');
+// Route::get('therapists/create', 'TherapistController@create')->middleware('auth-admin');
+// Route::post('therapists',       'TherapistController@store');
+
 
 // contact form
-//   Route::get('/contact', 'ContactUSController@contactUS' );
-  Route::post('/contact', 'ContactUSController@contactSaveData')->name('contactus');
+//   Route::get('/contact',  'ContactUSController@contactUS' );
+   Route::post('/contact', 'MessageController@contactSaveData')->name('contactus');  // don't work
 

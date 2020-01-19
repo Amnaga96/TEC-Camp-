@@ -11,7 +11,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all()->groupBy('user_type');
-        // return $users;
+
         // filtering
 
         return view('admin.users.index', [
@@ -46,9 +46,6 @@ class UserController extends Controller
 
     public function edit($id)
     {
-
-        //return view('admin/edit', compact($id));
-
          return view('Admin.edit',  [
             'user'=>User::find($id)
         ]);
@@ -64,7 +61,8 @@ class UserController extends Controller
             'password' => 'required',
             'user_type' => 'required'
         ]);
-            $user = User::find($id);
+
+        $user = User::find($id);
         $user->user_type = request('user_type');
         $user->name = request('name');
         $user->email = request('email');

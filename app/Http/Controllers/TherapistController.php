@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Clinic;
 use App\User;
+use App\Clinic;
+use App\Question;
 use Illuminate\Http\Request;
 
 class TherapistController extends Controller
