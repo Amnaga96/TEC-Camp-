@@ -17,11 +17,12 @@ class QuestionReplyController extends Controller
         ]);
         $reply = new Reply;
         $reply->body = request('reply');
-        $reply->replier_id = auth()->id();
+        $reply->replier_id = auth('api')->id();
 
         $question = Question::find($id);
         $question->replies()->save($reply);
 
-        return redirect()->back();
+        // return redirect()->back();
+        return response()->json($reply);
     }
 }

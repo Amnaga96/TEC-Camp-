@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Clinic;
 use App\User;
+use App\Clinic;
+use App\Question;
 use Illuminate\Http\Request;
 
 class TherapistController extends Controller
@@ -30,7 +31,7 @@ class TherapistController extends Controller
             });
         });
 
-        // TODO - style the following view "don"
+
         return view('therapists.index', [
             'therapists' => $therapists->get(),
             'clinics' => Clinic::all()
@@ -49,7 +50,7 @@ class TherapistController extends Controller
 
     public function store()
     {
-        // TODO - Validation "don"
+
          request()->validate([
             'name' => 'required',
             'email' => 'required',
