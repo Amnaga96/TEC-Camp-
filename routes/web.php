@@ -1,5 +1,6 @@
 <?php
 
+
 Route::group([
 'prefix' => 'admin/clinic',
 'as' => 'clinic.'

@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
 
 // Route::get('/blog', 'API\ArticleController@index');
 // Route::get('/article/{a_id}', 'API\ArticleController@show');

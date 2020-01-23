@@ -5,14 +5,14 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Question;
-use App\User; 
+use App\User;
 
 class QuestionController extends Controller
 {
     public function index(Request $request)
     {
         $user = User::first();
-        // $questions = new Question();
+        $questions = new Question();
 
         if ($user->user_type == 'patient') {
             $questions = $user->asked_questions;
@@ -20,9 +20,9 @@ class QuestionController extends Controller
             $questions = $user->recevied_questions;
         }
 
-          return response()->json(Question::all());
+        //   return response()->json(Question::all());
             // return response()->json(User::all());
-        // return response()->json($questions);
+        return response()->json($questions);
 
     }
 
