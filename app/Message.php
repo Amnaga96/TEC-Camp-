@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ContactUs extends Model
+class Message extends Model
 {
-    public $table = 'contactus';
+    public $table = 'Message';
     public $fillable = ['name','email','message'];
 }

@@ -410,7 +410,6 @@
         </div>
       <div id="success"></div>
       <button onClick="sayDone()" type="submit" value="Send"class="btn btn-default">Send Message</button>
-      <button onClick="sayDone()" type="submit" value= "Send"class="btn btn-default">Send Message</button>
       </form>
       {{--  end of contact form  --}}
     </div>

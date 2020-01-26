@@ -10,11 +10,10 @@ class QuestionReplyController extends Controller
 {
     public function store($id)
     {
-        // return 1;
-        // TODO validation
             request()->validate([
             'reply' => 'required'
         ]);
+
         $reply = new Reply;
         $reply->body = request('reply');
         $reply->replier_id = auth()->id();
