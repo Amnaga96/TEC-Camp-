@@ -88,8 +88,8 @@ Auth::routes();
 // Route::get('/ask', 'AskController@ask');
 Route::get('/', 'PagesController@index'); // home page
 
-Route::get('/ask',                      'QuestionController@create')->middleware('auth');  // don't work
-Route::post('/ask',                     'QuestionController@store');                            // don't work
+Route::get('/ask',                      'QuestionController@create')->middleware('auth');  
+Route::post('/ask',                     'QuestionController@store');                            
 Route::get('/questions/{qid}/show',     'QuestionController@show')->middleware('auth');
 Route::get('questions',                 'QuestionController@index')->name('questions')->middleware('auth'); // getting patient's questions for them
 Route::post('questions/{id}/replies',   'QuestionReplyController@store')->middleware('auth');
@@ -116,5 +116,5 @@ Route::get('admin/delete/{id}',  'Admin\UserController@delete')->name('user-dele
 
 // contact form
 //   Route::get('/contact',  'ContactUSController@contactUS' );
-   Route::post('/contact', 'MessageController@contactSaveData')->name('contactus');  // don't work
+  Route::post('/contact', 'MessageController@contactSaveData')->name('contactus');  // don't work
 

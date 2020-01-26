@@ -18,7 +18,7 @@ Route::post('user/auth/logout', 'Api\AuthController@logout') ->middleware('auth:
 // Route::post('user/auth/refresh', 'AuthController@refresh');
 Route::get('user/auth/me', 'Api\AuthController@me');//->middleware('auth:api');
 
-Route::get('/questions', 'Api\QuestionController@index');
+Route::get('/questions', 'Api\QuestionController@index');  // getting patient's questions for them
 Route::post('/questions', 'Api\QuestionController@store');
 Route::get('/questions/{qid}', 'Api\QuestionController@show');
 
