@@ -556,6 +556,14 @@ padding-top : 5px;
   margin-top: 10px;
   border-top-left-radius: 50px; 
 }
+/* #carouselExampleCaptions img{
+  width:50%;
+  max-height: 100px !important;
+} */
+.carousel-inner > .carousel-item > a > img {
+  /* width:100%;
+  height: 100% ; */
+}
 
 @media screen and (max-width: 1200px) {
   .container {

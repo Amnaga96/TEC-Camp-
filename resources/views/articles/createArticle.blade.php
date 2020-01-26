@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="{{asset('fonts/material-icon/css/material-design-iconic-font.min.css')}}">
         <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
         <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
+        <title>Write new article</title>
     </head>
     <body>
         <section class="create-article-form">
@@ -28,12 +29,16 @@
                         <h2 class="form-title col-6 mx-auto"><strong> Write an article</strong></h2> 
                     </div>
                     <div class="form-group row">
-                        Title   <label for="a_title "><i class=" zmdi zmdi-format-subject col-2"></i></label> <br>
+                        <label for="a_title "><i class=" zmdi zmdi-format-subject col-2"></i></label> <br>
                         <input type="text " name="title" class="form-control col-5" style="border: 1px solid" placeholder="Article title" id="a_title ">
                     </div>
                     <div class="form-group row">
                         <label for="a_body"><i class="zmdi zmdi-collection-text col-1"></i></label> <br>
                         <textarea type="text" name="body" id="a_body" class="form-control col-5" rows="5" style="border: 1px solid " placeholder="Article text"></textarea>
+                    </div>
+                    <div class="form-group row">
+                        <label for="a_slogan "><i class=" zmdi zmdi-format-subject col-2"></i></label> <br>
+                        <input type="text " name="slogan" class="form-control col-5" style="border: 1px solid" placeholder="Article slogan" id="a_slogan ">
                     </div>
                     <div class="form-group row">
                         <label for="article_image"><i class="zmdi zmdi-collection-image"></i></label> <br>
