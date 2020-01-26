@@ -18,5 +18,7 @@ class UsersTableSeeder extends Seeder
         $admin->email = 'admin@admin.test';
         $admin->user_type = 'admin';
         $admin->save();
+
+        
     }
 }

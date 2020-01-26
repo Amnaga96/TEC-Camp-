@@ -62,7 +62,7 @@ Route::group([
 'prefix' => '/find',
 'as' => 'find.'
 ],function(){
-    Route::post('/index','FindController@index')->name('index');
+    Route::post('/','FindController@index')->name('index');
     Route::get('/','FindController@show')->name('find');
 });
 
