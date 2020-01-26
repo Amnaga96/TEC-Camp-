@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="{{asset('fonts/material-icon/css/material-design-iconic-font.min.css')}}">
         <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
         <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
+        <title> Editting article</title>
     </head>
     <body>
         <section>
@@ -35,6 +36,10 @@
                     <div class="form-group row">
                         <h4>Article body:</h4>
                         <textarea type="text" name="body" id="a_body" class="form-control col-6" rows="5" style="border: 1px solid">{{$article-> body}}</textarea>
+                    </div>
+                    <div class="form-group row">
+                        <h4>Slogan:</h4>
+                        <input type="text " name="slogan" class="form-control col-6" style="border: 1px solid" id="a_slogan" value="{{$article-> slogan}}">
                     </div>
                     <div class="form-group row">
                         <h4>Article image:</h4>

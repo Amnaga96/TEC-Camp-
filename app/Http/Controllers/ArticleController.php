@@ -29,6 +29,7 @@ class ArticleController extends Controller
             $ImagePath =  request('image_link')->store('public');
             $article->title = request('title');
             $article->body = request('body');
+            $article->slogan = request('slogan');
             $article->editor_name = request('editor_name');
             $article->image_link = str_replace('public','storage',$ImagePath);
             $article-> save();
@@ -63,14 +64,15 @@ class ArticleController extends Controller
         }
         $article->title = request('title');
         $article->body = request('body');
+        $article->slogan = request('slogan');
         $article->editor_name = request('editor_name');
         $article->save();
         return redirect('blog');
     }
 
-      public function destroy($a_id)
+      public function delete($a_id)
   { 
-      $article = Article::find($a_id)->delete();
+      Article::find($a_id)->delete();
       return redirect ('blog');    
     }
 }

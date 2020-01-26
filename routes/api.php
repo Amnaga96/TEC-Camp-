@@ -8,8 +8,8 @@
 // Route::post('/login', 'API\LoginController@login');
 
 
-// Route::get('/find-therapist','API\FindTherapistController@index');
-// Route::post('patient/register', 'API\PatientRegisterController@register');
+Route::get('/find-therapist','API\FindTherapistController@index');
+Route::post('patient/register', 'API\PatientRegisterController@create');
 
 // Route::post('/login', 'API\LoginController@login');
 // +
