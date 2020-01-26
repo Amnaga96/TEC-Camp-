@@ -11,13 +11,14 @@ class QuestionController extends Controller
     public function index(Request $request)
     {
         $user =  auth()->user();
+        // $questions = new Question ;
 
         if ($user->user_type == 'patient') {
             $questions = $user->asked_questions;
         } elseif ($user->user_type == 'therapist') {
             $questions = $user->recevied_questions;
         }
-
+        
         return view('questions.index', [
             'questions'=> $questions,
             ]);

@@ -1,23 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\API\user;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
     /**
      * Create a new AuthController instance.
      *
-     * @return void
-     
-    *public function __construct()
-    *{
-     *   $this->middleware('auth:api', ['except' => ['login']]);
-    *}*/
+    //  * @return void
+    //  */
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:api', ['except' => ['login']]);
+    // }
 
-    /**
+    /**  
      * Get a JWT via given credentials.
      *
      * @return \Illuminate\Http\JsonResponse
@@ -60,10 +61,10 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function refresh()
-    {
-        return $this->respondWithToken(auth()->refresh());
-    }
+    // public function refresh()
+    // {
+    //     return $this->respondWithToken(auth()->refresh());
+    // }
 
     /**
      * Get the token array structure.
