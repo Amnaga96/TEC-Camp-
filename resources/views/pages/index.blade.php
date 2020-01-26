@@ -166,7 +166,7 @@
 <div id="works-section">
   <div class="container"> <!-- Container -->
     <div class="section-title">
-      <a href="blog/blog.html"><h2>Our<strong>Blog</strong></h2></a>
+      <a href="blog"><h2>Our<strong>Blog</strong></h2></a>
       <hr>
       <div class="clearfix"></div>
     </div>

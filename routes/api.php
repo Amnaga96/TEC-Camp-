@@ -10,8 +10,6 @@ Route::get('/article/{a_id}', 'API\ArticleController@show');
 Route::get('/find-therapist','API\FindTherapistController@index');
 Route::post('patient/register', 'API\PatientRegisterController@create');
 
-// Route::post('/login', 'API\LoginController@login');
-// +
 Route::post('user/auth/login', 'API\user\AuthController@login');
 Route::post('user/auth/logout', 'API\user\AuthController@logout') ->middleware('auth:api');
 Route::post('user/auth/refresh', 'API\user\AuthController@refresh');
