@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 /* Navigation (navbar) styling */
-#nav.navbar{
+/* #nav.navbar{
   background-color: #d6e8ee !important;
   text-transform: uppercase;
 
@@ -8,14 +8,14 @@
 .nav-item{
   padding-right: 3%;
   padding-left: 3%;
-}
+} */
 /* ===================================================================================== */
 
 /* Base */
 body {
   line-height: 1.7;
   font-size: 1rem;
-  color: rgb(51, 51, 51);
+  color: rgb(98, 76, 76);
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
 
 .text-black {
@@ -30,7 +30,7 @@ body {
 /* Slide pics Style */
 .carousel-caption {
   color: #000 !important;
-  backgound-color: rgba(0, 0, 0, 0.198);
+  background-color: rgba(0, 0, 0, 0.198);
   }
   .carousel-indicators li .active{
     color: #1da0f2;
@@ -67,33 +67,38 @@ body {
   border: 1px solid #97cadb; }
 
 .site-block-27 ul li.active a, .site-block-27 ul li.active span {
-  background: #97cadb;
+  background: #000000;
   color: rgb(0, 0, 0);
   border: 1px solid transparent; }
     
 a{
-  color: #383a37 !important;
+  color: #000000 ;
   border-radius: 20px;
 }
 /* ===================================================================================== */
-
-
 /* Article blocks styling */
 
-.article-block{
-  background-color: #C4D5A7;
-}
+/* .article-block{
+  background-color: #97cadb !important;
+} */
 .article-block img{
   padding: .5cm ;
+  width: 500px;
+  height: 300px;
 }
 .sub_article{
-  background-color: rgb(167, 209, 213);
+  background-color: #97cadb;
 }
-.blog_header, .article-title{
+.blog_header{
   margin-top: 3%;
   padding: 3%;
   padding-left: 17%;
-  background-color: #d6e8ee;
+  background-color: #97cadb;
+}
+.article-image {
+  width :600px;
+  height: 300px;
+
 }
   /* Zmdi Icons  */
 .zmdi-facebook {

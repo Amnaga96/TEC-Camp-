@@ -77,7 +77,7 @@ Route::post('/find/find_result','FindController@find_result');
  Route::get('article/{a_id}', 'ArticleController@show')->name('show'); //show an article
  Route::get('article/edit/{a_id}', 'ArticleController@edit'); //to edit an article
  Route::patch('article/{a_id}', 'ArticleController@update');
- Route::get('article/{a_id}', 'ArticleController@destroy'); //to delete an article
+ Route::get('article/{a_id}', 'ArticleController@delete'); //to delete an article
 
 Auth::routes();
 
