@@ -19,6 +19,7 @@ class CreateClinicsTable extends Migration
             $table->string('place')->nullable();
             $table->UnsignedBigInteger('area_id');
             $table->string('phone_number');
+            $table->string('image_link');
             $table->timestamps();
         });
     }
