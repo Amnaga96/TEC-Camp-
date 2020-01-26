@@ -36,7 +36,7 @@ class QuestionController extends Controller
             'title' => 'required',
             'body' => 'required',
             'therapist' => 'required',
-            'patient' => 'required'
+
         ]);
 
         $ques = new Question();

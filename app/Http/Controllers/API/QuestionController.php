@@ -20,8 +20,8 @@ class QuestionController extends Controller
             $questions = $user->recevied_questions;
         }
 
-        //    return response()->json(Question::all());
-            return response()->json(User::all());
+          return response()->json(Question::all());
+            // return response()->json(User::all());
         // return response()->json($questions);
 
     }
