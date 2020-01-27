@@ -23,7 +23,7 @@
     <body>
         <section class="create-article-form">
             <div class="container article_content m-5 ">
-                <form action="create-article " method="POST" class="article-form row " enctype="multipart/form-data" >
+                <form action="" method="POST" class="article-form row " enctype="multipart/form-data" >
                     @csrf
                     <div class="row">
                         <h2 class="form-title col-6 mx-auto"><strong> Write an article</strong></h2> 
@@ -49,7 +49,7 @@
                         <input  type="string" name="editor_name" class="form-control col-5 " style="border: 1px solid"placeholder="Editor Name" id="editor_info" >
                     </div>
                     <div class="form-group form-button row">
-                        <input type="submit" name="a_button" id="a_button" class="form-submit" value="Save it !"/>
+                        <input type="submit" name="a_button" id="a_button" class="form-submit mx-auto" value="Save it !"/>
                     </div>
                 </form> 
             </div>

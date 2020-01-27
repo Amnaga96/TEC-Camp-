@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="{{asset('fonts/material-icon/css/material-design-iconic-font.min.css')}}">
         <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
         <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
-        <title> Editting article</title>
+        <title> Editing article</title>
     </head>
     <body>
         <section>

@@ -12,7 +12,7 @@ class ArticleController extends Controller
     {
         // request()->file('image');
         return view("articles.blog", [
-            'articles' => Article::all()
+            'articles'=> Article::all()
         ]);   
     }
 
@@ -37,13 +37,13 @@ class ArticleController extends Controller
             return redirect('blog');
     }
 
-    public function show($a_id)
-    {
-        return view("articles.single_article")->with( [
-            'article'=>Article::find($a_id),
-            'otherArticles'=> Article::take(6)->get()
-            ] );
-    } 
+    // public function show($a_id)
+    // {
+    //     return view("articles.single_article")->with( [
+    //         'article'=> Article::find($a_id),
+    //         'otherArticles'=> Article::take(6)->get()
+    //         ] );
+    // } 
 
      public function edit($id)
     {
@@ -70,9 +70,9 @@ class ArticleController extends Controller
         return redirect('blog');
     }
 
-      public function delete($a_id)
-  { 
-      Article::find($a_id)->delete();
-      return redirect ('blog');    
-    }
+//       public function delete($a_id)
+//   { 
+//       Article::find($a_id)->delete();
+//       return redirect ('blog');    
+//     }
 }
