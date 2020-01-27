@@ -13,6 +13,7 @@ class QuestionController extends Controller
     {
         $user = User::first();
         // $questions = new Question();
+        // $questions = Question::with('replies');
 
         if ($user->user_type == 'patient') {
             $questions = $user->asked_questions;
@@ -20,10 +21,12 @@ class QuestionController extends Controller
             $questions = $user->recevied_questions;
         }
 
-          return response()->json(Question::all());
-            // return response()->json(User::all());
-        // return response()->json($questions);
+        //   return response()->json(Question::all());
+        // return response()->json(User::all());
 
+        return response()->json($questions);
+        // return response()->json(Question::with('consulter', 'replies')->get());
+    
     }
 
     public function store(Request $request)
@@ -40,19 +43,15 @@ class QuestionController extends Controller
         $ques->body= request('body');
         $ques->therapist_id = request('therapist');
         $ques->patient_id = auth('api')->id();
-        //
-        // Question()->first();
+      
         $ques->save();
 
-        // return redirect()->route('questions');
-        // return $ques;
         return response()->json($ques);
     }
 
     public function show($qid)
     {
         $question =  Question::with('replies')->find($qid);
-        // return view('questions.show', compact('question'));
         return response()->json( Question::with('replies')->find($qid));
 
 
