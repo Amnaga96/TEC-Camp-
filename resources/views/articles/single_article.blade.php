@@ -52,11 +52,12 @@
             <div class="mb-5">    
               <h3 class="h5 text-black mb-3 sub_article"><strong>More articles </strong></h3>
               <ul class="list-unstyled">
-                @foreach ( $otherArticles as $article)
+                {{-- @foreach ( $otherArticles as $article)
                       <li class=" row mb-2">
                           {{-- <a href="{{route('show',['a_id'=>$article->id])}}">{{$article->title}}</a> --}}
+                          {{-- <a href="{{url('article/'.$article->id)}}">{{$article->title}}</a> --}}
                       </li>
-                @endforeach
+                @endforeach --}}
               </ul>
             </div>
           </div>

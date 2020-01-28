@@ -41,7 +41,7 @@
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active">                           
-                        {{-- <a href="{{route('show_article',['a_id'->$articles[0]->id])}}"> --}}
+                        {{-- <a href="{{url('article/'.$article[0]->id)}}"> --}}
                           <img src="{{ $articles[0]->image_link }}" class="d-block" alt="Article image !" width="100%" height="500px">
                           <div class="carousel-caption d-none d-md-block">
                             <strong><h3>{{ $articles[0]->title }}</h3></strong>
@@ -60,9 +60,9 @@
                       </div>
                       <div class="carousel-item">               
                         {{-- <a href="{{route('show',['a_id'=>$articles[0]->id])}}"> --}}
-                          <img src="{{ $articles[0]->image_link }}" class="d-block" alt="Article image !" width="100%" height="500px">
+                          <img src="{{ $articles[2]->image_link }}" class="d-block" alt="Article image !" width="100%" height="500px">
                           <div class="carousel-caption d-none d-md-block">
-                            <strong><h3>{{ $articles[0]->title }}</h3></strong>
+                            <strong><h3>{{ $articles[2]->title }}</h3></strong>
                             {{-- <p>{{$articles->title}}</p> <!-- Article slogan !--> --}}
                           </div>
                         </a>
@@ -97,8 +97,9 @@
             <div class="col-md-3 profile box" >
               <aside>
                 {{-- <a href="{{route('show',['a_id'=> $article-> id])}}" > --}}
+                <a href="{{url('article/'.$article->id)}}">
                   <img src="{{asset($article->image_link)}}" width="200px" alt="Article image!" class="img" title="{{$article->slogan}}"> <br>
-                {{-- </a> --}}
+                </a>
                 <span class="editor_label">By: {{$article->editor_name}}</span>
               </aside>
             </div>

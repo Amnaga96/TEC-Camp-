@@ -37,13 +37,13 @@ class ArticleController extends Controller
             return redirect('blog');
     }
 
-    // public function show($a_id)
-    // {
-    //     return view("articles.single_article")->with( [
-    //         'article'=> Article::find($a_id),
-    //         'otherArticles'=> Article::take(6)->get()
-    //         ] );
-    // } 
+    public function show($a_id)
+    {
+        return view("articles.single_article")->with( [
+            'article'=> Article::find($a_id),
+            'otherArticles'=> Article::take(6)->get()
+            ] );
+    } 
 
      public function edit($id)
     {
