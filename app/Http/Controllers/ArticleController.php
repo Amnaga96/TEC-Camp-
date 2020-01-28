@@ -34,7 +34,7 @@ class ArticleController extends Controller
             $article->image_link = str_replace('public','storage',$ImagePath);
             $article-> save();
 
-            return redirect('blog');
+            return redirect('articles/blog');
     }
 
     public function show($a_id)
@@ -67,12 +67,12 @@ class ArticleController extends Controller
         $article->slogan = request('slogan');
         $article->editor_name = request('editor_name');
         $article->save();
-        return redirect('blog');
+        return redirect('articles/blog');
     }
 
-//       public function delete($a_id)
-//   { 
-//       Article::find($a_id)->delete();
-//       return redirect ('blog');    
-//     }
+      public function delete($a_id)
+  { 
+      Article::find($a_id)->delete();
+      return redirect ('articles/blog');    
+    }
 }

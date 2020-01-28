@@ -28,20 +28,15 @@
         <div class="row">
           <div class="col-lg-8 article-block" >
               <figure>
-                <img src="{{asset($article->image_link)}}" alt="{{$article->title }}" class="img-fluid  article-image">
+                <img src="{{asset($article->image_link)}}" alt="{{$article->title }}" class="img-fluid  article-image mx-auto">
               </figure>
                 <h2 class="article-title"><strong>{{$article->title}}</strong></h2> <br>
               <footer>
                 <small>
                   By: {{$article->editor_name }}
                   | {{$article->updated_at}} |
-                  <a href= "{{url('article/edit/'. $article->id)}}" class="btn text-black"> Edit</a> | 
-                  {{-- <a href= "{{url('article/'. $article)}}" class="btn text-black">Delete</a>  --}}
-                  {{-- <form action="{{url('article/'.$article)}}" method="post" style="display;">
-                      @csrf
-                      @method('DELETE')
-                      <input type="submit" value="Delete" class="btn btn-group-sm">
-                  </form> --}} 
+                  <a href= "{{url('articles/article/edit/'. $article->id)}}" class="btn text-black"> Edit</a> | 
+                  <a href= "{{route('article.destroy',[ 'a_id' =>$article->id])}}" class="btn text-black" >delete</a>
                 </small>
               </footer>
               <br>
@@ -52,12 +47,11 @@
             <div class="mb-5">    
               <h3 class="h5 text-black mb-3 sub_article"><strong>More articles </strong></h3>
               <ul class="list-unstyled">
-                {{-- @foreach ( $otherArticles as $article)
+                 @foreach ( $otherArticles as $article)
                       <li class=" row mb-2">
-                          {{-- <a href="{{route('show',['a_id'=>$article->id])}}">{{$article->title}}</a> --}}
-                          {{-- <a href="{{url('article/'.$article->id)}}">{{$article->title}}</a> --}}
+                          <a href="{{route('article.show',['a_id'=>$article->id])}}">{{$article->title}}</a>
                       </li>
-                @endforeach --}}
+                @endforeach 
               </ul>
             </div>
           </div>

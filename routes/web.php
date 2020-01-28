@@ -58,27 +58,34 @@ Route::group([
             Route::get('/delete/{id}', 'Admin\AreaController@destroy')->name('delete')->middleware('auth');
         });
 
-Route::group([
+            Route::group([
 
-'prefix' => '/find',
-'as' => 'find.'
-],function(){
-    Route::post('/','FindController@index')->name('index');
-    Route::get('/','FindController@show')->name('find');
-});
+            'prefix' => '/find',
+            'as' => 'find.'
+            ],function(){
+                Route::post('/','FindController@index')->name('index');
+                Route::get('/','FindController@show')->name('find');
+            });
 
-Route::get('clinics', 'ClinicController@index')->name('clinics')->middleware('auth');
+            Route::get('clinics', 'ClinicController@index')->name('clinics')->middleware('auth');
 
-Route::post('/find/find_result','FindController@find_result');
+            Route::post('/find/find_result','FindController@find_result');
 
  //Articles Routes!
- Route::get('blog', 'ArticleController@index'); // showa the ganeral blog page
- Route::get('create-article', 'ArticleController@create');//create a new article
- Route::post('create-article', 'ArticleController@store'); //store a new article
- Route::get('article/{a_id}', 'ArticleController@show')->name('show'); //show an article
- Route::get('article/edit/{a_id}', 'ArticleController@edit'); //to edit an article
- Route::patch('article/{a_id}', 'ArticleController@update');
-//  Route::get('article/{a_id}', 'ArticleController@delete'); //to delete an article
+ 
+            Route::group([
+            'prefix' => 'articles',
+             'as' => 'article.'
+            ], function () {
+            Route::get('/blog', 'ArticleController@index'); // showa the ganeral blog page
+            Route::get('/create-article', 'ArticleController@create');//create a new article
+            Route::post('/create-article', 'ArticleController@store'); //store a new article
+            Route::get('/article/{a_id}', 'ArticleController@show')->name('show'); //show an article
+            Route::get('/article/edit/{a_id}', 'ArticleController@edit'); //to edit an article
+            Route::patch('/article/{a_id}', 'ArticleController@update');
+            Route::get('article/delete/{a_id}', 'ArticleController@delete')->name('destroy'); //to delete an article
+
+            });
 
 Auth::routes();
 

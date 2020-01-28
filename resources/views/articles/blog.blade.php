@@ -34,48 +34,48 @@
         <div class="site-section">
           <div class="row ">
             <div id="carouselExampleCaptions" class="carousel slide col-12 " data-ride="carousel">
-                    <ol class="carousel-indicators">
-                      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">                           
-                        {{-- <a href="{{url('article/'.$article[0]->id)}}"> --}}
-                          <img src="{{ $articles[0]->image_link }}" class="d-block" alt="Article image !" width="100%" height="500px">
-                          <div class="carousel-caption d-none d-md-block">
-                            <strong><h3>{{ $articles[0]->title }}</h3></strong>
-                            <p>{{$articles[0]->title}}</p> <!-- Article slogan !-->
-                          </div>                            
-                        </a>
-                      </div>
-                      <div class="carousel-item"> 
-                        {{-- <a href="{{route('show',['a_id'=>$articles[0]->id])}}"> --}}
-                          <img src="{{ $articles[1]->image_link }}" class="d-block" alrat="Article image !" width="100%" height="500px">
-                          <div class="carousel-caption d-none d-md-block">
-                            <strong><h3>{{ $articles[1]->title }}</h3></strong>
-                            <p>{{$articles[1]->title}}</p> <!-- Article slogan !-->
-                          </div>
-                        </a>
-                      </div>
-                      <div class="carousel-item">               
-                        {{-- <a href="{{route('show',['a_id'=>$articles[0]->id])}}"> --}}
-                          <img src="{{ $articles[2]->image_link }}" class="d-block" alt="Article image !" width="100%" height="500px">
-                          <div class="carousel-caption d-none d-md-block">
-                            <strong><h3>{{ $articles[2]->title }}</h3></strong>
-                            {{-- <p>{{$articles->title}}</p> <!-- Article slogan !--> --}}
-                          </div>
-                        </a>
-                      </div>
-                      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a id="slide" class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                      </a>
-                    </div>
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                  <a href="{{route('article.show',['a_id'=> $articles[2]->id])}}">                            
+                    <img src="{{asset( $articles[2]->image_link)}}"  class="d-block" alt="Article image !" width="100%" height="400px">
+                    <div class="carousel-caption d-none d-md-block">
+                      <strong><h3>{{ $articles[2]->title }}</h3></strong>
+                      <p>{{$articles[2]->slogan}}</p> <!-- Article slogan !-->
+                    </div> 
+                  </a>
+                </div> 
+                <div class="carousel-item active">
+                  <a href="{{route('article.show',['a_id'=> $articles[1]->id])}}">                            
+                    <img src="{{asset( $articles[1]->image_link)}}"  class="d-block" alt="Article image !" width="100%" height="400px">
+                    <div class="carousel-caption d-none d-md-block">
+                      <strong><h3>{{ $articles[1]->title }}</h3></strong>
+                      <p>{{$articles[1]->slogan}}</p> <!-- Article slogan !-->
+                    </div> 
+                  </a>
+                </div>
+                <div class="carousel-item active">
+                  <a href="{{route('article.show',['a_id'=> $articles[0]->id])}}">                            
+                    <img src="{{asset( $articles[0]->image_link)}}"  class="d-block" alt="Article image !" width="100%" height="400px">
+                    <div class="carousel-caption d-none d-md-block">
+                      <strong><h3>{{ $articles[0]->title }}</h3></strong>
+                      <p>{{$articles[0]->slogan}}</p> <!-- Article slogan !-->
+                    </div> 
+                  </a>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a id="slide" class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@
       <h1 class="blog_header">Our Blog Articles : </h1><hr>
       <div class="container row">
         <div class="btn mx-auto">
-          <a href="{{url('/create-article')}}">New Article</a> 
+          <a href="{{url('articles/create-article')}}">New Article</a> 
         </div>
       </div> 
     </div>
@@ -96,8 +96,7 @@
       <!--THE COL 1-->
             <div class="col-md-3 profile box" >
               <aside>
-                {{-- <a href="{{route('show',['a_id'=> $article-> id])}}" > --}}
-                <a href="{{url('article/'.$article->id)}}">
+                <a href="{{route('article.show',['a_id'=> $article-> id])}}" >
                   <img src="{{asset($article->image_link)}}" width="200px" alt="Article image!" class="img" title="{{$article->slogan}}"> <br>
                 </a>
                 <span class="editor_label">By: {{$article->editor_name}}</span>
@@ -107,22 +106,14 @@
             <div class="col-md-9 box" >    
               <article>
                 <header>
-                  {{-- <a href="{{route('show',['a_id'=> $article-> id])}}"> --}}
+                  <a href="{{route('article.show',['a_id'=> $article->id])}}">
                     <h2>{{$article->title}}</h2>
-                  {{-- </a> --}}
+                  </a>
                 </header>
                 <footer>
                   {{$article->updated_at}} |
-                    <a href= "{{url('article/edit/'. $article-> id)}}" class=" btn btn-group-sm"> Edit</a> | 
-                {{-- <a href= "{{url('article/'. $article)}}" class="btn" action="{{url('article/'.$article)}}" method="post">
-                    @csrf
-                    @method('DELETE') Delete</a> <br> --}}
-                  {{-- <form action="{{url('article/'.$article)}}" method="post" style="display;">
-                      @csrf 
-                      @method('DELETE')
-                      <input type="submit" value="Delete" class="btn btn-group-sm">
-                  </form> --}}
-                </footer>
+                    <a href= "{{url('articles/article/edit/'. $article-> id)}}" class="btn text-black"> Edit</a> | 
+                    <a href= "{{route('article.destroy',[ 'a_id' =>$article->id])}}" class="btn text-black" >delete</a>
                 <div class="lead">{{$article->slogan}}</div>
                 <br> <br> <hr>
               </article>          
