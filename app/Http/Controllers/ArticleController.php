@@ -12,7 +12,7 @@ class ArticleController extends Controller
     {
         // request()->file('image');
         return view("articles.blog", [
-            'articles' => Article::all()
+            'articles'=> Article::all()
         ]);   
     }
 
@@ -34,13 +34,13 @@ class ArticleController extends Controller
             $article->image_link = str_replace('public','storage',$ImagePath);
             $article-> save();
 
-            return redirect('blog');
+            return redirect('articles/blog');
     }
 
     public function show($a_id)
     {
         return view("articles.single_article")->with( [
-            'article'=>Article::find($a_id),
+            'article'=> Article::find($a_id),
             'otherArticles'=> Article::take(6)->get()
             ] );
     } 
@@ -67,12 +67,12 @@ class ArticleController extends Controller
         $article->slogan = request('slogan');
         $article->editor_name = request('editor_name');
         $article->save();
-        return redirect('blog');
+        return redirect('articles/blog');
     }
 
       public function delete($a_id)
   { 
       Article::find($a_id)->delete();
-      return redirect ('blog');    
+      return redirect ('articles/blog');    
     }
 }
