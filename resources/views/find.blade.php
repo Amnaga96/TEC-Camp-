@@ -27,6 +27,7 @@
                                       <select class="form-control form-control-lg" style="border-color: #86e2d5;" name="specialization">
                                       <option>select a specialization</option>                                 
                                        @foreach ($specializations as $specialization_object) 
+                                       @dd($specialization_object);
                                             <option value="{{ $specialization_object->id }}" {{ ($specialization_object->id == $specialization)? 'selected': '' }}>{{ $specialization_object->name }}</option>
                                         @endforeach  
                                       </select>
