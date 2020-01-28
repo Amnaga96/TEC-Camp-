@@ -18,12 +18,12 @@
         <link rel="stylesheet" href="{{asset('fonts/material-icon/css/material-design-iconic-font.min.css')}}">
         <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
         <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
-        <title> Editting article</title>
+        <title> Editing article</title>
     </head>
     <body>
         <section>
             <div class="container article_content">
-                <form action="{{url('article/'.$article-> id)}}" method="POST" class="article-form" enctype="multipart/form-data" >
+                <form action="{{url('articles/article/'.$article-> id)}}" method="POST" class="article-form" enctype="multipart/form-data" >
                     @csrf
                     @method('PATCH') 
                     <div class="row"> 

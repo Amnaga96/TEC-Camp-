@@ -151,11 +151,11 @@
     <div class="space"></div>
     <div class="row">
       <div class="col-md-6 col-sm-6 service"> <!--<i class="fa fa-desktop"></i>-->
-        <h4><a href="{{ url('/find') }}">find a thirapist</a></h4>
+        <h4 style="text-decoration: underline"><a href="{{ url('/find') }}"> <strong>find a thirapist </strong></a></h4>
         <p> Here in health care we can help you to find the avilible therapists in the country. </p>
       </div>
       <div class="col-md-6 col-sm-6 service">  <!--<i class="fa fa-gears"></i>-->
-        <h4><a href="{{ url('/ask') }}">git help</a></h4>
+        <h4 style="text-decoration: underline"><a href="{{ url('/ask') }}"><strong>get help</strong></a></h4>
         <p> Ask a therapist for help. </p>
       </div>
      </div>
@@ -166,21 +166,11 @@
 <div id="works-section">
   <div class="container"> <!-- Container -->
     <div class="section-title">
-      <a href="blog"><h2>Our<strong>Blog</strong></h2></a>
+      <a href="articles/blog/"><h2>Our<strong>Blog</strong></h2></a>
       <hr>
       <div class="clearfix"></div>
     </div>
-    {{--  <!-- <div class="categories"> -->
-      <!-- <ul class="cat"> -->
-        <!-- <li> -->
-          <!-- <ol class="type"> -->
-           <!-- <li><a href="#" data-filter="*" class="active">All</a></li>
-            <li><a href="#" data-filter=".web">children</a></li>
-            <li><a href="#" data-filter=".app">teens</a></li>
-            <li><a href="#" data-filter=".branding">adults</a></li> -->
-          <!-- </ol> -->
-        <!-- </li> -->
-      <!-- </ul> -->  --}}
+
       <div class="clearfix"></div>
     </div>
     <div class="row">
@@ -219,59 +209,6 @@
               <img src="Blog/images/img_1.jpg" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
-       {{--  <!-- <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/04.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4></h4>
-                <small></small>
-                <div class="clearfix"></div>
-                <i class="fa fa-plus"></i> </div>
-              <img src="img/portfolio/04.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 app">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/05.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4></h4>
-                <small></small>
-                <div class="clearfix"></div>
-                <i class="fa fa-plus"></i> </div>
-              <img src="img/portfolio/05.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 branding">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/06.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4></h4>
-                <small></small>
-                <div class="clearfix"></div>
-                <i class="fa fa-plus"></i> </div>
-              <img src="img/portfolio/06.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 branding app">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/07.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4></h4>
-                <small></small>
-                <div class="clearfix"></div>
-                <i class="fa fa-plus"></i> </div>
-              <img src="img/portfolio/07.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/08.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4></h4>
-                <small></small>
-                <div class="clearfix"></div>
-                <i class="fa fa-plus"></i> </div>
-              <img src="img/portfolio/08.jpg" class="img-responsive" alt="Project Title"> </a> </div> -->  --}}
           </div>
         </div>
       </div>
