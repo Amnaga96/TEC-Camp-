@@ -151,12 +151,12 @@
     <div class="space"></div>
     <div class="row">
       <div class="col-md-6 col-sm-6 service"> <!--<i class="fa fa-desktop"></i>-->
-        <h4><a href="{{ url('/find') }}">find a thirapist</a></h4>
-        <p> Here in health care we can help you to find the avilible therapists in the country. </p>
+        <h4><a style="font-size:32px; color:#86e2d5;" href="{{ url('/find') }}">find a therapist</a></h4>
+        <p style="font-size:15px;"> Here in health care we can help you to find the avilible therapists in the country. </p>
       </div>
       <div class="col-md-6 col-sm-6 service">  <!--<i class="fa fa-gears"></i>-->
-        <h4><a href="{{ url('/ask') }}">git help</a></h4>
-        <p> Ask a therapist for help. </p>
+        <h4><a style="font-size:32px; color:#86e2d5;" href="{{ url('/ask') }}">get help</a></h4>
+        <p style="font-size:15px;"> Ask a therapist for help. </p>
       </div>
      </div>
 </div>
@@ -433,7 +433,7 @@
 <!--footer-->
 <div id="footer">
   <div class="container">
-    <center><p>Copyright &copy; 2019 health care. Design by <a href="team" rel="nofollow">team</a></p></center>
+    <center><p>Copyright &copy; 2019 health care. Design by <a href="#team-section" rel="nofollow">team</a></p></center>
   </div>
 </div>
 

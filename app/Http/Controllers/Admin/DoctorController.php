@@ -66,7 +66,7 @@ class DoctorController extends Controller
             'name' => 'required', 
         ]);
 
-        $doctor = new Doctor;
+        $doctor = Doctor::find($id);
         $doctor ->name= request('name');
         $doctor ->save();
         $doctor->specialization()->sync($request->specialization);

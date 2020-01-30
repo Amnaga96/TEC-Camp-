@@ -19,31 +19,47 @@ class FindController extends Controller
 
         $area = request('area_id');
         $specialization = request('specialization');
+
         
-        $clinics = Clinic::with('doctors');
-
-        $clinics->when(request('area_id'), function($clinicQuery) {
-                $clinicQuery->where('area_id', request('area_id'));
-        });
-
-        $doctor_clinics = Doctor::with('clinics')->whereHas('clinics',function($query) use($area){
+    //    // return $specialization;
+        // $clinics = Clinic::with(['doctors.specialization'=> function($query) use ($specialization ) {
+        //     $query->where('specializations.id', $specialization );
+        // }])->get();
+   
+        
+       $doctors = Doctor::with('clinics','specialization')->whereHas('clinics',function($query) use($area){
                                     $query->where('area_id',$area);
                                 })
                                 ->whereHas('specialization',function($query) use($specialization){
                                     $query->where('specializations.id',$specialization);
                                 })
-                                ->get()
-                                ->pluck('clinics'); 
+                                ->get();
+
+        // return $doctors;
+
+        // $clinics->when(request('area_id'), function($clinicQuery) {
+        //         $clinicQuery->where('area_id', request('area_id'));
+        // });
+
+        // $doctor_clinics = Doctor::with('clinics')->whereHas('clinics',function($query) use($area){
+        //                             $query->where('area_id',$area);
+        //                         })
+        //                         ->whereHas('specialization',function($query) use($specialization){
+        //                             $query->where('specializations.id',$specialization);
+        //                         })
+        //                         ->get()
+        //                         ->pluck('clinics'); 
 
         // return $specializations;
 
-        $clinics->when(request('specialization'), function($clinicQuery) use($doctor_clinics) {
-            $clinicQuery->whereIn('id', $doctor_clinics);
-        });
+        // $clinics->when(request('specialization'), function($clinicQuery) use($doctor_clinics) {
+        //     $clinicQuery->whereIn('id', $doctor_clinics);
+        // });
 
         // return $clinics->get();
         return view('find', [
-            'clinics' => $clinics->get(),
+           // 'clinics' => $clinics->get(),
+           'doctors' => $doctors,
             'areas' => Area::all(),
             'area' => $area,
             'specialization' => $specialization,
@@ -57,21 +73,12 @@ public function show()
 return view('find', [
     'areas' => Area::all(),
     'specializations' => specialization::all(),
-    'clinics' => [],
+    'doctors' => [],
     'area' => null,
     'specialization' => null,
 ]); 
 
 }
-
-    
-
-   
-
-    
-
-    
-    
 
 
 }

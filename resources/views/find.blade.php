@@ -11,7 +11,7 @@
 
 <div  style="width:600px;" class="container ">
                   <div  class="showcase-content">
-                      <h2 >FIND A THIRAPIST!</h2>
+                      <h2 >FIND A THERAPIST!</h2>
                       <p>Here in Utalk we can help you to find the avilible therapists in the country.</p>
   
   <form  action="{{ route('find.index') }}"  method="post">
@@ -27,7 +27,6 @@
                                       <select class="form-control form-control-lg" style="border-color: #86e2d5;" name="specialization">
                                       <option>select a specialization</option>                                 
                                        @foreach ($specializations as $specialization_object) 
-                                       @dd($specialization_object);
                                             <option value="{{ $specialization_object->id }}" {{ ($specialization_object->id == $specialization)? 'selected': '' }}>{{ $specialization_object->name }}</option>
                                         @endforeach  
                                       </select>
@@ -40,31 +39,45 @@
             </div>
 
 
-               @foreach ($clinics as $clinic )
+               @foreach ($doctors as $doctor )
 
          <div class="mt-5 mb-5 container">
 
           <div class="row">
             <!--THE COL 1-->
             <div class="col-md-4 profile box" >
-              <aside>
+               {{-- <aside>
                 <img src="{{ asset ('storage/'.$clinic->image_link) }}"  width="200px"  >
                
-              </aside>
+              </aside>  --}}
             </div>
             <!--THE COL 2-->
-            <div class="col-md-8 box" >    
+            <div class="col-md-8 box mt-5" >    
               <header>
-                <h2>{{$clinic->name}}</h2>
+                                          <span style="background-color: #86e2d5;" class="badge  badge-lg">therapist's name:</span>
+
+                <h2>{{$doctor->name}}</h2>
               </header>
               <div class="lead"> 
+                            <span style="background-color: #86e2d5;" class="badge  badge-lg">specialization:</span>
+
                   <ul >
-                    @foreach($clinic->doctors as $doctor )<li> {{$doctor->name}}</li>@endforeach
+                    @foreach($doctor->specialization as $specialization )<li> {{$specialization->name}}</li>@endforeach
                   </ul>
               </div>
+              <div class="lead"> 
+              <span style="background-color: #86e2d5;" class="badge  badge-lg">clinic name:</span>
+                  <ul >
+                    @foreach($doctor->clinics as $clinic )<li> {{$clinic->name}}
+                    <img style="border-radius:8px; margin-left:10px;" src="{{ asset ('storage/'.$clinic->image_link) }}"  width="30px"  >
+</li>@endforeach
+                  </ul>
+              </div>
+              
               <footer>
-                <span style="background-color: #86e2d5;" class="badge  badge-lg">phone number : {{$clinic->phone_number}} </span>
+                <span style="background-color: #86e2d5;" class="badge  badge-lg">cinic phone number : {{$clinic->phone_number}} </span>
               </footer>
+
                 <br><br>
                 
             </div>
