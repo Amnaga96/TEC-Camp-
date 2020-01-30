@@ -61,7 +61,14 @@
         <li><a href="#testimonials-section" class="page-scroll">Testimonials</a></li>
         <li><a href="#contact-section" class="page-scroll">Contact</a></li>
         @auth
+
+        @if (auth()->user()->user_type != 'admin')
         <li><a href="{{ url('questions') }}">Questions</a></li>
+        @endif
+             @if (auth()->user()->user_type == 'admin')
+                    <li><a href="{{ url('/admin/home')}}">your profile</a></li>
+                    <li><a href="{{ url('/create-article')}}">create articles</a></li>
+                   @endif
         @endauth
         @guest
                   <li class="nav-item">
@@ -151,12 +158,21 @@
     <div class="space"></div>
     <div class="row">
       <div class="col-md-6 col-sm-6 service"> <!--<i class="fa fa-desktop"></i>-->
-        <h4><a href="{{ url('/find') }}">find a thirapist</a></h4>
+<<<<<<< HEAD
+        <h4><a style="font-size:32px; color:#86e2d5;" href="{{ url('/find') }}">find a therapist</a></h4>
+        <p style="font-size:15px;"> Here in health care we can help you to find the avilible therapists in the country. </p>
+      </div>
+      <div class="col-md-6 col-sm-6 service">  <!--<i class="fa fa-gears"></i>-->
+        <h4><a style="font-size:32px; color:#86e2d5;" href="{{ url('/ask') }}">get help</a></h4>
+        <p style="font-size:15px;"> Ask a therapist for help. </p>
+=======
+        <h4 style="text-decoration: underline"><a href="{{ url('/find') }}"> <strong>find a thirapist </strong></a></h4>
         <p> Here in health care we can help you to find the avilible therapists in the country. </p>
       </div>
       <div class="col-md-6 col-sm-6 service">  <!--<i class="fa fa-gears"></i>-->
-        <h4><a href="{{ url('/ask') }}">git help</a></h4>
+        <h4 style="text-decoration: underline"><a href="{{ url('/ask') }}"><strong>get help</strong></a></h4>
         <p> Ask a therapist for help. </p>
+>>>>>>> 42993ac328cfb8c650965847d132cf50029a4a3b
       </div>
      </div>
 </div>
@@ -166,112 +182,49 @@
 <div id="works-section">
   <div class="container"> <!-- Container -->
     <div class="section-title">
-      <a href="blog/blog.html"><h2>Our<strong>Blog</strong></h2></a>
+      <a href="articles/blog/"><h2>Our<strong>Blog</strong></h2></a>
       <hr>
       <div class="clearfix"></div>
     </div>
-    {{--  <!-- <div class="categories"> -->
-      <!-- <ul class="cat"> -->
-        <!-- <li> -->
-          <!-- <ol class="type"> -->
-           <!-- <li><a href="#" data-filter="*" class="active">All</a></li>
-            <li><a href="#" data-filter=".web">children</a></li>
-            <li><a href="#" data-filter=".app">teens</a></li>
-            <li><a href="#" data-filter=".branding">adults</a></li> -->
-          <!-- </ol> -->
-        <!-- </li> -->
-      <!-- </ul> -->  --}}
+
       <div class="clearfix"></div>
     </div>
     <div class="row">
       <div class="portfolio-items">
         <div class="col-sm-6 col-md-3 col-lg-3 web">
           <div class="portfolio-item">
-            <div class="hover-bg"> <a href="blog/images/img-9.jpg" rel="prettyPhoto">
+            <div class="hover-bg"> 
               <div class="hover-text">
                 <h4>Stress issues</h4>
                 <a href="blog/One-Page-Artical/artical1.html"><small>read more</small></a>
                 <div class="clearfix"></div>
                 <i class="fa fa-plus"></i>
                </div>
-              <img src="blog/images/img-9.jpg" class="img-responsive" alt="Stress issues"> </a> </div>
+              <img src="{{asset('img/blog1.jpg')}}" class="img-responsive" alt="Stress issues"> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 app">
           <div class="portfolio-item">
-            <div class="hover-bg"> <a href="Blog/images/img_7.jpeg" rel="prettyPhoto">
+            <div class="hover-bg">
               <div class="hover-text">
                 <h4>children</h4>
                 <a href="blog/One-Page-Artical/artical1.html"><small>read more</small></a>
                 <div class="clearfix"></div>
                 <i class="fa fa-plus"></i> </div>
-              <img src="Blog/images/img_7.jpeg" class="img-responsive" alt="Project Title"> </div>
+              <img src="{{asset('img/blog4.jpg')}}" class="img-responsive" alt="Project Title"> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 web">
           <div class="portfolio-item">
-            <div class="hover-bg"> <a href="Blog/images/img_1.jpg" rel="prettyPhoto">
+            <div class="hover-bg">
               <div class="hover-text">
                 <h4>adults</h4>
                 <a href="blog/One-Page-Artical/artical1.html"><small>read more</small></a>
                 <div class="clearfix"></div>
                 <i class="fa fa-plus"></i> </div>
-              <img src="Blog/images/img_1.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{{asset('img/blog3.jpg')}}" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
-       {{--  <!-- <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/04.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4></h4>
-                <small></small>
-                <div class="clearfix"></div>
-                <i class="fa fa-plus"></i> </div>
-              <img src="img/portfolio/04.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 app">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/05.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4></h4>
-                <small></small>
-                <div class="clearfix"></div>
-                <i class="fa fa-plus"></i> </div>
-              <img src="img/portfolio/05.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 branding">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/06.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4></h4>
-                <small></small>
-                <div class="clearfix"></div>
-                <i class="fa fa-plus"></i> </div>
-              <img src="img/portfolio/06.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 branding app">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/07.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4></h4>
-                <small></small>
-                <div class="clearfix"></div>
-                <i class="fa fa-plus"></i> </div>
-              <img src="img/portfolio/07.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3 web">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/08.jpg" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4></h4>
-                <small></small>
-                <div class="clearfix"></div>
-                <i class="fa fa-plus"></i> </div>
-              <img src="img/portfolio/08.jpg" class="img-responsive" alt="Project Title"> </a> </div> -->  --}}
           </div>
         </div>
       </div>
@@ -290,36 +243,32 @@
       <div class="col-md-3 col-sm-6 team">
         <div class="thumbnail"> <img src="{{ asset('img/team/01.png') }}" alt="..." class="img-circle team-img">
           <div class="caption">
-            <h3>amna</h3>
+            <h3>Amna</h3>
             <p>control</p>
-            <p>bla bla.</p>
           </div>
         </div>
       </div>
       <div class="col-md-3 col-sm-6 team">
         <div class="thumbnail"> <img src="{{ asset('img/team/02.png') }}" alt="..." class="img-circle team-img">
           <div class="caption">
-            <h3>heba</h3>
+            <h3>Heba</h3>
             <p>software engineering</p>
-            <p>bla bla.</p>
           </div>
         </div>
       </div>
       <div class="col-md-3 col-sm-6 team">
         <div class="thumbnail"> <img src="{{ asset('img/team/03.png') }}" alt="..." class="img-circle team-img">
           <div class="caption">
-            <h3>asma</h3>
+            <h3>Asma</h3>
             <p>software ngineering</p>
-            <p>bla bla</p>
           </div>
         </div>
       </div>
       <div class="col-md-3 col-sm-6 team">
         <div class="thumbnail"> <img src="{{ asset('img/team/04.png') }}" alt="..." class="img-circle team-img">
           <div class="caption">
-            <h3>soha</h3>
+            <h3>Soha</h3>
             <p>Project manager</p>
-            <p>bla bla.</p>
           </div>
         </div>
       </div>
@@ -338,15 +287,13 @@
       <div class="col-md-8 ">
         <div id="testimonial" class="owl-carousel owl-theme">
           <div class="item">
-            <p>bla bla.</p>
+            <p>We are very fortunate to have formed excellent partnerships with many of our clients. And we’ve formed more than just working relationships with them; we have formed true friendships. Here’s what they’re saying about us.</p>
             <p><strong>someone</strong>, CEO, Company.</p>
           </div>
           <div class="item">
-            <p>bla bla.</p>
             <p><strong>someone</strong>, CEO, Company.</p>
           </div>
           <div class="item">
-            <p>bla bla.</p>
             <p><strong>someone</strong>, CEO, Company.</p>
           </div>
         </div>
@@ -433,7 +380,7 @@
 <!--footer-->
 <div id="footer">
   <div class="container">
-    <center><p>Copyright &copy; 2019 health care. Design by <a href="team" rel="nofollow">team</a></p></center>
+    <center><p>Copyright &copy; 2019 health care. Design by <a href="#team-section" rel="nofollow">team</a></p></center>
   </div>
 </div>
 
