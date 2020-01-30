@@ -33,7 +33,7 @@
     <!-- Slide pics block -->
         <div class="site-section">
           <div class="row ">
-            <div id="carouselExampleCaptions" class="carousel slide col-12 " data-ride="carousel">
+            <div id="carouselExampleCaptions" class="carousel slide col-12" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -121,7 +121,7 @@
         </div>
         @endforeach
       </div>
-    
+    <br> <br> <br>
   <!-- End of articles blockes -->
   <!-- JQuery, js, and Bootstrap Plugins -->
     <!-- Native javascript --> 
