@@ -1,9 +1,13 @@
 @extends('layouts.app_renamed')
 @section('content')
   <div class="container row p-3">
+<<<<<<< HEAD
     <div id="showcase" style=" width:800px; height:650px; border: 2px solid #86e2d5;" class="ml-5 mt-5 col-12 p-5" >
+=======
+    <div class="ml-5 mt-5 col-12 p-5" >
+>>>>>>> 42993ac328cfb8c650965847d132cf50029a4a3b
         @if (auth()->user()->user_type == 'patient')
-          <a  style=" color: black; font-size:20px;" href="{{ url('/ask') }}"> Ask a new question</a>
+          <a  style="color: #86e2d6; font-size:20px;" href="{{ url('/ask') }}"> Ask a new question</a>
         @endif
       <table style="margin-Top:20px ;" class="table table-sm  text-center">
         <thead style="background-color: #86e2d5;"  class="table-info ">
@@ -27,6 +31,5 @@
 
         </tbody>
       </table>
-    </div>
   </div>
        @stop

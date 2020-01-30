@@ -12,7 +12,7 @@ class QuestionController extends Controller
     public function index(Request $request)
     {
         $user = User::first();
-        // $questions = new Question();
+        $questions = new Question();
         // $questions = Question::with('replies');
 
         if ($user->user_type == 'patient') {
@@ -21,12 +21,12 @@ class QuestionController extends Controller
             $questions = $user->recevied_questions;
         }
 
-        //   return response()->json(Question::all());
+        // return response()->json(Question::all());
         // return response()->json(User::all());
 
         return response()->json($questions);
-        // return response()->json(Question::with('consulter', 'replies')->get());
-    
+        //  return response()->json(Question::with('consulter', 'replies')->get());
+
     }
 
     public function store(Request $request)
@@ -43,7 +43,7 @@ class QuestionController extends Controller
         $ques->body= request('body');
         $ques->therapist_id = request('therapist');
         $ques->patient_id = auth('api')->id();
-      
+
         $ques->save();
 
         return response()->json($ques);
