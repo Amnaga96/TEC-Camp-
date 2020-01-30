@@ -67,12 +67,8 @@ Route::group([
                 Route::get('/','FindController@show')->name('find')->middleware('auth');
             });
             Route::get('clinics', 'ClinicController@index')->name('clinics')->middleware('auth');
-<<<<<<< HEAD
-            Route::post('/find/find_result','FindController@find_result');
-=======
 
             Route::post('/find/find_result','FindController@find_result')->middleware('auth');
->>>>>>> 42993ac328cfb8c650965847d132cf50029a4a3b
 
  //Articles Routes!
  

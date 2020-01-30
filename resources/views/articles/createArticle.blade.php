@@ -1,26 +1,33 @@
+{{-- @extends('layouts.app_renamed') --}}
 <html>
     <head>
-        <link rel="stylesheet" href="{{asset('css/articles/Form CSS/style.css')}}">
-        <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
-        <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
-        <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/mediaelementplayer.css')}}">
-        <link rel="stylesheet" href="{{asset('css/animate.css')}}">
-        <link rel="stylesheet" href="{{asset('css/fl-bigmug-line.css')}}">
-        <link rel="stylesheet" type="{{asset('css/text/css" href="css/responsive.css')}}">
+        <!-- Stylesheet -->     
+         <link rel="stylesheet" href="{{asset('css/articles/style.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/magnific-popup.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/jquery-ui.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/owl.theme.default.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/mediaelementplayer.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/animate.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/fl-bigmug-line.css')}}">
+        <link rel="stylesheet" type="{{asset('css/articles/text/css" href="css/responsive.css')}}">
         <link rel="stylesheet" href="{{asset('css/articles.css')}}">
+                <link rel="stylesheet" href="{{asset('css/articles/Form CSS/style.css')}}">
+
       <!-- Bootstrap -->
-        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
-        <script type="text/javascript" src="{{asset('js/bootstrap.js')}}"></script>     
+        <link rel="stylesheet" href="{{asset('css/articles/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/articles/bootstrap-datepicker.css')}}">
+        <script type="text/javascript" src="{{asset('js/articles/bootstrap.js')}}"></script>     
       <!-- Font Icon -->
-        <link rel="stylesheet" href="{{asset('fonts/material-icon/css/material-design-iconic-font.min.css')}}">
-        <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
-        <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
+        <link rel="stylesheet" href="{{asset('fonts/artifcles/material-icon/css/material-design-iconic-font.min.css')}}">
+        <link rel="stylesheet" href="{{asset('fonts/articles/flaticon/font/flaticon.css')}}">
+        <link rel="stylesheet" href="{{asset('fonts/articles/icomoon/style.css')}}">
         <title>Write new article</title>
     </head>
-    <body>
+    <body> 
+       {{-- @section ('content')  --}}
+       <div class="container"> 
+       <div class="site-section">                         
         <section class="create-article-form">
             <div class="container article_content m-5 ">
                 <form action="" method="POST" class="article-form row " enctype="multipart/form-data" >
@@ -54,27 +61,31 @@
                 </form> 
             </div>
         </section>
-         <!-- JQuery, js, and Bootstrap Plugins -->
-          <!-- Native javascript --> 
-            <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script> 
-            <script src="{{asset('articles/js/mediaelement-and-player.min.js')}}"></script>
-            <script src="{{asset('articles/js/jquery-migrate-3.0.1.min.js')}}"></script>  
-            <script src="{{asset('articles/js/circleaudioplayer.js')}}"></script>
-            <script src="{{asset('articles/js/owl.carousel.min.js')}}"></script>
-            <script src="{{asset('articles/js/popper.min.js')}}"></script> 
-            <script src="{{asset('js/main.js')}}"></script>
-            <script src="{{asset('articles/js/aos.js')}}"></script>
-          <!-- JQuery script -->   
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
-            <script type="{{asset('text/javascript" src="articles/js/jquery.1.11.1.js')}}"></script> 
-            <script src="{{asset('articles/js/jquery.magnific-popup.min.js')}}"></script>
-            <script src="{{asset('articles/js/jquery.countdown.min.js')}}"></script>
-            <script src="{{asset('articles/js/jquery.stellar.min.js')}}"></script>
-            <script src="{{asset('articles/js/jquery-3.3.1.min.js')}}"></script>
-            <script src="{{asset('articles/js/jquery-ui.js')}}"></script>
-          <!-- Bootstrap script -->
-            <script type="{{asset('text/javascript" src="articles/js/bootstrap.js')}}"></script> 
-            <script src="{{asset('articles/js/bootstrap-datepicker.min.js')}}"></script>
-            <script src="{{asset('articles/js/bootstrap.min.js')}}"></script>
+        </div>
+    </div>
+        
+        <!-- JQuery, js, and Bootstrap Plugins -->
+    <!-- Native javascript --> 
+      <script src="{{asset('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')}}"></script> 
+      <script src="{{asset('js/articles/mediaelement-and-player.min.js')}}"></script>
+      <script src="{{asset('js/articles/jquery-migrate-3.0.1.min.js')}}"></script>  
+      <script src="{{asset('js/articles/circleaudioplayer.js')}}"></script>
+      <script src="{{asset('js/articles/owl.carousel.min.js')}}"></script>
+      <script src="{{asset('js/articles/popper.min.js')}}"></script> 
+      <script src="{{asset('js/articles/main.js')}}"></script>
+      <script src="{{asset('js/articles/aos.js')}}"></script>
+    <!-- JQuery script -->   
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+      <script type="{{asset('text/javascript" src="articles/js/jquery.1.11.1.js')}}"></script> 
+      <script src="{{asset('js/articles/jquery.magnific-popup.min.js')}}"></script>
+      <script src="{{asset('js/articles/jquery.countdown.min.js')}}"></script>
+      <script src="{{asset('js/articles/jquery.stellar.min.js')}}"></script>
+      <script src="{{asset('js/articles/jquery-3.3.1.min.js')}}"></script>
+      <script src="{{asset('js/articles/jquery-ui.js')}}"></script>
+    <!-- Bootstrap script -->
+      <script type="{{asset('text/javascript" src="articles/js/bootstrap.js')}}"></script> 
+      <script src="{{asset('js/articles/bootstrap-datepicker.min.js')}}"></script>
+      <script src="{{asset('js/articles/bootstrap.min.js')}}"></script>
+      {{-- @endsection --}}
     </body>
 </html>
