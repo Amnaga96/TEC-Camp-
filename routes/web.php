@@ -32,7 +32,7 @@ Route::group([
     'prefix' => 'admin/doctor',
     'as' => 'doctor.'
     ],function(){
-        Route::get('/create', 'Admin\DoctorController@create')->name('create')->middleware('auth'-admin);
+        Route::get('/create', 'Admin\DoctorController@create')->name('create')->middleware('auth');
         Route::post('/store', 'Admin\DoctorController@store')->name('store');
         Route::get('/', 'Admin\DoctorController@index')->name('index')->middleware('auth-admin');
         Route::get('/page', 'Admin\DoctorController@page')->name('page')->middleware('auth-admin');
@@ -59,16 +59,19 @@ Route::group([
         });
 
             Route::group([
-
             'prefix' => '/find',
             'as' => 'find.'
             ],function(){
-                Route::post('/','FindController@index')->name('index')->middleware('auth');
-                Route::get('/','FindController@show')->name('find')->middleware('auth');
+                Route::post('/','FindController@index')->name('index');
+                Route::get('/','FindController@show')->name('find');
             });
             Route::get('clinics', 'ClinicController@index')->name('clinics')->middleware('auth');
+<<<<<<< HEAD
 
             Route::post('/find/find_result','FindController@find_result')->middleware('auth');
+=======
+            Route::post('/find/find_result','FindController@find_result');
+>>>>>>> 779204156b26b390c6575170401bf5c6b09d19c6
 
  //Articles Routes!
  

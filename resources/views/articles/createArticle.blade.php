@@ -1,31 +1,26 @@
-{{-- @extends('layouts.app_renamed') --}}
 <html>
     <head>
-        <!-- Stylesheet -->     
-         <link rel="stylesheet" href="{{asset('css/articles/style.css')}}">
-        <link rel="stylesheet" href="{{asset('css/articles/magnific-popup.css')}}">
-        <link rel="stylesheet" href="{{asset('css/articles/jquery-ui.css')}}">
-        <link rel="stylesheet" href="{{asset('css/articles/owl.carousel.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/articles/owl.theme.default.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/articles/mediaelementplayer.css')}}">
-        <link rel="stylesheet" href="{{asset('css/articles/animate.css')}}">
-        <link rel="stylesheet" href="{{asset('css/articles/fl-bigmug-line.css')}}">
-        <link rel="stylesheet" type="{{asset('css/articles/text/css" href="css/responsive.css')}}">
+       <link rel="stylesheet" href="{{asset('css/articles/Form CSS/style.css')}}">
+        <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+        <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
+        <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/mediaelementplayer.css')}}">
+        <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+        <link rel="stylesheet" href="{{asset('css/fl-bigmug-line.css')}}">
+        <link rel="stylesheet" type="{{asset('css/text/css" href="css/responsive.css')}}">
         <link rel="stylesheet" href="{{asset('css/articles.css')}}">
-                <link rel="stylesheet" href="{{asset('css/articles/Form CSS/style.css')}}">
-
       <!-- Bootstrap -->
-        <link rel="stylesheet" href="{{asset('css/articles/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/articles/bootstrap-datepicker.css')}}">
-        <script type="text/javascript" src="{{asset('js/articles/bootstrap.js')}}"></script>     
+        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
+        <script type="text/javascript" src="{{asset('js/bootstrap.js')}}"></script>     
       <!-- Font Icon -->
-        <link rel="stylesheet" href="{{asset('fonts/artifcles/material-icon/css/material-design-iconic-font.min.css')}}">
-        <link rel="stylesheet" href="{{asset('fonts/articles/flaticon/font/flaticon.css')}}">
-        <link rel="stylesheet" href="{{asset('fonts/articles/icomoon/style.css')}}">
+        <link rel="stylesheet" href="{{asset('fonts/material-icon/css/material-design-iconic-font.min.css')}}">
+        <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
+        <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
         <title>Write new article</title>
     </head>
     <body> 
-       {{-- @section ('content')  --}}
        <div class="container"> 
        <div class="site-section">                         
         <section class="create-article-form">
@@ -86,6 +81,5 @@
       <script type="{{asset('text/javascript" src="articles/js/bootstrap.js')}}"></script> 
       <script src="{{asset('js/articles/bootstrap-datepicker.min.js')}}"></script>
       <script src="{{asset('js/articles/bootstrap.min.js')}}"></script>
-      {{-- @endsection --}}
     </body>
 </html>

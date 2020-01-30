@@ -54,22 +54,24 @@ background: #000;
                       <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="{{  url('/login') }}">Log in</a>
                     </li>
                     @else
+                    <li class="nav-item">
+                        <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('questions') }}" class=" nav-link">Questions</a>
+                    </li>
+
+                  @if (auth()->user()->user_type == 'admin')
+
                     <ul class="navbar-nav mr-auto">
-                        
                         <li class="nav-item">
-                            <a href="{{ url('admin/clinic') }}" class="nav-link" style=" font-size: 14.5px; color: silver;">find feature</a>
+                            <a href="{{ url('admin/clinic') }}" class="nav-link">find feature</a>
                         </li>
                     </ul>
-                     @if (auth()->user()->user_type != 'admin')
-                     <ul>
-        <li class="nav-item"><a class="nav-link" href="{{ url('questions') }}" style=" font-size: 14.5px; color: silver;">Questions</a></li>
-        </ul>
-        @endif
-             @if (auth()->user()->user_type == 'admin')
-                    <ul class="navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="{{ url('/admin/home')}}" style=" font-size: 14.5px; color: silver;">your profile</a></li></ul>
-                    <ul class="navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="{{ url('/create-article')}}" style=" font-size: 14.5px; color: silver;">create articles</a></li></ul>
+
+                    @endif
+                    @if (auth()->user()->user_type == 'admin')
+                    <li class="nav-item">
+                    <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/admin/home')}}">your profile</a>
+                  </li>
                    @endif
-        
                     <li class="nav-item dropdown">
                         <a style=" color: #86e2d5;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
