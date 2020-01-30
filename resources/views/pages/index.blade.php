@@ -158,21 +158,12 @@
     <div class="space"></div>
     <div class="row">
       <div class="col-md-6 col-sm-6 service"> <!--<i class="fa fa-desktop"></i>-->
-<<<<<<< HEAD
         <h4><a style="font-size:32px; color:#86e2d5;" href="{{ url('/find') }}">find a therapist</a></h4>
-        <p style="font-size:15px;"> Here in health care we can help you to find the avilible therapists in the country. </p>
+        <p style="text-decoration: underline font-size:15px;"> Here in health care we can help you to find the avilible therapists in the country. </p>
       </div>
       <div class="col-md-6 col-sm-6 service">  <!--<i class="fa fa-gears"></i>-->
         <h4><a style="font-size:32px; color:#86e2d5;" href="{{ url('/ask') }}">get help</a></h4>
         <p style="font-size:15px;"> Ask a therapist for help. </p>
-=======
-        <h4 style="text-decoration: underline"><a href="{{ url('/find') }}"> <strong>find a thirapist </strong></a></h4>
-        <p> Here in health care we can help you to find the avilible therapists in the country. </p>
-      </div>
-      <div class="col-md-6 col-sm-6 service">  <!--<i class="fa fa-gears"></i>-->
-        <h4 style="text-decoration: underline"><a href="{{ url('/ask') }}"><strong>get help</strong></a></h4>
-        <p> Ask a therapist for help. </p>
->>>>>>> 42993ac328cfb8c650965847d132cf50029a4a3b
       </div>
      </div>
 </div>
