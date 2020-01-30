@@ -1,5 +1,5 @@
 <style>
-
+     .zoom {
         padding: 10px;
         transition: transform .2s;
         width: 80px;
