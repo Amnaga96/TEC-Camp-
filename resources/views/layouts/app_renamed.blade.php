@@ -44,7 +44,7 @@ background: #000;
                 <a style="font-size: 14.5px; color: silver;" class="nav-link"  href="{{ url('/find') }}">find a thirapist</a>
               </li>
               <li  class="nav-item">
-                  <a style="font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/ blog')}}">Our blog</a>
+                  <a style="font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('articles/blog')}}">Our blog</a>
                 </li>
                 <li class="nav-item">
                     <a style=" font-size: 14.5px; color: silver;" class="nav-link" href="{{ url('/#contact-section')}}">Contact us</a>

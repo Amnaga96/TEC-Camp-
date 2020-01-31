@@ -187,11 +187,11 @@
             <div class="hover-bg"> 
               <div class="hover-text">
                 <h4>Stress issues</h4>
-                <a href="blog/One-Page-Artical/artical1.html"><small>read more</small></a>
+                <a href="articles/article/3"><small>read more</small></a>
                 <div class="clearfix"></div>
                 <i class="fa fa-plus"></i>
                </div>
-              <img src="{{asset('img/blog1.jpg')}}" class="img-responsive" alt="Stress issues"> </div>
+              <img src="{{asset('img/blog1.jpg')}}" width="600" height="400" class="img-responsive" alt="Stress issue"> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 app">
@@ -199,10 +199,10 @@
             <div class="hover-bg">
               <div class="hover-text">
                 <h4>children</h4>
-                <a href="blog/One-Page-Artical/artical1.html"><small>read more</small></a>
+                <a href="articles/article/1"><small>read more</small></a>
                 <div class="clearfix"></div>
                 <i class="fa fa-plus"></i> </div>
-              <img src="{{asset('img/blog4.jpg')}}" class="img-responsive" alt="Project Title"> </div>
+              <img src="{{asset('img/blog4.jpg')}}" width="600" height="400" class="img-responsive" alt="Project Title"> </div>
           </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3 web">
@@ -210,10 +210,10 @@
             <div class="hover-bg">
               <div class="hover-text">
                 <h4>adults</h4>
-                <a href="blog/One-Page-Artical/artical1.html"><small>read more</small></a>
+                <a href="articles/article/2"><small>read more</small></a>
                 <div class="clearfix"></div>
                 <i class="fa fa-plus"></i> </div>
-              <img src="{{asset('img/blog3.jpg')}}" class="img-responsive" alt="Project Title"> </a> </div>
+              <img src="{{asset('img/blog2.jpg')}}" width="600" height="400" class="img-responsive" alt="Project Title"> </a> </div>
           </div>
         </div>
           </div>
